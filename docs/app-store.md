@@ -249,7 +249,7 @@ Für den englischen Eintrag derselbe Satz mit englischer Oberfläche in `docs/sc
 
 Das Handbuch zeigt dieselben Bilder: Code, Suche, Vorschau, Vergleich, geteilte Ansicht und Inspektor.
 
-Aufgenommen mit Schrift 15 pt über die Argumente des Debug-Builds, etwa `EXTRA="-fontSize 15 -inspectorTab outline -showsInspector YES" ACTIVATE=1 .build/shoot.sh …`; Inspektor vom 16.11.2026, Vorschau vom 25.11.2026 mit `Testdateien/Screenshots/de/Reise-La-Pineda.md` und `en/Trip-La-Pineda.md`, die übrigen vom 22.10.2026 zeigen noch den aktuellen Stand.
+Aufgenommen mit Schrift 15 pt über die Argumente des Debug-Builds, etwa `EXTRA="-fontSize 15 -inspectorTab outline -showsInspector YES" ACTIVATE=1 .build/shoot.sh …`; Inspektor vom 16.11.2026, Vorschau vom 25.11.2026 mit `Testdateien/Screenshots/de/Reise-La-Pineda.md` und `en/Trip-La-Pineda.md`, Trinkgeld vom 25.11.2026 mit dem neuen Icon, die übrigen vom 22.10.2026 zeigen noch den aktuellen Stand.
 
 ## TestFlight
 
