@@ -1,12 +1,12 @@
-# Kennzeichen der Schreibmaschine
+# Kennzeichen von Bleistift
 
-Der Quellcode der Schreibmaschine steht unter der Apache-Lizenz 2.0 (siehe `LICENSE`) und
+Der Quellcode von Bleistift steht unter der Apache-Lizenz 2.0 (siehe `LICENSE`) und
 ist frei verwendbar. Die Kennzeichen des Projekts sind davon ausgenommen; diese
 Seite sagt, was mit ihnen erlaubt ist.
 
 ## Worum es geht
 
-- der Name „Schreibmaschine“
+- der Name „Bleistift“
 - das App-Symbol und das Dokumentsymbol
 - `scripts/make_icon.swift`, das diese Symbole zeichnet
 
@@ -17,41 +17,41 @@ Werks.
 
 ## Erlaubt, ohne zu fragen
 
-- die Schreibmaschine beim Namen zu nennen, um über sie zu sprechen: in Besprechungen,
+- Bleistift beim Namen zu nennen, um darüber zu sprechen: in Besprechungen,
   Anleitungen, Vergleichen, Vorträgen oder Verlinkungen
-- zu sagen, dass ein Programm mit der Schreibmaschine zusammenarbeitet oder für die Schreibmaschine
+- zu sagen, dass ein Programm mit Bleistift zusammenarbeitet oder für Bleistift
   gedacht ist
 - die unveränderte App weiterzugeben, so wie sie veröffentlicht ist, mit
   Namen und Symbolen
-- Bildschirmfotos der Schreibmaschine zu zeigen
+- Bildschirmfotos von Bleistift zu zeigen
 
 ## Was einen eigenen Namen braucht
 
 Veränderte Fassungen, Abspaltungen und daraus abgeleitete Programme. Sie dürfen
-weder „Schreibmaschine“ heißen noch das Symbol verwenden, auch nicht in
+weder „Bleistift“ heißen noch das Symbol verwenden, auch nicht in
 abgewandelter oder nachgezeichneter Form, und nicht als Teil eines eigenen
 Namens oder Logos.
 
 Der Code selbst bleibt dabei frei verwendbar — die Einschränkung betrifft nur
-die Kennzeichen. Wer die Schreibmaschine abspaltet, tauscht also Name und Symbole aus und ist
+die Kennzeichen. Wer Bleistift abspaltet, tauscht also Name und Symbole aus und ist
 fertig.
 
 ## Alles Übrige
 
 Für alles, was hier nicht steht, genügt eine Anfrage an
-schreibmaschine@stefanradermacher.com.
+bleistift@stefanradermacher.com.
 
 ---
 
-# Schreibmaschine trademarks
+# Bleistift trademarks
 
-The source code of Schreibmaschine is licensed under the Apache License 2.0 (see
+The source code of Bleistift is licensed under the Apache License 2.0 (see
 `LICENSE`) and is free to use. The project's marks are excluded from that
 license; this page says what may be done with them.
 
 ## What this covers
 
-- the name "Schreibmaschine"
+- the name "Bleistift"
 - the app icon and the document icon
 - `scripts/make_icon.swift`, which draws those icons
 
@@ -61,22 +61,22 @@ produces them are, in addition, not part of the licensed work.
 
 ## Allowed without asking
 
-- naming Schreibmaschine in order to talk about Schreibmaschine: in reviews, tutorials,
+- naming Bleistift in order to talk about Bleistift: in reviews, tutorials,
   comparisons, talks or links
-- stating that a program works with Schreibmaschine or is made for Schreibmaschine
+- stating that a program works with Bleistift or is made for Bleistift
 - redistributing the app unchanged, as published, with its name and icons
-- showing screenshots of Schreibmaschine
+- showing screenshots of Bleistift
 
 ## What needs a name of its own
 
 Modified versions, forks and programs derived from them. They may neither be
-called "Schreibmaschine" nor use the icon, not in altered or redrawn form
+called "Bleistift" nor use the icon, not in altered or redrawn form
 either, and not as part of a name or logo of their own.
 
 The code itself stays free to use — the restriction covers the marks only.
-Forking Schreibmaschine therefore means replacing the name and the icons, and that is
+Forking Bleistift therefore means replacing the name and the icons, and that is
 all.
 
 ## Anything else
 
-For anything not covered here, just ask: schreibmaschine@stefanradermacher.com
+For anything not covered here, just ask: bleistift@stefanradermacher.com

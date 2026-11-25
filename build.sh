@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Builds Schreibmaschine.app with Xcode into ./build and installs it to /Applications.
+# Builds Bleistift.app with Xcode into ./build and installs it to /Applications.
 # Usage: ./build.sh [--no-install] [--adhoc]
 #   Signs with the team from Config/Local.xcconfig if it names one; Xcode creates the App ID and the
 #   development profile in the developer account if needed. Without a team, or with --adhoc, it
@@ -27,7 +27,7 @@ else
 fi
 
 mkdir -p .build
-if ! xcodebuild -project Schreibmaschine.xcodeproj -scheme Schreibmaschine -configuration Release \
+if ! xcodebuild -project Bleistift.xcodeproj -scheme Bleistift -configuration Release \
     -derivedDataPath .build/xcode \
     "${signing[@]}" \
     build > .build/xcodebuild.log 2>&1; then
@@ -36,8 +36,8 @@ if ! xcodebuild -project Schreibmaschine.xcodeproj -scheme Schreibmaschine -conf
     exit 1
 fi
 
-app=build/Schreibmaschine.app
-built=.build/xcode/Build/Products/Release/Schreibmaschine.app
+app=build/Bleistift.app
+built=.build/xcode/Build/Products/Release/Bleistift.app
 rm -rf "$app"
 mkdir -p build
 ditto "$built" "$app"
@@ -47,13 +47,13 @@ lsregister=/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchSe
 "$lsregister" -u "$built" 2>/dev/null || true
 "$lsregister" -u "$app" 2>/dev/null || true
 
-# The build number comes from Config/Schreibmaschine.xcconfig, the same source Xcode reads.
-build_number=$(sed -n 's/^CURRENT_PROJECT_VERSION = \([0-9][0-9]*\)$/\1/p' Config/Schreibmaschine.xcconfig)
+# The build number comes from Config/Bleistift.xcconfig, the same source Xcode reads.
+build_number=$(sed -n 's/^CURRENT_PROJECT_VERSION = \([0-9][0-9]*\)$/\1/p' Config/Bleistift.xcconfig)
 echo "Gebaut: $PWD/$app (Build ${build_number:-?}, $($team && echo "signiert mit Team" || echo "ad hoc"))"
 
 $install || exit 0
 
-target=/Applications/Schreibmaschine.app
+target=/Applications/Bleistift.app
 # A copy from the App Store stays untouched: it belongs to the App Store, which updates it,
 # and replacing it would lose its receipt. The new build is then only in build/.
 if [[ -e "$target/Contents/_MASReceipt/receipt" ]]; then
@@ -61,17 +61,17 @@ if [[ -e "$target/Contents/_MASReceipt/receipt" ]]; then
     echo "Zum Ausprobieren: open -a \"$PWD/$app\""
     exit 0
 fi
-# The installed Schreibmaschine has to quit before it can be replaced; it is reopened afterwards.
+# The installed Bleistift has to quit before it can be replaced; it is reopened afterwards.
 # Other copies, e.g. one started from Xcode, are left alone.
-is_running() { pgrep -qf "^$target/Contents/MacOS/Schreibmaschine"; }
+is_running() { pgrep -qf "^$target/Contents/MacOS/Bleistift"; }
 was_running=false
 if is_running; then
     was_running=true
     osascript -e "quit app \"$target\"" >/dev/null 2>&1 || true
     for _ in {1..50}; do is_running || break; sleep 0.1; done
     if is_running; then
-        echo "Die Schreibmaschine lässt sich nicht beenden (vielleicht ist noch ein Dialog offen)." >&2
-        echo "Bitte die Schreibmaschine von Hand beenden und erneut bauen. Gebaut ist die neue Version schon: $PWD/$app" >&2
+        echo "Bleistift lässt sich nicht beenden (vielleicht ist noch ein Dialog offen)." >&2
+        echo "Bitte Bleistift von Hand beenden und erneut bauen. Gebaut ist die neue Version schon: $PWD/$app" >&2
         exit 1
     fi
 fi

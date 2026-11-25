@@ -1,10 +1,10 @@
-# Schreibmaschine – Konzept
+# Bleistift – Konzept
 
 Stand: 28. September 2026
 
-Die Schreibmaschine ist ein Texteditor für macOS: vor allem für einfachen Text, der oft umgeformt wird, aber genauso brauchbar für Code. Er soll kein IDE-Ersatz und kein Alleskönner sein. Vorbilder sind KWrite und CotEditor. Von CotEditor übernimmt er den Funktionsumfang, macht aber Suchen, Fenster und Wiederherstellung anders.
+Bleistift ist ein Texteditor für macOS: vor allem für einfachen Text, der oft umgeformt wird, aber genauso brauchbar für Code. Er soll kein IDE-Ersatz und kein Alleskönner sein. Vorbilder sind KWrite und CotEditor. Von CotEditor übernimmt er den Funktionsumfang, macht aber Suchen, Fenster und Wiederherstellung anders.
 
-Englischer Name ebenfalls „Schreibmaschine“, im App Store mit erklärendem Zusatz (etwa „Schreibmaschine – Text Editor“).
+Englischer Name ebenfalls „Bleistift“, im App Store mit erklärendem Zusatz (etwa „Bleistift – Text Editor“). Bis Build 78 hieß die App „Schreibmaschine“; weil im Oktober 2026 ein anderer Mac-Editor mit diesem Namen erschienen ist (schreibmaschine.app), wurde sie im November 2026 vor der ersten Veröffentlichung umbenannt, samt Bundle-ID und In-App-Käufen.
 
 ## Leitlinien
 
@@ -38,7 +38,7 @@ Bei CotEditor wie bei den meisten Mac-Apps übernimmt die Fensterwiederherstellu
 
 ### Die Lösung: eine eigene, sichtbare Sitzung
 
-Die Schreibmaschine schaltet die Systemwiederherstellung ab und verwaltet ihre **Sitzung** selbst:
+Bleistift schaltet die Systemwiederherstellung ab und verwaltet die **Sitzung** selbst:
 
 - Eine Sitzung ist: alle Fenster mit Position und Größe, darin die Tabs in ihrer Reihenfolge, je Tab eine Datei oder ein ungesicherter Text, und die geteilten Ansichten.
 - **Einstellung „Beim Start“**, ausdrücklich und mit drei Möglichkeiten:

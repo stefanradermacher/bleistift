@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Creates the manual of Schreibmaschine, in the style of the other apps' manuals. The texts
+// Creates the manual of Bleistift, in the style of the other apps' manuals. The texts
 // live in docs/handbuch/de.md and en.md; screenshots are taken from docs/screenshots.
 // Usage (from the project folder): swift scripts/make_manual.swift [en]
-//   without an argument: docs/handbuch/de.md → docs/Schreibmaschine-Handbuch.pdf (German)
-//   with "en":           docs/handbuch/en.md → docs/Schreibmaschine-Manual.pdf (English)
-// A copy goes to Resources/, from where "Help → Schreibmaschine Manual" opens it in the app.
+//   without an argument: docs/handbuch/de.md → docs/Bleistift-Handbuch.pdf (German)
+//   with "en":           docs/handbuch/en.md → docs/Bleistift-Manual.pdf (English)
+// A copy goes to Resources/, from where "Help → Bleistift Manual" opens it in the app.
 
 import AppKit
 import PDFKit
@@ -27,7 +27,7 @@ import PDFKit
 let english = CommandLine.arguments.contains("en")
 
 let sourcePath = english ? "docs/handbuch/en.md" : "docs/handbuch/de.md"
-let outputPath = english ? "docs/Schreibmaschine-Manual.pdf" : "docs/Schreibmaschine-Handbuch.pdf"
+let outputPath = english ? "docs/Bleistift-Manual.pdf" : "docs/Bleistift-Handbuch.pdf"
 
 // MARK: - Look
 
@@ -292,7 +292,7 @@ func titlePage() {
     accent.setFill()
     CGRect(x: 0, y: pageSize.height - 250, width: pageSize.width, height: 250).fill()
 
-    let title = text("Schreibmaschine", size: 46, weight: .bold, color: .white)
+    let title = text("Bleistift", size: 46, weight: .bold, color: .white)
     title.draw(at: NSPoint(x: margin, y: pageSize.height - 150))
     // The title page breaks lines only between words: centered short texts look better whole.
     let subtitle = text(coverSubtitle, size: 15, color: NSColor(white: 1, alpha: 0.9), hyphenates: false)
@@ -514,7 +514,7 @@ if let document = PDFDocument(url: url) {
         PDFDocumentAttribute.titleAttribute: documentTitle,
         PDFDocumentAttribute.authorAttribute: "Stefan Radermacher",
         PDFDocumentAttribute.subjectAttribute: documentSubject,
-        PDFDocumentAttribute.creatorAttribute: "Schreibmaschine",
+        PDFDocumentAttribute.creatorAttribute: "Bleistift",
     ]
     let temporary = url.deletingLastPathComponent().appendingPathComponent("tmp-handbuch.pdf")
     if document.write(to: temporary) {

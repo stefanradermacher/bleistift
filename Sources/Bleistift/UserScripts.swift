@@ -265,7 +265,7 @@ final class UserScriptsMenu: NSObject, NSMenuDelegate {
         guard chosen.standardizedFileURL.path == folder.standardizedFileURL.path else {
             let alert = NSAlert()
             alert.messageText = String(localized: "Das ist nicht der Skriptordner.")
-            alert.informativeText = String(localized: "Skripte findet die Schreibmaschine nur in \(folder.path).")
+            alert.informativeText = String(localized: "Skripte findet Bleistift nur in \(folder.path).")
             alert.runModal()
             return
         }

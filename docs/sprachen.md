@@ -1,9 +1,9 @@
 # Sprachdefinitionen
 
-Die Schreibmaschine färbt Text nach Sprachdefinitionen: kleinen YAML-Dateien mit regulären Ausdrücken. Die mitgelieferten liegen im Quellcode unter `Resources/Languages/`, eigene in einem Ordner im Container der App:
+Bleistift färbt Text nach Sprachdefinitionen: kleinen YAML-Dateien mit regulären Ausdrücken. Die mitgelieferten liegen im Quellcode unter `Resources/Languages/`, eigene in einem Ordner im Container der App:
 
 ```
-~/Library/Containers/com.stefanradermacher.schreibmaschine/Data/Library/Application Support/Schreibmaschine/Sprachen/
+~/Library/Containers/com.stefanradermacher.bleistift/Data/Library/Application Support/Bleistift/Sprachen/
 ```
 
 Format → Sprache → „Ordner mit eigenen Sprachen zeigen“ öffnet ihn im Finder.

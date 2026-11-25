@@ -39,7 +39,7 @@ enum PrintOptions {
 
 extension TextDocument {
     /// The print operation: the text in its own view, laid out for paper, with the options of
-    /// the Schreibmaschine section of the print dialog.
+    /// Bleistift section of the print dialog.
     func makePrintOperation(printSettings: [NSPrintInfo.AttributeKey: Any]) -> NSPrintOperation {
         PrintOptions.registerDefaults()
         let info = printInfo.copy() as! NSPrintInfo
@@ -355,7 +355,7 @@ final class PrintAccessoryController: NSViewController, NSPrintPanelAccessorizin
     init(isMarkdown: Bool) {
         self.isMarkdown = isMarkdown
         super.init(nibName: nil, bundle: nil)
-        title = "Schreibmaschine"
+        title = "Bleistift"
         fontSize = defaults.double(forKey: PrintOptions.fontSize)
         syntaxColors = defaults.bool(forKey: PrintOptions.syntaxColors)
         lineNumbers = defaults.bool(forKey: PrintOptions.lineNumbers)

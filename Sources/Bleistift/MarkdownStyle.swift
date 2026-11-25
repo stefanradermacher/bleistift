@@ -135,7 +135,7 @@ final class MarkdownStyler {
     // MARK: - Styling
 
     /// How deep a line is quoted; the layout fragment draws a bar for each level.
-    static let quoteDepth = NSAttributedString.Key("SchreibmaschineQuoteDepth")
+    static let quoteDepth = NSAttributedString.Key("BleistiftQuoteDepth")
     /// Room for one quote bar, left of the text.
     static let quoteBarStep: CGFloat = 12
 

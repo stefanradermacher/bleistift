@@ -21,12 +21,12 @@
         }
       }
     },
-    "„%@“ wurde außerhalb der Schreibmaschine geändert." : {
+    "„%@“ wurde außerhalb von Bleistift geändert." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“%@” was changed outside Schreibmaschine."
+            "value" : "“%@” was changed outside Bleistift."
           }
         }
       }
@@ -921,12 +921,12 @@
         }
       }
     },
-    "Automatisch gesichert wird, wenn Fenster oder Tab den Fokus verlieren, die Schreibmaschine in den Hintergrund geht oder ein Dokument geschlossen wird; auf Wunsch auch nach 15 Sekunden Schreibpause. Die Änderungen im Lineal zeigen weiter, was seit dem letzten ⌘S geändert ist. Unter Ablage → Zurück zu stehen die früheren Fassungen der letzten 14 Tage; mit ⌥ lassen sie sich vergleichen." : {
+    "Automatisch gesichert wird, wenn Fenster oder Tab den Fokus verlieren, Bleistift in den Hintergrund geht oder ein Dokument geschlossen wird; auf Wunsch auch nach 15 Sekunden Schreibpause. Die Änderungen im Lineal zeigen weiter, was seit dem letzten ⌘S geändert ist. Unter Ablage → Zurück zu stehen die früheren Fassungen der letzten 14 Tage; mit ⌥ lassen sie sich vergleichen." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Files are saved automatically when the window or tab loses focus, Schreibmaschine goes to the background, or a document is closed; if you like, also after a 15-second pause in typing. The marks in the ruler keep showing what changed since the last ⌘S. File → Revert To lists the earlier versions of the last 14 days; with ⌥, you can compare them."
+            "value" : "Files are saved automatically when the window or tab loses focus, Bleistift goes to the background, or a document is closed; if you like, also after a 15-second pause in typing. The marks in the ruler keep showing what changed since the last ⌘S. File → Revert To lists the earlier versions of the last 14 days; with ⌥, you can compare them."
           }
         }
       }
@@ -1011,12 +1011,12 @@
         }
       }
     },
-    "Beim Öffnen erkennt die Schreibmaschine Kodierung und Zeilenenden der Datei und behält sie beim Sichern bei. Die Standardkodierung wird außerdem zuerst versucht, wenn eine Datei kein UTF-8 ist." : {
+    "Beim Öffnen erkennt Bleistift Kodierung und Zeilenenden der Datei und behält sie beim Sichern bei. Die Standardkodierung wird außerdem zuerst versucht, wenn eine Datei kein UTF-8 ist." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "When opening a file, Schreibmaschine recognizes its encoding and line endings and keeps them when saving. The default encoding is also tried first when a file is not UTF-8."
+            "value" : "When opening a file, Bleistift recognizes its encoding and line endings and keeps them when saving. The default encoding is also tried first when a file is not UTF-8."
           }
         }
       }
@@ -1531,42 +1531,42 @@
         }
       }
     },
-    "Die Schreibmaschine als Standard-App für Text und Code verwenden?" : {
+    "Bleistift als Standard-App für Text und Code verwenden?" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Use Schreibmaschine as the default app for text and code?"
+            "value" : "Use Bleistift as the default app for text and code?"
           }
         }
       }
     },
-    "Die Schreibmaschine hat kein Tracking, keine Analyse und keine Werbung und baut selbst keine Verbindungen ins Internet auf; nur ein freiwilliges Trinkgeld läuft über den App Store. Deine Texte und Einstellungen bleiben auf deinem Mac." : {
+    "Bleistift hat kein Tracking, keine Analyse und keine Werbung und baut selbst keine Verbindungen ins Internet auf; nur ein freiwilliges Trinkgeld läuft über den App Store. Deine Texte und Einstellungen bleiben auf deinem Mac." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schreibmaschine has no tracking, no analytics, and no ads, and never connects to the internet by itself; only a voluntary tip goes through the App Store. Your texts and settings stay on your Mac."
+            "value" : "Bleistift has no tracking, no analytics, and no ads, and never connects to the internet by itself; only a voluntary tip goes through the App Store. Your texts and settings stay on your Mac."
           }
         }
       }
     },
-    "Die Schreibmaschine ist ein unabhängiges Open-Source-Projekt und bleibt vollständig kostenlos. Wenn du mir für die Weiterentwicklung etwas ausgeben möchtest, würde ich mich freuen:" : {
+    "Bleistift ist ein unabhängiges Open-Source-Projekt und bleibt vollständig kostenlos. Wenn du mir für die Weiterentwicklung etwas ausgeben möchtest, würde ich mich freuen:" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schreibmaschine is an independent open source project and stays completely free. If you'd like to buy me something for its further development, I'd be happy:"
+            "value" : "Bleistift is an independent open source project and stays completely free. If you'd like to buy me something for its further development, I'd be happy:"
           }
         }
       }
     },
-    "Die Schreibmaschine öffnet %lld von %lld Formaten; „Anpassen …“ zeigt, welche." : {
+    "Bleistift öffnet %lld von %lld Formaten; „Anpassen …“ zeigt, welche." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schreibmaschine opens %1$lld of %2$lld formats; “Customize…” shows which."
+            "value" : "Bleistift opens %1$lld of %2$lld formats; “Customize…” shows which."
           }
         }
       }
@@ -2591,22 +2591,22 @@
         }
       }
     },
-    "macOS fragt für jedes Format einzeln nach, bei allen Formaten also mehrmals hintereinander. Lehnst du einmal ab, fragt die Schreibmaschine nicht weiter. HTML, CSV und Protokolle gehören nicht zu „Alle Formate“, weil sie meist im Browser, in einer Tabellenkalkulation oder in der Konsole besser aufgehoben sind. Zurücksetzen gibt ein Format der App zurück, die es vorher hatte, sonst TextEdit." : {
+    "macOS fragt für jedes Format einzeln nach, bei allen Formaten also mehrmals hintereinander. Lehnst du einmal ab, fragt Bleistift nicht weiter. HTML, CSV und Protokolle gehören nicht zu „Alle Formate“, weil sie meist im Browser, in einer Tabellenkalkulation oder in der Konsole besser aufgehoben sind. Zurücksetzen gibt ein Format der App zurück, die es vorher hatte, sonst TextEdit." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "macOS asks for each format separately, so for all formats several times in a row. If you decline once, Schreibmaschine stops asking. HTML, CSV, and logs are not part of “All Formats”, as they are usually better off in the browser, a spreadsheet, or Console. Reset gives a format back to the app it had before, otherwise TextEdit."
+            "value" : "macOS asks for each format separately, so for all formats several times in a row. If you decline once, Bleistift stops asking. HTML, CSV, and logs are not part of “All Formats”, as they are usually better off in the browser, a spreadsheet, or Console. Reset gives a format back to the app it had before, otherwise TextEdit."
           }
         }
       }
     },
-    "macOS fragt für jedes Format einzeln nach; lehnst du einmal ab, fragt die Schreibmaschine nicht weiter" : {
+    "macOS fragt für jedes Format einzeln nach; lehnst du einmal ab, fragt Bleistift nicht weiter" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "macOS asks for each format separately; if you decline once, Schreibmaschine stops asking"
+            "value" : "macOS asks for each format separately; if you decline once, Bleistift stops asking"
           }
         }
       }
@@ -3281,42 +3281,42 @@
         }
       }
     },
-    "Schreibmaschine" : {
+    "Bleistift" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schreibmaschine"
+            "value" : "Bleistift"
           }
         }
       }
     },
-    "Schreibmaschine im Web" : {
+    "Bleistift im Web" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schreibmaschine on the Web"
+            "value" : "Bleistift on the Web"
           }
         }
       }
     },
-    "Schreibmaschine unterstützen" : {
+    "Bleistift unterstützen" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Support Schreibmaschine"
+            "value" : "Support Bleistift"
           }
         }
       }
     },
-    "Schreibmaschine verwenden" : {
+    "Bleistift verwenden" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Use Schreibmaschine"
+            "value" : "Use Bleistift"
           }
         }
       }
@@ -3451,12 +3451,12 @@
         }
       }
     },
-    "Skripte findet die Schreibmaschine nur in %@." : {
+    "Skripte findet Bleistift nur in %@." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schreibmaschine finds scripts only in %@."
+            "value" : "Bleistift finds scripts only in %@."
           }
         }
       }
@@ -3561,12 +3561,12 @@
         }
       }
     },
-    "Startet die Schreibmaschine, weil eine Datei geöffnet wird, erscheint nur diese Datei. Die Sitzung davor lässt sich unter Fenster → Sitzung zurückholen. Ungesicherte Texte bleiben immer erhalten, auch nach einem Absturz." : {
+    "Startet Bleistift, weil eine Datei geöffnet wird, erscheint nur diese Datei. Die Sitzung davor lässt sich unter Fenster → Sitzung zurückholen. Ungesicherte Texte bleiben immer erhalten, auch nach einem Absturz." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "When Schreibmaschine starts because a file is opened, only that file appears. The session before can be brought back under Window → Session. Unsaved texts are always kept, even after a crash."
+            "value" : "When Bleistift starts because a file is opened, only that file appears. The session before can be brought back under Window → Session. Unsaved texts are always kept, even after a crash."
           }
         }
       }
@@ -3701,12 +3701,12 @@
         }
       }
     },
-    "Über Schreibmaschine" : {
+    "Über Bleistift" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "About Schreibmaschine"
+            "value" : "About Bleistift"
           }
         }
       }

@@ -17,7 +17,7 @@ import AppKit
 /// The window of a document. New documents open as a tab in the front window or in a window
 /// of their own, as the settings say.
 final class DocumentWindowController: NSWindowController, NSWindowDelegate {
-    static let tabbingIdentifier = "Schreibmaschine.Dokument"
+    static let tabbingIdentifier = "Bleistift.Dokument"
 
     init() {
         let window = NSWindow(

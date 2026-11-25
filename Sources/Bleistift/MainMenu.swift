@@ -50,7 +50,7 @@ enum MainMenu {
         return item
     }
 
-    private static let appName = "Schreibmaschine"
+    private static let appName = "Bleistift"
 
     private static func appMenu() -> NSMenu {
         let menu = NSMenu(title: appName)

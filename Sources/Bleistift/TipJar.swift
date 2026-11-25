@@ -25,9 +25,9 @@ final class TipJar {
     /// The tips, cheapest first. Emoji and name belong to the app, so they follow its language;
     /// only the price comes from the App Store, which uses the language of the App Store account.
     enum Tip: String, CaseIterable {
-        case coffee = "com.stefanradermacher.schreibmaschine.tip.coffee"
-        case breakfast = "com.stefanradermacher.schreibmaschine.tip.breakfast"
-        case dinner = "com.stefanradermacher.schreibmaschine.tip.dinner"
+        case coffee = "com.stefanradermacher.bleistift.tip.coffee"
+        case breakfast = "com.stefanradermacher.bleistift.tip.breakfast"
+        case dinner = "com.stefanradermacher.bleistift.tip.dinner"
 
         var emoji: String {
             switch self {
@@ -154,7 +154,7 @@ struct TipJarView: View {
                 .padding(.vertical, 4)
                 .transition(.opacity.combined(with: .scale(scale: 0.9)))
             } else {
-                Text("Die Schreibmaschine ist ein unabhängiges Open-Source-Projekt und bleibt vollständig kostenlos. Wenn du mir für die Weiterentwicklung etwas ausgeben möchtest, würde ich mich freuen:")
+                Text("Bleistift ist ein unabhängiges Open-Source-Projekt und bleibt vollständig kostenlos. Wenn du mir für die Weiterentwicklung etwas ausgeben möchtest, würde ich mich freuen:")
                     .font(.callout)
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
@@ -234,7 +234,7 @@ struct TipJarView: View {
     }
 }
 
-/// Window behind "Help → Support Schreibmaschine …": only the tip jar, without the rest of the About window.
+/// Window behind "Help → Support Bleistift …": only the tip jar, without the rest of the About window.
 struct SupportView: View {
     var body: some View {
         VStack(spacing: 14) {
@@ -242,7 +242,7 @@ struct SupportView: View {
                 .resizable()
                 .frame(width: 72, height: 72)
                 .accessibilityHidden(true)
-            Text("Schreibmaschine unterstützen")
+            Text("Bleistift unterstützen")
                 .font(.title2.weight(.semibold))
             TipJarView()
         }

@@ -62,7 +62,7 @@ private struct GeneralSettings: View {
                 }
                 .pickerStyle(.radioGroup)
             } footer: {
-                Text("Startet die Schreibmaschine, weil eine Datei geöffnet wird, erscheint nur diese Datei. Die Sitzung davor lässt sich unter Fenster → Sitzung zurückholen. Ungesicherte Texte bleiben immer erhalten, auch nach einem Absturz.")
+                Text("Startet Bleistift, weil eine Datei geöffnet wird, erscheint nur diese Datei. Die Sitzung davor lässt sich unter Fenster → Sitzung zurückholen. Ungesicherte Texte bleiben immer erhalten, auch nach einem Absturz.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -110,7 +110,7 @@ private struct FileSettings: View {
                     }
                 }
             } footer: {
-                Text("Automatisch gesichert wird, wenn Fenster oder Tab den Fokus verlieren, die Schreibmaschine in den Hintergrund geht oder ein Dokument geschlossen wird; auf Wunsch auch nach 15 Sekunden Schreibpause. Die Änderungen im Lineal zeigen weiter, was seit dem letzten ⌘S geändert ist. Unter Ablage → Zurück zu stehen die früheren Fassungen der letzten 14 Tage; mit ⌥ lassen sie sich vergleichen.")
+                Text("Automatisch gesichert wird, wenn Fenster oder Tab den Fokus verlieren, Bleistift in den Hintergrund geht oder ein Dokument geschlossen wird; auf Wunsch auch nach 15 Sekunden Schreibpause. Die Änderungen im Lineal zeigen weiter, was seit dem letzten ⌘S geändert ist. Unter Ablage → Zurück zu stehen die früheren Fassungen der letzten 14 Tage; mit ⌥ lassen sie sich vergleichen.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -142,7 +142,7 @@ private struct FileSettings: View {
             } header: {
                 Text("Für neue Dokumente")
             } footer: {
-                Text("Beim Öffnen erkennt die Schreibmaschine Kodierung und Zeilenenden der Datei und behält sie beim Sichern bei. Die Standardkodierung wird außerdem zuerst versucht, wenn eine Datei kein UTF-8 ist.")
+                Text("Beim Öffnen erkennt Bleistift Kodierung und Zeilenenden der Datei und behält sie beim Sichern bei. Die Standardkodierung wird außerdem zuerst versucht, wenn eine Datei kein UTF-8 ist.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }

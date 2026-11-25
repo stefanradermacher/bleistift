@@ -13,10 +13,10 @@ Oben stehen die Angaben für Titelseite und Dokumentinformationen, danach der In
                         fehlt die Datei, wird es ausgelassen
   | Befehl | Kürzel |   Zeile der Tastaturkürzel-Tabelle
 
-Im Fließtext heißt die App „die Schreibmaschine“, in Menünamen und Titeln steht der Name allein.
+Die App heißt „Bleistift“, im Fließtext wie in Menünamen und Titeln ohne Artikel.
 -->
 
-Dokumenttitel: Schreibmaschine – Handbuch
+Dokumenttitel: Bleistift – Handbuch
 Thema: Texteditor für macOS
 Untertitel: Handbuch zum Texteditor für macOS
 Leitsatz: Für Text und Code.
@@ -25,9 +25,9 @@ Kostenlos, werbefrei und ohne Datensammlung.
 
 # Über dieses Handbuch
 
-Die Schreibmaschine ist ein Texteditor für macOS: vor allem für einfachen Text, der oft umgeformt wird, aber genauso brauchbar für Code. Sie will keine Entwicklungsumgebung sein, sondern ein Werkzeug zum Schreiben. Dieses Handbuch beschreibt in wenigen Kapiteln, was sie kann und wie sie sich bedienen lässt.
+Bleistift ist ein Texteditor für macOS: vor allem für einfachen Text, der oft umgeformt wird, aber genauso brauchbar für Code. Bleistift will keine Entwicklungsumgebung sein, sondern ein Werkzeug zum Schreiben. Dieses Handbuch beschreibt in wenigen Kapiteln, was die App kann und wie sie sich bedienen lässt.
 
-## Was die Schreibmaschine ausmacht
+## Was Bleistift ausmacht
 
 - Suchen und Ersetzen in einer Leiste über dem Text, nicht in einem eigenen Fenster
 - Ein Menü voller Textbefehle und eine Befehlspalette, die jeden Befehl findet
@@ -40,7 +40,7 @@ Die Schreibmaschine ist ein Texteditor für macOS: vor allem für einfachen Text
 
 # Dokumente und Fenster
 
-Textdateien öffnest du per Doppelklick, über „Ablage → Öffnen …“ (⌘O) oder indem du sie auf das Symbol der Schreibmaschine im Dock oder auf ein Fenster der Schreibmaschine ziehst, ob auf den Text, die Titelleiste oder die Dokumentliste. Hältst du beim Loslassen über dem Text die ⌥-Taste gedrückt, wird stattdessen der Pfad der Datei eingefügt. Ein neues Dokument legst du mit ⌘N an.
+Textdateien öffnest du per Doppelklick, über „Ablage → Öffnen …“ (⌘O) oder indem du sie auf das Symbol von Bleistift im Dock oder auf ein Fenster von Bleistift ziehst, ob auf den Text, die Titelleiste oder die Dokumentliste. Hältst du beim Loslassen über dem Text die ⌥-Taste gedrückt, wird stattdessen der Pfad der Datei eingefügt. Ein neues Dokument legst du mit ⌘N an.
 
 ## Tabs oder Fenster
 
@@ -65,45 +65,45 @@ Mit ⌃⌘S erscheint links eine Liste aller offenen Dokumente, bei mehreren Fen
 
 ## Sichern, Kodierung und Zeilenenden
 
-Die Schreibmaschine schreibt eine Datei nur, wenn du sie mit ⌘S sicherst, es sei denn, du schaltest das automatische Sichern ein (siehe unten). Zeichenkodierung und Zeilenenden erkennt sie beim Öffnen und behält sie beim Sichern bei. Beides steht in der Statusleiste und lässt sich dort per Klick ändern. Die gängigen Kodierungen stehen direkt im Menü, alle übrigen, die macOS kennt, unter „Weitere Kodierungen“, nach Schriftraum geordnet. Erscheinen Umlaute falsch, liest „Ablage → Erneut öffnen mit Kodierung“ die Datei in einer anderen Kodierung.
+Bleistift schreibt eine Datei nur, wenn du sie mit ⌘S sicherst, es sei denn, du schaltest das automatische Sichern ein (siehe unten). Zeichenkodierung und Zeilenenden erkennt Bleistift beim Öffnen und behält sie beim Sichern bei. Beides steht in der Statusleiste und lässt sich dort per Klick ändern. Die gängigen Kodierungen stehen direkt im Menü, alle übrigen, die macOS kennt, unter „Weitere Kodierungen“, nach Schriftraum geordnet. Erscheinen Umlaute falsch, liest „Ablage → Erneut öffnen mit Kodierung“ die Datei in einer anderen Kodierung.
 
-Auf Wunsch räumt die Schreibmaschine beim Sichern auf: Unter „Einstellungen → Dateien → Beim Sichern“ entfernt sie Leerzeichen und Tabs am Zeilenende und beendet die Datei mit einem Zeilenumbruch. Die Zeile mit der Einfügemarke bleibt dabei unberührt, ebenso zwei Leerzeichen am Ende einer Markdown-Zeile, die dort einen Zeilenumbruch bedeuten. Das Aufräumen ist eine Änderung wie jede andere und lässt sich mit ⌘Z zurücknehmen.
+Auf Wunsch räumt Bleistift beim Sichern auf: Unter „Einstellungen → Dateien → Beim Sichern“ werden dann Leerzeichen und Tabs am Zeilenende entfernt, und die Datei endet mit einem Zeilenumbruch. Die Zeile mit der Einfügemarke bleibt dabei unberührt, ebenso zwei Leerzeichen am Ende einer Markdown-Zeile, die dort einen Zeilenumbruch bedeuten. Das Aufräumen ist eine Änderung wie jede andere und lässt sich mit ⌘Z zurücknehmen.
 
-Ändert ein anderes Programm eine offene Datei, etwa git oder ein zweiter Editor, lädt die Schreibmaschine sie von selbst neu, solange du nichts Ungesichertes darin hast; Einfügemarke und Scrollposition bleiben, wo sie waren. Hast du ungesicherte Änderungen, fragt eine Leiste unter der Titelleiste: „Neu laden“ übernimmt die Datei, „Behalten“ bleibt bei deinem Text, den ⌘S dann über die Datei schreibt, und „Vergleichen“ stellt beides nebeneinander: Unterschiede aus der Datei übernimmst du in deinen Text und sicherst das Ergebnis. Wird eine offene Datei gelöscht oder verschoben, bleibt dein Text erhalten und gilt als ungesichert; „Sichern unter …“ legt ihn wieder ab.
+Ändert ein anderes Programm eine offene Datei, etwa git oder ein zweiter Editor, lädt Bleistift sie von selbst neu, solange du nichts Ungesichertes darin hast; Einfügemarke und Scrollposition bleiben, wo sie waren. Hast du ungesicherte Änderungen, fragt eine Leiste unter der Titelleiste: „Neu laden“ übernimmt die Datei, „Behalten“ bleibt bei deinem Text, den ⌘S dann über die Datei schreibt, und „Vergleichen“ stellt beides nebeneinander: Unterschiede aus der Datei übernimmst du in deinen Text und sicherst das Ergebnis. Wird eine offene Datei gelöscht oder verschoben, bleibt dein Text erhalten und gilt als ungesichert; „Sichern unter …“ legt ihn wieder ab.
 
 ## Automatisch sichern
 
-Unter „Einstellungen → Dateien → Automatisch sichern“ schreibt die Schreibmaschine geänderte Dateien auch ohne ⌘S. „Beim Verlassen“ sichert, sobald Fenster oder Tab den Fokus verlieren, die Schreibmaschine in den Hintergrund geht oder du ein Dokument schließt; ein geändertes Dokument wird dann beim Schließen gesichert statt nachgefragt. „Beim Verlassen und in Schreibpausen“ sichert zusätzlich, wenn du 15 Sekunden nichts tippst. Das ist praktisch, wenn ein anderes Programm die Datei liest, etwa ein Compiler, ein Webserver oder git.
+Unter „Einstellungen → Dateien → Automatisch sichern“ schreibt Bleistift geänderte Dateien auch ohne ⌘S. „Beim Verlassen“ sichert, sobald Fenster oder Tab den Fokus verlieren, Bleistift in den Hintergrund geht oder du ein Dokument schließt; ein geändertes Dokument wird dann beim Schließen gesichert statt nachgefragt. „Beim Verlassen und in Schreibpausen“ sichert zusätzlich, wenn du 15 Sekunden nichts tippst. Das ist praktisch, wenn ein anderes Programm die Datei liest, etwa ein Compiler, ein Webserver oder git.
 
 Nie automatisch gesichert werden unbenannte Dokumente, die bleiben in der Sitzung. Auch eine Datei, die ein anderes Programm geändert, gelöscht oder schreibgeschützt hat, bleibt unangetastet, ebenso Text mit Zeichen, die die Kodierung der Datei nicht kennt; hier entscheidest du mit ⌘S. Die Marken im Lineal zeigen weiterhin, was sich seit deinem letzten ⌘S geändert hat, nicht seit dem letzten automatischen Sichern.
 
 ## Frühere Fassungen
 
-Jedes Mal, wenn du eine Datei öffnest oder sicherst, von Hand oder automatisch, hebt die Schreibmaschine diesen Stand in ihrem eigenen Bereich auf dem Mac auf. „Ablage → Zurück zu“ führt sie auf: oben „Zuletzt gesichert“ und „Zuletzt geöffnet“, darunter die früheren Fassungen mit Datum und Uhrzeit. Eine Fassung zu wählen ersetzt den Text wie eine gewöhnliche Bearbeitung, ⌘Z holt deinen Text also zurück. Hältst du ⌥ gedrückt, wird aus jedem Eintrag ein Vergleich: Die Fassung erscheint neben deinem Text, und du übernimmst nur, was du brauchst.
+Jedes Mal, wenn du eine Datei öffnest oder sicherst, von Hand oder automatisch, hebt Bleistift diesen Stand in einem eigenen Bereich auf dem Mac auf. „Ablage → Zurück zu“ führt sie auf: oben „Zuletzt gesichert“ und „Zuletzt geöffnet“, darunter die früheren Fassungen mit Datum und Uhrzeit. Eine Fassung zu wählen ersetzt den Text wie eine gewöhnliche Bearbeitung, ⌘Z holt deinen Text also zurück. Hältst du ⌥ gedrückt, wird aus jedem Eintrag ein Vergleich: Die Fassung erscheint neben deinem Text, und du übernimmst nur, was du brauchst.
 
 Wie viele Fassungen je Datei bleiben, legt „Einstellungen → Dateien → Frühere Fassungen aufbewahren“ fest, voreingestellt 20; älter als 14 Tage wird keine. Gleiche Stände werden nur einmal gespeichert, Dateien über 10 MB gar nicht. „Verlauf löschen …“ am Ende des Menüs entfernt die Fassungen der Datei, die Datei selbst bleibt, wie sie ist. Benennst du eine offene Datei um oder verschiebst sie, nimmt sie ihre Fassungen mit.
 
 ## Drucken
 
-„Ablage → Drucken …“ (⌘P) druckt das Dokument, umbrochen auf die Breite des Papiers und in den hellen Farben. Im Druckdialog stehen unter „Schreibmaschine“ die eigenen Optionen: die Schriftgröße für das Papier (voreingestellt 10 pt), Syntaxfarben, Zeilennummern und eine Kopf- und Fußzeile mit Dateiname oder Dateipfad, Datum und Seitenzahl. Bei Markdown-Dateien wählst du, ob der Text so gedruckt wird wie im Editor oder gesetzt wie in der Vorschau, mit echten Überschriften, Listen und Tabellen. Ist Text ausgewählt, druckt „Auswahl in Schreibmaschine“ unter „Seiten“ nur ihn, mit den Zeilennummern aus dem Dokument. Die Vorschau links folgt jeder Änderung, und die Schreibmaschine merkt sich die Optionen für das nächste Mal.
+„Ablage → Drucken …“ (⌘P) druckt das Dokument, umbrochen auf die Breite des Papiers und in den hellen Farben. Im Druckdialog stehen unter „Bleistift“ die eigenen Optionen: die Schriftgröße für das Papier (voreingestellt 10 pt), Syntaxfarben, Zeilennummern und eine Kopf- und Fußzeile mit Dateiname oder Dateipfad, Datum und Seitenzahl. Bei Markdown-Dateien wählst du, ob der Text so gedruckt wird wie im Editor oder gesetzt wie in der Vorschau, mit echten Überschriften, Listen und Tabellen. Ist Text ausgewählt, druckt „Auswahl in Bleistift“ unter „Seiten“ nur ihn, mit den Zeilennummern aus dem Dokument. Die Vorschau links folgt jeder Änderung, und Bleistift merkt sich die Optionen für das nächste Mal.
 
 # Die Sitzung
 
-Viele Mac-Apps überlassen es macOS, nach dem Neustart wieder zu öffnen, was offen war. Ob das klappt, hängt von Systemeinstellungen und der Art des Beendens ab. Die Schreibmaschine führt deshalb ihre eigene Sitzung: alle Fenster mit ihren Tabs, die Dateien darin und alle ungesicherten Texte.
+Viele Mac-Apps überlassen es macOS, nach dem Neustart wieder zu öffnen, was offen war. Ob das klappt, hängt von Systemeinstellungen und der Art des Beendens ab. Bleistift führt deshalb eine eigene Sitzung: alle Fenster mit ihren Tabs, die Dateien darin und alle ungesicherten Texte.
 
 ## Nichts geht verloren
 
-Ungesicherte Texte und Änderungen sichert die Schreibmaschine laufend in ihrem eigenen Bereich auf dem Mac, nicht in deinen Dateien. Beim Beenden fragt sie deshalb nicht nach. Beim nächsten Start kommt alles zurück, als geändert markiert, auch nach einem Absturz.
+Ungesicherte Texte und Änderungen sichert Bleistift laufend in einem eigenen Bereich auf dem Mac, nicht in deinen Dateien. Beim Beenden gibt es deshalb keine Nachfrage. Beim nächsten Start kommt alles zurück, als geändert markiert, auch nach einem Absturz.
 
 ## Start mit einer Datei
 
-Startest du die Schreibmaschine ohne Datei, stellt sie die letzte Sitzung wieder her, öffnet ein neues Dokument oder nichts, je nach Einstellung. Öffnest du dagegen eine Datei aus dem Finder, erscheint nur diese. Die Sitzung davor bleibt als „vorige Sitzung“ erhalten: „Fenster → Sitzung → Vorige Sitzung wiederherstellen“ holt sie zurück.
+Startest du Bleistift ohne Datei, stellt die App die letzte Sitzung wieder her, öffnet ein neues Dokument oder nichts, je nach Einstellung. Öffnest du dagegen eine Datei aus dem Finder, erscheint nur diese. Die Sitzung davor bleibt als „vorige Sitzung“ erhalten: „Fenster → Sitzung → Vorige Sitzung wiederherstellen“ holt sie zurück.
 
 > „Fenster → Sitzung“ zeigt jederzeit, was zur Sitzung gehört und was beim nächsten Start wiederkommt.
 
 ## Jede Datei merkt sich ihren Zustand
 
-Für jede Datei merkt sich die Schreibmaschine Auswahl, sichtbaren Ausschnitt, Umbruch, Zeilennummern, Schriftgröße, Lesezeichen, Faltungen und eine geteilte Ansicht. Beim nächsten Öffnen ist alles wieder so, wie du es verlassen hast. Die Datei selbst bleibt dabei unverändert.
+Für jede Datei merkt sich Bleistift Auswahl, sichtbaren Ausschnitt, Umbruch, Zeilennummern, Schriftgröße, Lesezeichen, Faltungen und eine geteilte Ansicht. Beim nächsten Öffnen ist alles wieder so, wie du es verlassen hast. Die Datei selbst bleibt dabei unverändert.
 
 # Suchen und Ersetzen
 
@@ -115,7 +115,7 @@ Für jede Datei merkt sich die Schreibmaschine Auswahl, sichtbaren Ausschnitt, U
 
 ↩ und ⇧↩ springen zum nächsten und vorigen Treffer, ⌘G und ⇧⌘G auch bei geschlossener Leiste. Eine Auswahl wird beim Öffnen zum Suchbegriff, ⌘E übernimmt sie ohne die Leiste zu öffnen. Die letzten 20 Begriffe stehen im Menü der Lupe im Suchfeld, ↓ öffnet es ebenfalls. Esc schließt die Leiste.
 
-Auch ohne Suchleiste zeigt die Schreibmaschine, wo ein Wort noch vorkommt: Wählst du ein ganzes Wort aus, etwa mit einem Doppelklick, bekommen seine anderen Vorkommen einen leichten Rahmen, und am rechten Rand stehen kleine Striche für das ganze Dokument. ⌃G wählt dann das nächste Vorkommen dazu aus. Abschalten lässt sich das in den Einstellungen unter „Darstellung“.
+Auch ohne Suchleiste zeigt Bleistift, wo ein Wort noch vorkommt: Wählst du ein ganzes Wort aus, etwa mit einem Doppelklick, bekommen seine anderen Vorkommen einen leichten Rahmen, und am rechten Rand stehen kleine Striche für das ganze Dokument. ⌃G wählt dann das nächste Vorkommen dazu aus. Abschalten lässt sich das in den Einstellungen unter „Darstellung“.
 
 ## Schalter
 
@@ -130,7 +130,7 @@ Auch ohne Suchleiste zeigt die Schreibmaschine, wo ein Wort noch vorkommt: Wähl
 
 ## In allen offenen Dokumenten
 
-⇧⌘F sucht in allen offenen Dokumenten. Die Treffer stehen in einer Seitenleiste, nach Dokument gegliedert; ein Klick springt zur Stelle. „Alle ersetzen“ gilt für alle Dokumente, jedes kann es einzeln widerrufen. In Ordnern sucht die Schreibmaschine bewusst nicht.
+⇧⌘F sucht in allen offenen Dokumenten. Die Treffer stehen in einer Seitenleiste, nach Dokument gegliedert; ein Klick springt zur Stelle. „Alle ersetzen“ gilt für alle Dokumente, jedes kann es einzeln widerrufen. In Ordnern sucht Bleistift bewusst nicht.
 
 ## Gehe zu Zeile
 
@@ -206,7 +206,7 @@ Unter „Darstellung → Fokus-Modus“ bleibt nur der Absatz mit der Einfügema
 
 ## Markdown gestaltet
 
-In Markdown-Dateien zeigt die Schreibmaschine die Auszeichnungen gleich im Text: Überschriften stehen größer und fett, `**fett**` und `*kursiv*` erscheinen fett und kursiv, `~~durchgestrichen~~` durchgestrichen, Code hat einen leichten Hintergrund, Links stehen in Linkfarbe, Zitate bekommen einen Balken am Rand. Die Zeichen dafür bleiben blass sichtbar, du bearbeitest also weiterhin genau den Text, der in der Datei steht. Umbrochene Zeilen von Listenpunkten und Zitaten beginnen unter dem Text, nicht unter dem Zeichen davor. Ausschalten lässt sich das unter „Darstellung → Markdown gestaltet darstellen“.
+In Markdown-Dateien zeigt Bleistift die Auszeichnungen gleich im Text: Überschriften stehen größer und fett, `**fett**` und `*kursiv*` erscheinen fett und kursiv, `~~durchgestrichen~~` durchgestrichen, Code hat einen leichten Hintergrund, Links stehen in Linkfarbe, Zitate bekommen einen Balken am Rand. Die Zeichen dafür bleiben blass sichtbar, du bearbeitest also weiterhin genau den Text, der in der Datei steht. Umbrochene Zeilen von Listenpunkten und Zitaten beginnen unter dem Text, nicht unter dem Zeichen davor. Ausschalten lässt sich das unter „Darstellung → Markdown gestaltet darstellen“.
 
 ## Listen und Auszeichnungen
 
@@ -214,19 +214,19 @@ Ein ↩ in einem Listenpunkt beginnt den nächsten, mit derselben Einrückung, b
 
 ## Markdown-Vorschau
 
-In einer Markdown-Datei zeigt „Darstellung → Markdown-Vorschau“ (⌥⌘P) rechts neben dem Text, wie er gesetzt aussieht: Überschriften, Hervorhebungen, Listen und Aufgabenlisten, Zitate, Codeblöcke, Tabellen und Links. Die Vorschau folgt dem Tippen nach einem kurzen Augenblick und scrollt mit, ausgerichtet an den Überschriften. Links öffnen sich im Browser. Die Vorschau lädt nichts aus dem Internet; Bilder neben der Datei zeigt sie nur, wenn die Schreibmaschine sie lesen darf, sonst steht an ihrer Stelle ihre Beschreibung.
+In einer Markdown-Datei zeigt „Darstellung → Markdown-Vorschau“ (⌥⌘P) rechts neben dem Text, wie er gesetzt aussieht: Überschriften, Hervorhebungen, Listen und Aufgabenlisten, Zitate, Codeblöcke, Tabellen und Links. Die Vorschau folgt dem Tippen nach einem kurzen Augenblick und scrollt mit, ausgerichtet an den Überschriften. Links öffnen sich im Browser. Die Vorschau lädt nichts aus dem Internet; Bilder neben der Datei zeigt sie nur, wenn Bleistift sie lesen darf, sonst steht an ihrer Stelle ihre Beschreibung.
 
 ![Eine Markdown-Notiz, gestaltet und mit Vorschau](docs/screenshots/3-vorschau.png)
 
 # Code
 
-Die Schreibmaschine erkennt die Sprache einer Datei an Name, Endung oder erster Zeile und färbt sie entsprechend. Mitgeliefert werden Swift, Markdown, PHP, JavaScript und TypeScript, Python, JSON, YAML, INI und TOML, Shell, HTML, XML, CSS, SQL und Lua. Die Sprache lässt sich unter „Format → Sprache“ oder in der Statusleiste wählen.
+Bleistift erkennt die Sprache einer Datei an Name, Endung oder erster Zeile und färbt sie entsprechend. Mitgeliefert werden Swift, Markdown, PHP, JavaScript und TypeScript, Python, JSON, YAML, INI und TOML, Shell, HTML, XML, CSS, SQL und Lua. Die Sprache lässt sich unter „Format → Sprache“ oder in der Statusleiste wählen.
 
 ![Swift mit Syntaxhervorhebung, Zeilennummern und Lesezeichen](docs/screenshots/1-code.png)
 
 ## Einrückung
 
-Ob eine Datei mit Tabs oder Leerzeichen eingerückt ist und wie breit, erkennt die Schreibmaschine aus dem Text. Ändern lässt es sich unter „Format → Einrückung“ oder in der Statusleiste. ⇥ und ⇧⇥ rücken eine Auswahl über mehrere Zeilen ein und aus, ↩ übernimmt die Einrückung der Zeile davor.
+Ob eine Datei mit Tabs oder Leerzeichen eingerückt ist und wie breit, erkennt Bleistift aus dem Text. Ändern lässt es sich unter „Format → Einrückung“ oder in der Statusleiste. ⇥ und ⇧⇥ rücken eine Auswahl über mehrere Zeilen ein und aus, ↩ übernimmt die Einrückung der Zeile davor.
 
 ## Kommentare und Klammern
 
@@ -240,7 +240,7 @@ Blöcke, die tiefer eingerückt sind als die Zeile davor, lassen sich falten. �
 
 # Eigene Sprachen
 
-Jede Sprache ist eine kleine YAML-Datei mit regulären Ausdrücken. „Format → Sprache → Definition dieser Sprache bearbeiten“ öffnet eine Kopie der mitgelieferten Definition, die du anpassen kannst. Neue Sprachen legst du in den Ordner, den „Ordner mit eigenen Sprachen zeigen“ öffnet. Beim Sichern wird eine Änderung sofort wirksam; enthält die Datei einen Fehler, nennt die Schreibmaschine die Zeile.
+Jede Sprache ist eine kleine YAML-Datei mit regulären Ausdrücken. „Format → Sprache → Definition dieser Sprache bearbeiten“ öffnet eine Kopie der mitgelieferten Definition, die du anpassen kannst. Neue Sprachen legst du in den Ordner, den „Ordner mit eigenen Sprachen zeigen“ öffnet. Beim Sichern wird eine Änderung sofort wirksam; enthält die Datei einen Fehler, nennt Bleistift die Zeile.
 
 ## Aufbau einer Definition
 
@@ -261,7 +261,7 @@ Eine Regel nennt entweder Wörter (words), ein Muster in einer Zeile (match) ode
 
 ![Ein Dokument im Vergleich mit seiner gesicherten Fassung](docs/screenshots/4-vergleich.png)
 
-Beide Seiten scrollen gemeinsam. Wo auf einer Seite Zeilen fehlen, lässt die Schreibmaschine Platz, sodass zusammengehörige Zeilen auf gleicher Höhe stehen. Zeilen, die es nur auf einer Seite gibt, egal auf welcher, sind blau; Zeilen, die sich unterscheiden, sind rot, die abweichenden Zeichen darin kräftiger. Auf Wunsch sind auch die gleichen Zeilen grün („Gleiche Zeilen grün“ unten rechts), sonst bleiben sie weiß. Die Leiste am rechten Rand zeigt alle Unterschiede im ganzen Text, ein Klick springt hin.
+Beide Seiten scrollen gemeinsam. Wo auf einer Seite Zeilen fehlen, lässt Bleistift Platz, sodass zusammengehörige Zeilen auf gleicher Höhe stehen. Zeilen, die es nur auf einer Seite gibt, egal auf welcher, sind blau; Zeilen, die sich unterscheiden, sind rot, die abweichenden Zeichen darin kräftiger. Auf Wunsch sind auch die gleichen Zeilen grün („Gleiche Zeilen grün“ unten rechts), sonst bleiben sie weiß. Die Leiste am rechten Rand zeigt alle Unterschiede im ganzen Text, ein Klick springt hin.
 
 ## Unterschiede abarbeiten
 
@@ -291,9 +291,9 @@ Zwei Zeilen am Anfang des Skripts, in seiner Kommentarschreibweise, ändern das:
 - @output copy: legt das Ergebnis in die Zwischenablage
 - @output none: verwirft das Ergebnis
 
-Ein Ergebnis zu ersetzen ist ein Schritt, den ⌘Z zurücknimmt. Endet ein Skript mit einem Fehler, zeigt die Schreibmaschine, was es auf die Fehlerausgabe geschrieben hat. Ändert sich der Text, während ein Skript läuft, setzt sie das Ergebnis nicht ein, sondern bietet es als neues Dokument an.
+Ein Ergebnis zu ersetzen ist ein Schritt, den ⌘Z zurücknimmt. Endet ein Skript mit einem Fehler, zeigt Bleistift, was es auf die Fehlerausgabe geschrieben hat. Ändert sich der Text, während ein Skript läuft, wird das Ergebnis nicht eingesetzt, sondern bietet es als neues Dokument an.
 
-> Skripte laufen außerhalb der Sandbox der Schreibmaschine, mit deinen Rechten; sie können alles, was ein Programm im Terminal kann. Lege nur Skripte in den Ordner, denen du traust.
+> Skripte laufen außerhalb der Sandbox von Bleistift, mit deinen Rechten; sie können alles, was ein Programm im Terminal kann. Lege nur Skripte in den Ordner, denen du traust.
 
 # Darstellung und Einstellungen
 
@@ -315,7 +315,7 @@ Unten im Fenster stehen Zeile und Spalte, die Größe der Auswahl, Sprache, Einr
 - Bearbeiten: Tabbreite und Einrückung, Klammern automatisch schließen, Bild ↑/↓, Pos1 und Ende, Umbruchspalte
 - Schreiben: Schreibmaschinen-Modus, Fokus-Modus und die Breite der Textspalte im ablenkungsfreien Modus
 
-Soll die Schreibmaschine Textdateien per Doppelklick öffnen, legt „Allgemein → Standard-App → Als Standard festlegen“ sie dafür fest: für reinen Text, Markdown, JSON, YAML, XML, CSS, JavaScript, Swift, Python, PHP, Shell-Skripte, SQL, Lua, TOML und INI sowie Diff. macOS fragt dabei für jedes Format einzeln nach. „Anpassen …“ zeigt alle Formate mit der App, die sie gerade öffnet, und legt jedes einzeln fest, auch HTML, CSV und Protokolle, die sonst meist in Browser, Tabellenkalkulation und Konsole bleiben. „Zurücksetzen“ gibt die Formate der App zurück, die sie vorher hatten. Nach einigen Tagen fragt die Schreibmaschine auch selbst einmal in einem Balken unter der Titelleiste nach, höchstens zweimal.
+Soll Bleistift Textdateien per Doppelklick öffnen, legt „Allgemein → Standard-App → Als Standard festlegen“ sie dafür fest: für reinen Text, Markdown, JSON, YAML, XML, CSS, JavaScript, Swift, Python, PHP, Shell-Skripte, SQL, Lua, TOML und INI sowie Diff. macOS fragt dabei für jedes Format einzeln nach. „Anpassen …“ zeigt alle Formate mit der App, die sie gerade öffnet, und legt jedes einzeln fest, auch HTML, CSV und Protokolle, die sonst meist in Browser, Tabellenkalkulation und Konsole bleiben. „Zurücksetzen“ gibt die Formate der App zurück, die sie vorher hatten. Nach einigen Tagen fragt Bleistift auch selbst einmal in einem Balken unter der Titelleiste nach, höchstens zweimal.
 
 Als Schrift ist SF Mono voreingestellt, die Monospace-Schrift von macOS. Weil macOS sie in der Schriftenpalette nicht anzeigt, führt der Knopf „Standard“ zu ihr zurück.
 
@@ -353,9 +353,9 @@ Alle Kürzel sind normale Menübefehle. In den Systemeinstellungen unter „Tast
 
 # Fragen und Antworten
 
-## Ist die Schreibmaschine eine Entwicklungsumgebung?
+## Ist Bleistift eine Entwicklungsumgebung?
 
-Nein, und das bleibt so. Es gibt keine Projekte, keine Autovervollständigung und kein Bauen oder Ausführen. Die Schreibmaschine ist ein Werkzeug zum Schreiben und Umformen von Text, der aber gern auch Code sein darf.
+Nein, und das bleibt so. Es gibt keine Projekte, keine Autovervollständigung und kein Bauen oder Ausführen. Bleistift ist ein Werkzeug zum Schreiben und Umformen von Text, der aber gern auch Code sein darf.
 
 ## Wo bleiben meine ungesicherten Texte, wenn ich die App beende?
 
@@ -363,16 +363,16 @@ Sie bleiben in der Sitzung und kommen beim nächsten Start zurück. In eine Date
 
 ## Ich habe eine Datei aus dem Finder geöffnet, und meine anderen Fenster sind weg.
 
-Startet die Schreibmaschine wegen einer Datei, zeigt sie nur diese. „Fenster → Sitzung → Vorige Sitzung wiederherstellen“ holt die anderen Fenster zurück.
+Startet Bleistift wegen einer Datei, erscheint nur diese. „Fenster → Sitzung → Vorige Sitzung wiederherstellen“ holt die anderen Fenster zurück.
 
 ## Wie groß darf eine Datei sein?
 
 So groß, wie der Arbeitsspeicher erlaubt. Eine Logdatei von 100 MB mit einer Million Zeilen öffnet in etwa einer Sekunde, und Sprünge an jede Stelle gehen sofort. Zeilen mit mehr als 10.000 Zeichen, etwa in minifiziertem JSON, bleiben ungefärbt. Enthält eine Datei eine Zeile mit mehr als 100.000 Zeichen, öffnet ihr Fenster mit Zeilenumbruch, weil eine so lange Zeile ohne Umbruch viel Zeit und Speicher kostet; ⌃⌘W schaltet ihn trotzdem ab.
 
-## Warum sucht die Schreibmaschine nicht in Ordnern?
+## Warum sucht Bleistift nicht in Ordnern?
 
-Weil sie keine Projekte kennt. Die Suche in allen offenen Dokumenten deckt ab, was gerade in Arbeit ist; für Ordner gibt es den Finder und Werkzeuge auf der Kommandozeile.
+Weil Bleistift keine Projekte kennt. Die Suche in allen offenen Dokumenten deckt ab, was gerade in Arbeit ist; für Ordner gibt es den Finder und Werkzeuge auf der Kommandozeile.
 
 ## Was bringen mir die Trinkgelder?
 
-Nichts außer meinem Dank. Sie schalten keine Funktionen frei; die Schreibmaschine ist und bleibt vollständig kostenlos.
+Nichts außer meinem Dank. Sie schalten keine Funktionen frei; Bleistift ist und bleibt vollständig kostenlos.

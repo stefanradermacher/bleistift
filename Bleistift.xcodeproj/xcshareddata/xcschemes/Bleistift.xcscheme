@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F03BBADD9F995C80D1F6194B"
-               BuildableName = "Schreibmaschine.app"
-               BlueprintName = "Schreibmaschine"
-               ReferencedContainer = "container:Schreibmaschine.xcodeproj">
+               BuildableName = "Bleistift.app"
+               BlueprintName = "Bleistift"
+               ReferencedContainer = "container:Bleistift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,13 +45,13 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F03BBADD9F995C80D1F6194B"
-            BuildableName = "Schreibmaschine.app"
-            BlueprintName = "Schreibmaschine"
-            ReferencedContainer = "container:Schreibmaschine.xcodeproj">
+            BuildableName = "Bleistift.app"
+            BlueprintName = "Bleistift"
+            ReferencedContainer = "container:Bleistift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <StoreKitConfigurationFileReference
-         identifier = "../../Config/Schreibmaschine.storekit">
+         identifier = "../../Config/Bleistift.storekit">
       </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F03BBADD9F995C80D1F6194B"
-            BuildableName = "Schreibmaschine.app"
-            BlueprintName = "Schreibmaschine"
-            ReferencedContainer = "container:Schreibmaschine.xcodeproj">
+            BuildableName = "Bleistift.app"
+            BlueprintName = "Bleistift"
+            ReferencedContainer = "container:Bleistift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

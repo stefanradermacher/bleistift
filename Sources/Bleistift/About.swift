@@ -18,17 +18,17 @@ import SwiftUI
 /// Addresses used in the About window and the Help menu, kept in one place.
 enum AppLinks {
     static let moreProjects = URL(string: "https://stefanradermacher.com/projects")!
-    static let productPage = URL(string: "https://stefanradermacher.com/projects/schreibmaschine")!
-    static let help = URL(string: "https://stefanradermacher.com/projects/schreibmaschine/support")!
-    static let privacy = URL(string: "https://stefanradermacher.com/projects/schreibmaschine/datenschutz")!
-    static let sourceCode = URL(string: "https://github.com/stefanradermacher/schreibmaschine")!
-    static let reportIssue = URL(string: "https://github.com/stefanradermacher/schreibmaschine/issues/new")!
+    static let productPage = URL(string: "https://stefanradermacher.com/projects/bleistift")!
+    static let help = URL(string: "https://stefanradermacher.com/projects/bleistift/support")!
+    static let privacy = URL(string: "https://stefanradermacher.com/projects/bleistift/datenschutz")!
+    static let sourceCode = URL(string: "https://github.com/stefanradermacher/bleistift")!
+    static let reportIssue = URL(string: "https://github.com/stefanradermacher/bleistift/issues/new")!
 
     /// Opens the manual that comes with the app, in the language of the app, in the default
     /// PDF viewer. It lives in the bundle, so it matches this version and needs no network.
     static func openManual() {
         let german = Bundle.main.preferredLocalizations.first?.hasPrefix("de") == true
-        guard let url = Bundle.main.url(forResource: german ? "Schreibmaschine-Handbuch" : "Schreibmaschine-Manual", withExtension: "pdf")
+        guard let url = Bundle.main.url(forResource: german ? "Bleistift-Handbuch" : "Bleistift-Manual", withExtension: "pdf")
         else { return NSSound.beep() }
         NSWorkspace.shared.open(url)
     }
@@ -37,8 +37,8 @@ enum AppLinks {
 /// A small window with SwiftUI content and no visible title bar, for "About" and "Support".
 /// Each is made once and shown again; closing only hides it.
 final class InfoWindowController: NSWindowController, NSWindowDelegate {
-    static let about = InfoWindowController(title: String(localized: "Über Schreibmaschine"), content: AboutView())
-    static let support = InfoWindowController(title: String(localized: "Schreibmaschine unterstützen"), content: SupportView())
+    static let about = InfoWindowController(title: String(localized: "Über Bleistift"), content: AboutView())
+    static let support = InfoWindowController(title: String(localized: "Bleistift unterstützen"), content: SupportView())
 
     private init(title: String, content: some View) {
         let controller = NSHostingController(rootView: content)
@@ -100,7 +100,7 @@ struct AboutView: View {
                 .resizable()
                 .frame(width: 112, height: 112)
                 .accessibilityHidden(true)
-            Text(verbatim: "Schreibmaschine")
+            Text(verbatim: "Bleistift")
                 .font(.system(size: 26, weight: .semibold))
             Text(version)
                 .font(.callout)
@@ -123,7 +123,7 @@ struct AboutView: View {
     /// Only for English readers: what the German app name means.
     private var nameNote: String? {
         guard Bundle.main.preferredLocalizations.first?.hasPrefix("en") == true else { return nil }
-        return "“Schreibmaschine” [ˈʃʁaɪ̯pmaˌʃiːnə] is the German word for “typewriter”."
+        return "“Bleistift” [ˈblaɪ̯ʃtɪft] is the German word for “pencil”."
     }
 
     /// What the app promises: free, open, without ads, without collecting data.
@@ -139,7 +139,7 @@ struct AboutView: View {
                     promise("Keine Datensammlung", "hand.raised")
                 }
             }
-            Text("Die Schreibmaschine hat kein Tracking, keine Analyse und keine Werbung und baut selbst keine Verbindungen ins Internet auf; nur ein freiwilliges Trinkgeld läuft über den App Store. Deine Texte und Einstellungen bleiben auf deinem Mac.")
+            Text("Bleistift hat kein Tracking, keine Analyse und keine Werbung und baut selbst keine Verbindungen ins Internet auf; nur ein freiwilliges Trinkgeld läuft über den App Store. Deine Texte und Einstellungen bleiben auf deinem Mac.")
                 .font(.callout)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
@@ -165,7 +165,7 @@ struct AboutView: View {
         VStack(spacing: 6) {
             HStack(spacing: 6) {
                 monogram
-                Link("Schreibmaschine im Web", destination: AppLinks.productPage)
+                Link("Bleistift im Web", destination: AppLinks.productPage)
                 separator
                 Link("Weitere Werkzeuge von mir", destination: AppLinks.moreProjects)
             }

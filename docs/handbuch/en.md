@@ -1,9 +1,9 @@
 <!--
 Texts of the English manual; the format is described at the top of de.md.
-`swift scripts/make_manual.swift en` turns this file into docs/Schreibmaschine-Manual.pdf.
+`swift scripts/make_manual.swift en` turns this file into docs/Bleistift-Manual.pdf.
 -->
 
-Dokumenttitel: Schreibmaschine – Manual
+Dokumenttitel: Bleistift – Manual
 Thema: Text editor for macOS
 Untertitel: Manual for the text editor for macOS
 Leitsatz: For text and code.
@@ -12,9 +12,9 @@ Free, ad-free, and without data collection.
 
 # About this manual
 
-Schreibmaschine is a text editor for macOS: first and foremost for plain text intended to be changed a lot, but just as useful for code. It doesn't want to be a development environment, just a tool for writing. In a few chapters, this manual describes what it can do and how to use it.
+Bleistift is a text editor for macOS: first and foremost for plain text intended to be changed a lot, but just as useful for code. It doesn't want to be a development environment, just a tool for writing. In a few chapters, this manual describes what it can do and how to use it.
 
-## What makes Schreibmaschine special?
+## What makes Bleistift special?
 
 - Find and replace in a bar above the text, not in a window of its own
 - A menu full of text commands and a command palette that finds every command
@@ -25,11 +25,11 @@ Schreibmaschine is a text editor for macOS: first and foremost for plain text in
 - Apple frameworks only, no third-party components
 - German and English
 
-> “Schreibmaschine” [ˈʃʁaɪ̯pmaˌʃiːnə] is the German word for “typewriter”.
+> “Bleistift” [ˈblaɪ̯ʃtɪft] is the German word for “pencil”.
 
 # Documents and windows
 
-Open text files by double-clicking them, through “File → Open…” (⌘O), or by dropping them onto the Schreibmaschine icon in the Dock or onto a Schreibmaschine window, whether on the text, the title bar, or the document list. Hold ⌥ while dropping onto the text to insert the file's path instead. ⌘N creates a new document.
+Open text files by double-clicking them, through “File → Open…” (⌘O), or by dropping them onto the Bleistift icon in the Dock or onto a Bleistift window, whether on the text, the title bar, or the document list. Hold ⌥ while dropping onto the text to insert the file's path instead. ⌘N creates a new document.
 
 ## Tabs or windows
 
@@ -54,45 +54,45 @@ New documents open as a tab in the front window or in a window of their own, as 
 
 ## Saving, encoding, and line endings
 
-Schreibmaschine writes a file only when you save it with ⌘S, unless you turn on saving automatically (see below). It recognizes the text encoding and line endings when opening a file and keeps them when saving. Both appear in the status bar and can be changed there with a click. The common encodings are right in the menu; every other one that macOS knows is under “More Encodings”, grouped by script. If umlauts or other characters look wrong, “File → Reopen with Encoding” reads the file in another encoding.
+Bleistift writes a file only when you save it with ⌘S, unless you turn on saving automatically (see below). It recognizes the text encoding and line endings when opening a file and keeps them when saving. Both appear in the status bar and can be changed there with a click. The common encodings are right in the menu; every other one that macOS knows is under “More Encodings”, grouped by script. If umlauts or other characters look wrong, “File → Reopen with Encoding” reads the file in another encoding.
 
-If you like, Schreibmaschine tidies up when saving: under “Settings → Files → When saving”, it removes spaces and tabs at the ends of lines and ends the file with a line break. The line with the insertion point is left alone, and so are two spaces at the end of a Markdown line, which mean a line break there. Tidying up is a change like any other, and ⌘Z takes it back.
+If you like, Bleistift tidies up when saving: under “Settings → Files → When saving”, it removes spaces and tabs at the ends of lines and ends the file with a line break. The line with the insertion point is left alone, and so are two spaces at the end of a Markdown line, which mean a line break there. Tidying up is a change like any other, and ⌘Z takes it back.
 
-If another program changes an open file, such as git or a second editor, Schreibmaschine reloads it by itself as long as you have nothing unsaved in it; the insertion point and the scroll position stay where they were. If you have unsaved changes, a bar below the title bar asks: “Reload” takes the file, “Keep” stays with your text, which ⌘S then writes over the file, and “Compare” puts both side by side: take differences from the file over into your text and save the result. If an open file is deleted or moved, your text is kept and counts as unsaved; “Save As…” puts it somewhere again.
+If another program changes an open file, such as git or a second editor, Bleistift reloads it by itself as long as you have nothing unsaved in it; the insertion point and the scroll position stay where they were. If you have unsaved changes, a bar below the title bar asks: “Reload” takes the file, “Keep” stays with your text, which ⌘S then writes over the file, and “Compare” puts both side by side: take differences from the file over into your text and save the result. If an open file is deleted or moved, your text is kept and counts as unsaved; “Save As…” puts it somewhere again.
 
 ## Saving automatically
 
-With “Settings → Files → Save automatically”, Schreibmaschine writes changed files without ⌘S as well. “When switching away” saves as soon as the window or tab loses focus, Schreibmaschine goes to the background, or you close a document; a changed document is then saved on closing instead of asking. “When switching away and when pausing” also saves when you have not typed for 15 seconds. This is handy when another program reads the file, such as a compiler, a web server, or git.
+With “Settings → Files → Save automatically”, Bleistift writes changed files without ⌘S as well. “When switching away” saves as soon as the window or tab loses focus, Bleistift goes to the background, or you close a document; a changed document is then saved on closing instead of asking. “When switching away and when pausing” also saves when you have not typed for 15 seconds. This is handy when another program reads the file, such as a compiler, a web server, or git.
 
 Untitled documents are never saved automatically; they stay in the session. A file that another program has changed, deleted, or made read-only is left alone as well, and so is text with characters the file's encoding cannot hold; here, you decide with ⌘S. The marks in the ruler keep showing what changed since your last ⌘S, not since the last automatic save.
 
 ## Earlier versions
 
-Each time you open or save a file, by hand or automatically, Schreibmaschine keeps that state in its own area on your Mac. “File → Revert To” lists them: “Last Saved” and “Last Opened” at the top, the earlier versions with date and time below. Choosing a version replaces the text like an ordinary edit, so ⌘Z brings your text back. Hold down ⌥, and every entry becomes a comparison: the version appears beside your text, and you take over only what you need.
+Each time you open or save a file, by hand or automatically, Bleistift keeps that state in its own area on your Mac. “File → Revert To” lists them: “Last Saved” and “Last Opened” at the top, the earlier versions with date and time below. Choosing a version replaces the text like an ordinary edit, so ⌘Z brings your text back. Hold down ⌥, and every entry becomes a comparison: the version appears beside your text, and you take over only what you need.
 
 “Settings → Files → Keep earlier versions” sets how many versions each file keeps, 20 by default; none is kept longer than 14 days. Identical states are stored only once, and files over 10 MB not at all. “Clear History…” at the end of the menu removes the versions of the file; the file itself stays as it is. If you rename or move an open file, its versions go with it.
 
 ## Printing
 
-“File → Print…” (⌘P) prints the document, wrapped to the width of the paper and in the light colors. In the print dialog, the “Schreibmaschine” section holds its own options: the font size for paper (10 pt by default), syntax colors, line numbers, and a header and footer with the file name or path, the date, and the page number. For Markdown files, you choose whether the text is printed as in the editor or typeset as in the preview, with real headings, lists, and tables. With text selected, the selection option under “Pages” prints only that, keeping the line numbers of the document. The preview on the left follows every change, and Schreibmaschine remembers the options for next time.
+“File → Print…” (⌘P) prints the document, wrapped to the width of the paper and in the light colors. In the print dialog, the “Bleistift” section holds its own options: the font size for paper (10 pt by default), syntax colors, line numbers, and a header and footer with the file name or path, the date, and the page number. For Markdown files, you choose whether the text is printed as in the editor or typeset as in the preview, with real headings, lists, and tables. With text selected, the selection option under “Pages” prints only that, keeping the line numbers of the document. The preview on the left follows every change, and Bleistift remembers the options for next time.
 
 # The session
 
-Many Mac apps leave it to macOS to reopen what was open after a restart. Whether that works depends on system settings and on how the app was quit. Schreibmaschine therefore keeps a session of its own: all windows with their tabs, the files in them, and every unsaved text.
+Many Mac apps leave it to macOS to reopen what was open after a restart. Whether that works depends on system settings and on how the app was quit. Bleistift therefore keeps a session of its own: all windows with their tabs, the files in them, and every unsaved text.
 
 ## Nothing gets lost
 
-Schreibmaschine keeps unsaved texts and changes all the time in its own area on your Mac, not in your files. That is why it never asks when you quit. At the next start everything comes back, marked as changed, even after a crash.
+Bleistift keeps unsaved texts and changes all the time in its own area on your Mac, not in your files. That is why it never asks when you quit. At the next start everything comes back, marked as changed, even after a crash.
 
 ## Starting with a file
 
-Started without a file, Schreibmaschine restores the last session, opens a new document, or nothing, as set in the settings. When you open a file from the Finder instead, only that file appears. The session before is kept as the “previous session”: “Window → Session → Restore Previous Session” brings it back.
+Started without a file, Bleistift restores the last session, opens a new document, or nothing, as set in the settings. When you open a file from the Finder instead, only that file appears. The session before is kept as the “previous session”: “Window → Session → Restore Previous Session” brings it back.
 
 > “Window → Session” always shows what belongs to the session and what comes back at the next start.
 
 ## Every file remembers its state
 
-For every file, Schreibmaschine remembers the selection, the visible part, wrapping, line numbers, font size, bookmarks, folds, and a split view. Next time you open it, everything is as you left it. The file itself stays untouched.
+For every file, Bleistift remembers the selection, the visible part, wrapping, line numbers, font size, bookmarks, folds, and a split view. Next time you open it, everything is as you left it. The file itself stays untouched.
 
 # Find and replace
 
@@ -104,7 +104,7 @@ For every file, Schreibmaschine remembers the selection, the visible part, wrapp
 
 ↩ and ⇧↩ jump to the next and previous match, ⌘G and ⇧⌘G even with the bar closed. A selection becomes the search term when the bar opens; ⌘E takes it without opening the bar. The last 20 terms are in the menu of the magnifier in the search field, ↓ opens it as well. Esc closes the bar.
 
-Even without the find bar, Schreibmaschine shows where a word occurs again: when you select a whole word, by double-clicking it, for example, its other occurrences get a light frame, and small lines at the right edge mark them in the whole document. ⌃G then adds the next occurrence to the selection. You can turn this off in the settings under “Appearance”.
+Even without the find bar, Bleistift shows where a word occurs again: when you select a whole word, by double-clicking it, for example, its other occurrences get a light frame, and small lines at the right edge mark them in the whole document. ⌃G then adds the next occurrence to the selection. You can turn this off in the settings under “Appearance”.
 
 ## Options
 
@@ -119,7 +119,7 @@ Even without the find bar, Schreibmaschine shows where a word occurs again: when
 
 ## In all open documents
 
-⇧⌘F searches all open documents. The matches appear in a sidebar, grouped by document; a click jumps to the spot. “Replace All” applies to all documents, and each can undo it on its own. Schreibmaschine deliberately does not search folders.
+⇧⌘F searches all open documents. The matches appear in a sidebar, grouped by document; a click jumps to the spot. “Replace All” applies to all documents, and each can undo it on its own. Bleistift deliberately does not search folders.
 
 ## Go to line
 
@@ -195,7 +195,7 @@ With “View → Focus Mode”, only the paragraph with the insertion point stay
 
 ## Formatted Markdown
 
-In Markdown files, Schreibmaschine shows the markup right in the text: headings are larger and bold, `**bold**` and `*italic*` appear bold and italic, `~~strikethrough~~` struck through, code has a light background, links are in the link color, and quotes get a bar at the edge. The marks themselves stay visible in a faint color, so you keep editing exactly the text that is in the file. Wrapped lines of list items and quotes start below the text, not below the mark in front of it. “View → Formatted Markdown” turns this off.
+In Markdown files, Bleistift shows the markup right in the text: headings are larger and bold, `**bold**` and `*italic*` appear bold and italic, `~~strikethrough~~` struck through, code has a light background, links are in the link color, and quotes get a bar at the edge. The marks themselves stay visible in a faint color, so you keep editing exactly the text that is in the file. Wrapped lines of list items and quotes start below the text, not below the mark in front of it. “View → Formatted Markdown” turns this off.
 
 ## Lists and markup
 
@@ -203,19 +203,19 @@ In Markdown files, Schreibmaschine shows the markup right in the text: headings 
 
 ## Markdown preview
 
-In a Markdown file, “View → Markdown Preview” (⌥⌘P) shows beside the text how it looks when set: headings, emphasis, lists and task lists, quotes, code blocks, tables, and links. The preview follows your typing after a short moment and scrolls along, aligned at the headings. Links open in the browser. The preview loads nothing from the internet; it shows images next to the file only if Schreibmaschine may read them, otherwise their description stands in their place.
+In a Markdown file, “View → Markdown Preview” (⌥⌘P) shows beside the text how it looks when set: headings, emphasis, lists and task lists, quotes, code blocks, tables, and links. The preview follows your typing after a short moment and scrolls along, aligned at the headings. Links open in the browser. The preview loads nothing from the internet; it shows images next to the file only if Bleistift may read them, otherwise their description stands in their place.
 
 ![A formatted Markdown note with its preview](docs/screenshots/en/3-preview.png)
 
 # Code
 
-Schreibmaschine recognizes the language of a file from its name, extension, or first line and colors it accordingly. It comes with Swift, Markdown, PHP, JavaScript and TypeScript, Python, JSON, YAML, INI and TOML, Shell, HTML, XML, CSS, SQL, and Lua. The language can be chosen under “Format → Language” or in the status bar.
+Bleistift recognizes the language of a file from its name, extension, or first line and colors it accordingly. It comes with Swift, Markdown, PHP, JavaScript and TypeScript, Python, JSON, YAML, INI and TOML, Shell, HTML, XML, CSS, SQL, and Lua. The language can be chosen under “Format → Language” or in the status bar.
 
 ![Swift with syntax highlighting, line numbers, and bookmarks](docs/screenshots/en/1-code.png)
 
 ## Indentation
 
-Schreibmaschine recognizes from the text whether a file is indented with tabs or spaces and how wide. You can change it under “Format → Indentation” or in the status bar. ⇥ and ⇧⇥ indent and outdent a selection over several lines, ↩ keeps the indentation of the line before.
+Bleistift recognizes from the text whether a file is indented with tabs or spaces and how wide. You can change it under “Format → Indentation” or in the status bar. ⇥ and ⇧⇥ indent and outdent a selection over several lines, ↩ keeps the indentation of the line before.
 
 ## Comments and brackets
 
@@ -229,7 +229,7 @@ Blocks that are indented deeper than the line before them can be folded. ⌃⌘�
 
 # Your own languages
 
-Every language is a small YAML file with regular expressions. “Format → Language → Edit Definition of This Language” opens a copy of the definition that comes with the app, which you can adjust. New languages go into the folder that “Show Folder with Custom Languages” opens. Saving puts a change into effect right away; if the file has an error, Schreibmaschine names the line.
+Every language is a small YAML file with regular expressions. “Format → Language → Edit Definition of This Language” opens a copy of the definition that comes with the app, which you can adjust. New languages go into the folder that “Show Folder with Custom Languages” opens. Saving puts a change into effect right away; if the file has an error, Bleistift names the line.
 
 ## How a definition is built
 
@@ -250,7 +250,7 @@ A rule names either words (words), a pattern within a line (match) or a region f
 
 ![A document compared with its saved version](docs/screenshots/en/4-compare.png)
 
-Both sides scroll together. Where lines are missing on one side, Schreibmaschine leaves room, so lines that belong together stand at the same height. Neither side counts as the older one: lines that exist on only one side are blue, whichever side; lines that differ are red, with the differing characters marked more strongly. If you like, equal lines are green as well (“Equal lines green” at the bottom right); otherwise, they stay white. The bar at the right edge shows all differences in the whole text; a click jumps there.
+Both sides scroll together. Where lines are missing on one side, Bleistift leaves room, so lines that belong together stand at the same height. Neither side counts as the older one: lines that exist on only one side are blue, whichever side; lines that differ are red, with the differing characters marked more strongly. If you like, equal lines are green as well (“Equal lines green” at the bottom right); otherwise, they stay white. The bar at the right edge shows all differences in the whole text; a click jumps there.
 
 ## Working through the differences
 
@@ -280,9 +280,9 @@ Two lines at the beginning of the script, in its comment syntax, change that:
 - @output copy: puts the result on the clipboard
 - @output none: discards the result
 
-Replacing text with a result is one step that ⌘Z undoes. If a script ends with an error, Schreibmaschine shows what it wrote to its error output. If the text changes while a script runs, Schreibmaschine does not put the result in but offers it as a new document.
+Replacing text with a result is one step that ⌘Z undoes. If a script ends with an error, Bleistift shows what it wrote to its error output. If the text changes while a script runs, Bleistift does not put the result in but offers it as a new document.
 
-> Scripts run outside Schreibmaschine's sandbox, with your rights; they can do anything a program in Terminal can. Only put scripts you trust into the folder.
+> Scripts run outside Bleistift's sandbox, with your rights; they can do anything a program in Terminal can. Only put scripts you trust into the folder.
 
 # View and settings
 
@@ -304,7 +304,7 @@ At the bottom of the window are line and column, the size of the selection, lang
 - Editing: tab width and indentation, closing brackets automatically, Page Up/Down, Home, and End, and the wrap column
 - Writing: typewriter mode, focus mode, and the width of the text column in distraction-free mode
 
-To have text files open in Schreibmaschine with a double-click, “General → Default app → Make Default” makes it the default for plain text, Markdown, JSON, YAML, XML, CSS, JavaScript, Swift, Python, PHP, shell scripts, SQL, Lua, TOML, and INI, as well as diff. macOS asks for each format separately. “Customize…” lists all formats with the app that opens them now and sets each one on its own, including HTML, CSV, and logs, which usually stay with the browser, a spreadsheet, and Console. “Reset” gives the formats back to the apps they had before. After a few days, Schreibmaschine also asks once itself, in a bar below the title bar, at most twice.
+To have text files open in Bleistift with a double-click, “General → Default app → Make Default” makes it the default for plain text, Markdown, JSON, YAML, XML, CSS, JavaScript, Swift, Python, PHP, shell scripts, SQL, Lua, TOML, and INI, as well as diff. macOS asks for each format separately. “Customize…” lists all formats with the app that opens them now and sets each one on its own, including HTML, CSV, and logs, which usually stay with the browser, a spreadsheet, and Console. “Reset” gives the formats back to the apps they had before. After a few days, Bleistift also asks once itself, in a bar below the title bar, at most twice.
 
 The default font is SF Mono, the monospaced font of macOS. Because macOS does not list it in the font panel, the “Default” button leads back to it.
 
@@ -342,9 +342,9 @@ All shortcuts are ordinary menu commands. They can be changed in System Settings
 
 # Questions and answers
 
-## Is Schreibmaschine a development environment?
+## Is Bleistift a development environment?
 
-No, and it will stay that way. There are no projects, no auto-completion, and no building or running. Schreibmaschine is a tool for writing and reshaping text, which may well be code.
+No, and it will stay that way. There are no projects, no auto-completion, and no building or running. Bleistift is a tool for writing and reshaping text, which may well be code.
 
 ## Where do my unsaved texts go when I quit?
 
@@ -352,16 +352,16 @@ They stay in the session and come back at the next start. Files are only written
 
 ## I opened a file from the Finder, and my other windows are gone.
 
-When Schreibmaschine starts because of a file, it shows just that file. “Window → Session → Restore Previous Session” brings the other windows back.
+When Bleistift starts because of a file, it shows just that file. “Window → Session → Restore Previous Session” brings the other windows back.
 
 ## How large may a file be?
 
 As large as your memory allows. A log file of 100 MB with a million lines opens in about a second, and jumps to any place are immediate. Lines of more than 10,000 characters, as in minified JSON, stay uncolored. If a file contains a line of more than 100,000 characters, its window opens with line wrapping, because such a long line costs a lot of time and memory unwrapped; ⌃⌘W turns wrapping off all the same.
 
-## Why doesn't Schreibmaschine search folders?
+## Why doesn't Bleistift search folders?
 
 Because it has no notion of projects. The search in all open documents covers what you are working on; for folders there are the Finder and command-line tools.
 
 ## What do the tips get me?
 
-Nothing but my thanks. They unlock no features; Schreibmaschine is and stays completely free.
+Nothing but my thanks. They unlock no features; Bleistift is and stays completely free.

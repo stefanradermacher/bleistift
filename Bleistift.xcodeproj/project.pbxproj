@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		19F01414085055FB62EE9BE2 /* Schreibmaschine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Schreibmaschine.entitlements; sourceTree = "<group>"; };
-		2BDA14127946C1E92E2CAEB5 /* Schreibmaschine.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Schreibmaschine.xcconfig; sourceTree = "<group>"; };
+		19F01414085055FB62EE9BE2 /* Bleistift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bleistift.entitlements; sourceTree = "<group>"; };
+		2BDA14127946C1E92E2CAEB5 /* Bleistift.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Bleistift.xcconfig; sourceTree = "<group>"; };
 		A1B225BA2E22F19C4A80F823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE6DD63A914B2A039E1BA067 /* Schreibmaschine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schreibmaschine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE6DD63A914B2A039E1BA067 /* Bleistift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bleistift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		34CEEFC9BA79528D2E5FB7CF /* Sources */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			name = Sources;
-			path = Sources/Schreibmaschine;
+			path = Sources/Bleistift;
 			sourceTree = "<group>";
 		};
 		E8657E1A821915F071E5BAF4 /* Resources */ = {
@@ -41,7 +41,7 @@
 		345DD38C17A59A3E66FA1F56 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE6DD63A914B2A039E1BA067 /* Schreibmaschine.app */,
+				AE6DD63A914B2A039E1BA067 /* Bleistift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,8 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				A1B225BA2E22F19C4A80F823 /* Info.plist */,
-				19F01414085055FB62EE9BE2 /* Schreibmaschine.entitlements */,
-				2BDA14127946C1E92E2CAEB5 /* Schreibmaschine.xcconfig */,
+				19F01414085055FB62EE9BE2 /* Bleistift.entitlements */,
+				2BDA14127946C1E92E2CAEB5 /* Bleistift.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -69,9 +69,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F03BBADD9F995C80D1F6194B /* Schreibmaschine */ = {
+		F03BBADD9F995C80D1F6194B /* Bleistift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BFDB29C68DBB2BA3458F72FB /* Build configuration list for PBXNativeTarget "Schreibmaschine" */;
+			buildConfigurationList = BFDB29C68DBB2BA3458F72FB /* Build configuration list for PBXNativeTarget "Bleistift" */;
 			buildPhases = (
 				326B294E411EA547D8E5CFE6 /* Sources */,
 				5E228987B52B24664AA1C431 /* Frameworks */,
@@ -85,11 +85,11 @@
 				34CEEFC9BA79528D2E5FB7CF /* Sources */,
 				E8657E1A821915F071E5BAF4 /* Resources */,
 			);
-			name = Schreibmaschine;
+			name = Bleistift;
 			packageProductDependencies = (
 			);
-			productName = Schreibmaschine;
-			productReference = AE6DD63A914B2A039E1BA067 /* Schreibmaschine.app */;
+			productName = Bleistift;
+			productReference = AE6DD63A914B2A039E1BA067 /* Bleistift.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -107,7 +107,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CEE48FEE3ACCE0418508410B /* Build configuration list for PBXProject "Schreibmaschine" */;
+			buildConfigurationList = CEE48FEE3ACCE0418508410B /* Build configuration list for PBXProject "Bleistift" */;
 			developmentRegion = de;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -122,7 +122,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F03BBADD9F995C80D1F6194B /* Schreibmaschine */,
+				F03BBADD9F995C80D1F6194B /* Bleistift */,
 			);
 		};
 /* End PBXProject section */
@@ -199,12 +199,12 @@
 		};
 		22C2ABD8937E2CB399330490 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BDA14127946C1E92E2CAEB5 /* Schreibmaschine.xcconfig */;
+			baseConfigurationReference = 2BDA14127946C1E92E2CAEB5 /* Bleistift.xcconfig */;
 			buildSettings = {
-				APP_DISPLAY_NAME = "Schreibmaschine Debug";
+				APP_DISPLAY_NAME = "Bleistift Debug";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Config/Schreibmaschine.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Config/Bleistift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -219,7 +219,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stefanradermacher.schreibmaschine.debug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stefanradermacher.bleistift.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -280,12 +280,12 @@
 		};
 		BA63885DB57F043BD0428E4C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BDA14127946C1E92E2CAEB5 /* Schreibmaschine.xcconfig */;
+			baseConfigurationReference = 2BDA14127946C1E92E2CAEB5 /* Bleistift.xcconfig */;
 			buildSettings = {
-				APP_DISPLAY_NAME = Schreibmaschine;
+				APP_DISPLAY_NAME = Bleistift;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Config/Schreibmaschine.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Config/Bleistift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -300,7 +300,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stefanradermacher.schreibmaschine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stefanradermacher.bleistift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -310,7 +310,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BFDB29C68DBB2BA3458F72FB /* Build configuration list for PBXNativeTarget "Schreibmaschine" */ = {
+		BFDB29C68DBB2BA3458F72FB /* Build configuration list for PBXNativeTarget "Bleistift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22C2ABD8937E2CB399330490 /* Debug */,
@@ -319,7 +319,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEE48FEE3ACCE0418508410B /* Build configuration list for PBXProject "Schreibmaschine" */ = {
+		CEE48FEE3ACCE0418508410B /* Build configuration list for PBXProject "Bleistift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				252C413D5B56A7CF4730EEAF /* Debug */,

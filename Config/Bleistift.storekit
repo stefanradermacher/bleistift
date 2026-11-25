@@ -18,17 +18,17 @@
       "internalID" : "6820000001",
       "localizations" : [
         {
-          "description" : "Kleines Trinkgeld für die Schreibmaschine.",
+          "description" : "Kleines Trinkgeld für Bleistift.",
           "displayName" : "Ein Kaffee",
           "locale" : "de"
         },
         {
-          "description" : "A small tip for Schreibmaschine.",
+          "description" : "A small tip for Bleistift.",
           "displayName" : "Coffee",
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.stefanradermacher.schreibmaschine.tip.coffee",
+      "productID" : "com.stefanradermacher.bleistift.tip.coffee",
       "referenceName" : "Trinkgeld Kaffee",
       "type" : "Consumable"
     },
@@ -38,17 +38,17 @@
       "internalID" : "6820000002",
       "localizations" : [
         {
-          "description" : "Mittleres Trinkgeld für die Schreibmaschine.",
+          "description" : "Mittleres Trinkgeld für Bleistift.",
           "displayName" : "Ein Frühstück",
           "locale" : "de"
         },
         {
-          "description" : "A medium tip for Schreibmaschine.",
+          "description" : "A medium tip for Bleistift.",
           "displayName" : "Breakfast",
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.stefanradermacher.schreibmaschine.tip.breakfast",
+      "productID" : "com.stefanradermacher.bleistift.tip.breakfast",
       "referenceName" : "Trinkgeld Frühstück",
       "type" : "Consumable"
     },
@@ -58,17 +58,17 @@
       "internalID" : "6820000003",
       "localizations" : [
         {
-          "description" : "Großes Trinkgeld für die Schreibmaschine.",
+          "description" : "Großes Trinkgeld für Bleistift.",
           "displayName" : "Ein Abendessen",
           "locale" : "de"
         },
         {
-          "description" : "A generous tip for Schreibmaschine.",
+          "description" : "A generous tip for Bleistift.",
           "displayName" : "Dinner",
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.stefanradermacher.schreibmaschine.tip.dinner",
+      "productID" : "com.stefanradermacher.bleistift.tip.dinner",
       "referenceName" : "Trinkgeld Abendessen",
       "type" : "Consumable"
     }

@@ -16,7 +16,7 @@ import AppKit
 import SwiftUI
 import UniformTypeIdentifiers
 
-/// The kinds of text the Schreibmaschine offers to open by default. HTML, CSV and logs can be
+/// The kinds of text Bleistift offers to open by default. HTML, CSV and logs can be
 /// chosen one by one but are left out of "all": web pages are usually opened in the browser,
 /// tables in a spreadsheet and logs in Console.
 enum TextFormat: String, CaseIterable, Identifiable {
@@ -75,7 +75,7 @@ enum TextFormat: String, CaseIterable, Identifiable {
     var isInAll: Bool { self != .html && self != .csv && self != .log }
 
     /// The formats whose types the system knows. The app declares the ones macOS does not, but a
-    /// format without any type must never count as the Schreibmaschine's.
+    /// format without any type must never count as Bleistift's.
     static var available: [TextFormat] { allCases.filter { !$0.types.isEmpty } }
 
     static var all: [TextFormat] { available.filter(\.isInAll) }
@@ -85,14 +85,14 @@ enum TextFormat: String, CaseIterable, Identifiable {
         types.first.flatMap { NSWorkspace.shared.urlForApplication(toOpen: $0) }
     }
 
-    var isSchreibmaschineDefault: Bool {
+    var isBleistiftDefault: Bool {
         !types.isEmpty && types.allSatisfy { type in
-            NSWorkspace.shared.urlForApplication(toOpen: type).map(DefaultAppOffer.isSchreibmaschine) ?? false
+            NSWorkspace.shared.urlForApplication(toOpen: type).map(DefaultAppOffer.isBleistift) ?? false
         }
     }
 }
 
-/// Offers to make the Schreibmaschine the default app for text and code – rarely and only once
+/// Offers to make Bleistift the default app for text and code – rarely and only once
 /// it is really in use:
 /// - never before it was used on three different days,
 /// - at most twice, the second time 30 days and three more days of use after the first,
@@ -121,12 +121,12 @@ enum DefaultAppOffer {
 
     // MARK: State of the system
 
-    static var isDefaultForAll: Bool { TextFormat.all.allSatisfy(\.isSchreibmaschineDefault) }
+    static var isDefaultForAll: Bool { TextFormat.all.allSatisfy(\.isBleistiftDefault) }
 
-    static var isDefaultForAny: Bool { TextFormat.available.contains(where: \.isSchreibmaschineDefault) }
+    static var isDefaultForAny: Bool { TextFormat.available.contains(where: \.isBleistiftDefault) }
 
     /// Plain text is the format that matters most; the offer goes by it.
-    static var isDefault: Bool { TextFormat.plainText.isSchreibmaschineDefault }
+    static var isDefault: Bool { TextFormat.plainText.isBleistiftDefault }
 
     /// A copy outside the Applications folders (e.g. a build folder) must not become the default.
     static var isInstalled: Bool {
@@ -135,22 +135,22 @@ enum DefaultAppOffer {
         return folders.contains { path.hasPrefix($0.resolvingSymlinksInPath().path + "/") }
     }
 
-    nonisolated static func isSchreibmaschine(_ app: URL) -> Bool {
+    nonisolated static func isBleistift(_ app: URL) -> Bool {
         Bundle(url: app)?.bundleIdentifier == Bundle.main.bundleIdentifier
     }
 
     /// macOS asks the user to confirm each type, one dialog after the other, and cannot ask for
-    /// several at once. Types the Schreibmaschine already has are skipped, and a single "keep"
+    /// several at once. Types Bleistift already has are skipped, and a single "keep"
     /// ends the whole run, so that declining does not mean declining a dozen times.
     static func makeDefault(for formats: [TextFormat] = TextFormat.all) async {
         var previous = previousApps
-        run: for format in formats where !format.isSchreibmaschineDefault {
+        run: for format in formats where !format.isBleistiftDefault {
             for type in format.types {
                 let current = NSWorkspace.shared.urlForApplication(toOpen: type)
-                if let current, isSchreibmaschine(current) { continue }
+                if let current, isBleistift(current) { continue }
                 if let current { previous[type.identifier] = current.path }
                 try? await NSWorkspace.shared.setDefaultApplication(at: Bundle.main.bundleURL, toOpen: type)
-                guard let now = NSWorkspace.shared.urlForApplication(toOpen: type), isSchreibmaschine(now) else { break run }
+                guard let now = NSWorkspace.shared.urlForApplication(toOpen: type), isBleistift(now) else { break run }
             }
         }
         defaults.set(previous, forKey: Key.previousApps)
@@ -162,13 +162,13 @@ enum DefaultAppOffer {
     /// and as when setting, a single "keep" ends the run.
     static func restore(_ formats: [TextFormat] = TextFormat.available) async {
         var previous = previousApps
-        run: for format in formats where format.isSchreibmaschineDefault {
+        run: for format in formats where format.isBleistiftDefault {
             for type in format.types {
-                guard let current = NSWorkspace.shared.urlForApplication(toOpen: type), isSchreibmaschine(current),
+                guard let current = NSWorkspace.shared.urlForApplication(toOpen: type), isBleistift(current),
                       let app = restoreApplication(for: type)
                 else { continue }
                 try? await NSWorkspace.shared.setDefaultApplication(at: app, toOpen: type)
-                guard let now = NSWorkspace.shared.urlForApplication(toOpen: type), !isSchreibmaschine(now) else { break run }
+                guard let now = NSWorkspace.shared.urlForApplication(toOpen: type), !isBleistift(now) else { break run }
                 previous[type.identifier] = nil
             }
         }
@@ -204,7 +204,7 @@ enum DefaultAppOffer {
 
     // MARK: Usage and offers
 
-    /// Counts the days on which the Schreibmaschine was used.
+    /// Counts the days on which Bleistift was used.
     static func recordUsage() {
         let today = Date.now.formatted(.iso8601.year().month().day())
         guard defaults.string(forKey: Key.lastUsageDay) != today else { return }
@@ -267,7 +267,7 @@ struct DefaultAppBanner: View {
         HStack(spacing: 12) {
             Image(systemName: "doc.text")
                 .foregroundStyle(.secondary)
-            Text("Die Schreibmaschine als Standard-App für Text und Code verwenden?")
+            Text("Bleistift als Standard-App für Text und Code verwenden?")
             Spacer(minLength: 8)
             Button("Als Standard festlegen") {
                 Task {
@@ -275,7 +275,7 @@ struct DefaultAppBanner: View {
                     onClose()
                 }
             }
-            .help("macOS fragt für jedes Format einzeln nach; lehnst du einmal ab, fragt die Schreibmaschine nicht weiter")
+            .help("macOS fragt für jedes Format einzeln nach; lehnst du einmal ab, fragt Bleistift nicht weiter")
             Button("Nicht jetzt", action: onClose)
         }
         .controlSize(.small)
@@ -294,7 +294,7 @@ struct DefaultAppSettingsRows: View {
         LabeledContent("Standard-App:") {
             HStack {
                 if summary.isAll {
-                    Label("Schreibmaschine", systemImage: "checkmark")
+                    Label("Bleistift", systemImage: "checkmark")
                 } else {
                     Text(summary.text)
                         .foregroundStyle(.secondary)
@@ -308,7 +308,7 @@ struct DefaultAppSettingsRows: View {
                         }
                     }
                     .disabled(!DefaultAppOffer.isInstalled)
-                    .help("macOS fragt für jedes Format einzeln nach; lehnst du einmal ab, fragt die Schreibmaschine nicht weiter")
+                    .help("macOS fragt für jedes Format einzeln nach; lehnst du einmal ab, fragt Bleistift nicht weiter")
                 }
             }
         }
@@ -320,7 +320,7 @@ struct DefaultAppSettingsRows: View {
                         summary = .current
                     }
                 }
-                .disabled(!summary.hasSchreibmaschine)
+                .disabled(!summary.hasBleistift)
                 .help("Gibt die Formate wieder den Apps, die sie vorher hatten, sonst TextEdit")
                 Button("Anpassen …") { showsFormats = true }
                     .disabled(!DefaultAppOffer.isInstalled)
@@ -336,18 +336,18 @@ struct DefaultAppSettingsRows: View {
 
     private struct Summary {
         var isAll = false
-        var hasSchreibmaschine = false
+        var hasBleistift = false
         var text: String
         var help = ""
 
         @MainActor static var current: Summary {
             let formats = TextFormat.all
-            let own = formats.filter(\.isSchreibmaschineDefault).count
-            if own == formats.count { return Summary(isAll: true, hasSchreibmaschine: true, text: "Schreibmaschine") }
+            let own = formats.filter(\.isBleistiftDefault).count
+            if own == formats.count { return Summary(isAll: true, hasBleistift: true, text: "Bleistift") }
             if own > 0 || DefaultAppOffer.isDefaultForAny {
                 // In the row "Default app:" the name goes without saying; it keeps the row on one line.
-                return Summary(hasSchreibmaschine: true, text: String(localized: "\(own) von \(formats.count) Formaten"),
-                               help: String(localized: "Die Schreibmaschine öffnet \(own) von \(formats.count) Formaten; „Anpassen …“ zeigt, welche."))
+                return Summary(hasBleistift: true, text: String(localized: "\(own) von \(formats.count) Formaten"),
+                               help: String(localized: "Bleistift öffnet \(own) von \(formats.count) Formaten; „Anpassen …“ zeigt, welche."))
             }
             let names = Set(formats.compactMap { $0.currentApplication.map(DefaultAppOffer.name(of:)) })
             return Summary(text: names.count == 1 ? names.first! : String(localized: "Verschiedene Apps"))
@@ -379,7 +379,7 @@ struct DefaultAppFormatsView: View {
                             } else {
                                 Text("Keine").foregroundStyle(.secondary)
                             }
-                            if format.isSchreibmaschineDefault {
+                            if format.isBleistiftDefault {
                                 let target = DefaultAppOffer.restoreApplication(for: format).map(DefaultAppOffer.name(of:)) ?? "TextEdit"
                                 Button(String(localized: "Zurück zu \(target)")) {
                                     Task {
@@ -390,7 +390,7 @@ struct DefaultAppFormatsView: View {
                                 .controlSize(.small)
                                 .gridColumnAlignment(.trailing)
                             } else {
-                                Button("Schreibmaschine verwenden") {
+                                Button("Bleistift verwenden") {
                                     Task {
                                         await DefaultAppOffer.makeDefault(for: [format])
                                         generation += 1
@@ -403,7 +403,7 @@ struct DefaultAppFormatsView: View {
                     }
                 }
             .id(generation)
-            Text("macOS fragt für jedes Format einzeln nach, bei allen Formaten also mehrmals hintereinander. Lehnst du einmal ab, fragt die Schreibmaschine nicht weiter. HTML, CSV und Protokolle gehören nicht zu „Alle Formate“, weil sie meist im Browser, in einer Tabellenkalkulation oder in der Konsole besser aufgehoben sind. Zurücksetzen gibt ein Format der App zurück, die es vorher hatte, sonst TextEdit.")
+            Text("macOS fragt für jedes Format einzeln nach, bei allen Formaten also mehrmals hintereinander. Lehnst du einmal ab, fragt Bleistift nicht weiter. HTML, CSV und Protokolle gehören nicht zu „Alle Formate“, weil sie meist im Browser, in einer Tabellenkalkulation oder in der Konsole besser aufgehoben sind. Zurücksetzen gibt ein Format der App zurück, die es vorher hatte, sonst TextEdit.")
                 .font(.callout)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)

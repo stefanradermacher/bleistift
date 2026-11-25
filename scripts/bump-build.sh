@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Erhöht die Build-Nummer in Config/Schreibmaschine.xcconfig um eins.
+# Erhöht die Build-Nummer in Config/Bleistift.xcconfig um eins.
 #
 # Vor jedem Neubau nach Änderungen ausführen und das Ergebnis mitcommitten, damit
 # sich installierte Builds unterscheiden lassen; App Store Connect verlangt
@@ -7,7 +7,7 @@
 set -euo pipefail
 cd "${0:A:h}/.."
 
-file=Config/Schreibmaschine.xcconfig
+file=Config/Bleistift.xcconfig
 current=$(sed -n 's/^CURRENT_PROJECT_VERSION = \([0-9][0-9]*\)$/\1/p' "$file")
 if [[ -z "$current" ]]; then
     echo "CURRENT_PROJECT_VERSION steht nicht in $file." >&2

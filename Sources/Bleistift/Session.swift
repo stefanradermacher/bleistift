@@ -64,7 +64,7 @@ final class SessionStore {
 
     static let supportDirectory: URL = {
         let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        let directory = base.appendingPathComponent("Schreibmaschine", isDirectory: true)
+        let directory = base.appendingPathComponent("Bleistift", isDirectory: true)
         try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
         return directory
     }()

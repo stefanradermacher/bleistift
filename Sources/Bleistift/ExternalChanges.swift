@@ -192,7 +192,7 @@ struct ExternalChangeBar: View {
                 .foregroundStyle(.orange)
             switch change {
             case .modified:
-                Text("„\(name)“ wurde außerhalb der Schreibmaschine geändert.")
+                Text("„\(name)“ wurde außerhalb von Bleistift geändert.")
                 Spacer(minLength: 8)
                 Button("Vergleichen") {
                     // The comparison is for merging into the own text, which saving then writes.

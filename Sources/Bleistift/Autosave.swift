@@ -178,7 +178,7 @@ final class VersionHistory {
     static let lengths = [10, 20, 50]
 
     private let directory = SessionStore.supportDirectory.appendingPathComponent("History", isDirectory: true)
-    private let queue = DispatchQueue(label: "Schreibmaschine.VersionHistory")
+    private let queue = DispatchQueue(label: "Bleistift.VersionHistory")
 
     static func folder(for url: URL) -> String {
         let digest = SHA256.hash(data: Data(url.standardizedFileURL.path.utf8))

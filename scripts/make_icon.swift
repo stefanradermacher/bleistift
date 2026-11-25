@@ -1,12 +1,12 @@
 // Copyright 2026 Stefan Radermacher
 //
-// NOT covered by the Apache License 2.0 that applies to the rest of Schreibmaschine.
+// NOT covered by the Apache License 2.0 that applies to the rest of Bleistift.
 // This file draws the app icon and the document icon, which are marks of
 // Stefan Radermacher and are reserved. See TRADEMARKS.md.
 
 import AppKit
 
-// Draws the Schreibmaschine app icon into the asset catalog and the document icon into Resources.
+// Draws the Bleistift app icon into the asset catalog and the document icon into Resources.
 // Usage (from the project folder): swift scripts/make_icon.swift
 // All drawing is done on a 1024 × 1024 canvas and scaled for the smaller sizes.
 
