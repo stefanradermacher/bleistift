@@ -262,13 +262,13 @@ Für externe Tester prüft Apple den ersten Build kurz. Unter „TestFlight → 
 - [x] Vertrag, Händlerstatus (DSA) und DAC7-Angaben: gelten für das ganze Konto und sind mit Leser erledigt
 - [x] Bundle-ID com.stefanradermacher.bleistift auf developer.apple.com unter „Identifiers“ registriert
 - [x] App-Eintrag „Bleistift“ in App Store Connect angelegt (Name, primäre Sprache, Bundle-ID, SKU)
-- [ ] Texte, Screenshots, Kategorie, Altersfreigabe, Datenschutzangaben und Preise im neuen Eintrag eingetragen
-- [ ] Support- und Datenschutzseite unter /projects/bleistift online
-- [ ] Drei Verbrauchsartikel mit den neuen Produkt-IDs angelegt
+- [x] Texte, Screenshots, Kategorie, Altersfreigabe, Datenschutzangaben und Preise im neuen Eintrag eingetragen
+- [x] Support- und Datenschutzseite unter /projects/bleistift online
+- [x] Drei Verbrauchsartikel mit den neuen Produkt-IDs angelegt
 - [x] Quellcode: GitHub-Repo (öffentlich seit 22.10.2026) am 25.11.2026 von schreibmaschine in bleistift umbenannt, die alte Adresse leitet weiter
-- [ ] Screenshots und Prüfbild mit dem neuen Namen und Symbol aufgenommen
-- [ ] Build-Nummer erhöht (79; die Zählung läuft weiter, auch wenn der neue Eintrag bei null beginnt)
-- [ ] Archiv erstellt, validiert und hochgeladen
+- [x] Screenshots und Prüfbild mit dem neuen Namen und Symbol aufgenommen
+- [x] Build-Nummer erhöht (80; die Zählung läuft weiter, auch wenn der neue Eintrag bei null beginnt)
+- [x] Archiv erstellt, validiert und hochgeladen; Bleistift 1.0 (80) am 25.11.2026 zur Prüfung eingereicht
 - [ ] Alter Eintrag „Schreibmaschine“ entfernt (Build 78 war am 16.11.2026 eingereicht und wurde am 25.11.2026 zurückgezogen)
 
 ## Einreichen
