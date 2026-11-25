@@ -74,7 +74,7 @@ Die Versionsnummer steht im Projekt unter „Version“ (`MARKETING_VERSION`) un
 
 **Vor jedem Upload in den App Store einmal `./scripts/bump-build.sh` ausführen und mitcommitten** — App Store Connect verlangt für jeden Upload eine höhere Nummer als für den vorigen.
 
-Das App-Icon und das Dokumentsymbol zeichnet `scripts/make_icon.swift`: das App-Icon in den Asset-Katalog, das Dokumentsymbol nach `Resources/TextDocument.icns`. Das App-Icon zeigt eine schwarze Schreibmaschine auf Stahlblau; Stahlblau ist auch die Akzentfarbe der App, und die Einfügemarke im Editor hat das Orange des Cursors im Symbol. Das Dokumentsymbol zeigt macOS nur, wenn Bleistift die Standard-App für eine Dateiart ist. Nach Änderungen an der Zeichnung im Projektordner `swift scripts/make_icon.swift` ausführen.
+Das App-Icon und das Dokumentsymbol zeichnet `scripts/make_icon.swift`: das App-Icon in den Asset-Katalog, das Dokumentsymbol nach `Resources/TextDocument.icns`. Das App-Icon zeigt auf Stahlblau ein Blatt mit geschriebenen Zeilen und einen gelben Bleistift, der gerade die letzte schreibt; Stahlblau ist auch die Akzentfarbe der App. Das Dokumentsymbol ist eine Seite mit Zeilen und stahlblauer Ecke, die Einfügemarke darauf hat dasselbe Orange wie die im Editor. Das Dokumentsymbol zeigt macOS nur, wenn Bleistift die Standard-App für eine Dateiart ist. Nach Änderungen an der Zeichnung im Projektordner `swift scripts/make_icon.swift` ausführen.
 
 ### Handbuch
 

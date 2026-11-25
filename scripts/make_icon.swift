@@ -18,7 +18,7 @@ func rr(_ r: NSRect, _ radius: CGFloat) -> NSBezierPath { NSBezierPath(roundedRe
 var ctx: CGContext { NSGraphicsContext.current!.cgContext }
 /// Output size relative to 1024; shadows are not affected by the scaled drawing, so they scale by hand.
 var outputScale: CGFloat = 1
-/// Additional scale of the machine inside the icon; shadows follow it as well.
+/// Additional scale of the drawing inside the icon; shadows follow it as well.
 var drawingScale: CGFloat = 1
 func shadow(_ blur: CGFloat, _ dy: CGFloat, _ alpha: CGFloat) {
     let s = outputScale * drawingScale
@@ -30,10 +30,11 @@ func noShadow() { ctx.setShadow(offset: .zero, blur: 0, color: nil) }
 // MARK: colours
 
 let skyTop = c(0x5C88C6), skyBottom = c(0x2D5592)          // steel blue background
-let body = c(0x3B3F48), bodyDark = c(0x1C1E23)             // black lacquer of the machine
-let well = c(0x0E0F12)                                     // keyboard well and type basket
-let cream = c(0xF6ECCB), creamDark = c(0xE2D2A0)           // key faces
-let ink = c(0x2B2F3A, 0.78)                                // typed text
+let lacquer = [c(0xFFD866), c(0xF4BE2E), c(0xD99A12)]      // the three visible faces of the pencil, lit from above
+let wood = c(0xF1D3A2), woodDark = c(0xD9AE72)             // sharpened wood
+let graphite = c(0x34363C), graphiteLight = c(0x5A5D66)    // lead and the lines it wrote
+let eraser = c(0xF0A3A0), eraserDark = c(0xD9807E)
+let ink = c(0x2B2F3A, 0.78)                                // lines on the document icon
 let cursorColor = c(0xE8702E)                              // insertion point
 let chrome = NSGradient(colors: [c(0xF6F6F8), c(0xA8A8B0), c(0xE4E4EA), c(0x74747C)],
                         atLocations: [0, 0.35, 0.6, 1], colorSpace: .sRGB)!
@@ -58,140 +59,115 @@ func typedLines(in r: NSRect, widths: [CGFloat], height: CGFloat, gap: CGFloat) 
     }
 }
 
-/// A key seen slightly from above: stem, chrome cylinder, cream face.
-func key(_ x: CGFloat, _ y: CGFloat, _ w: CGFloat) {
-    let h = w * 0.36, side = w * 0.22
-    c(0x000000, 0.55).setFill()
-    NSBezierPath(rect: NSRect(x: x - w * 0.09, y: y - side - w * 0.55, width: w * 0.18, height: w * 0.55)).fill()
-    let cylinder = NSBezierPath(ovalIn: NSRect(x: x - w / 2, y: y - side - h / 2, width: w, height: h))
-    cylinder.append(NSBezierPath(rect: NSRect(x: x - w / 2, y: y - side, width: w, height: side)))
-    shadow(5, -3, 0.4); chrome.draw(in: cylinder, angle: 0); noShadow()
-    chrome.draw(in: NSBezierPath(ovalIn: NSRect(x: x - w / 2, y: y - h / 2, width: w, height: h)), angle: 180)
-    let inset = w * 0.08
-    let face = NSBezierPath(ovalIn: NSRect(x: x - w / 2 + inset, y: y - h / 2 + inset * 0.6, width: w - 2 * inset, height: h - 1.2 * inset))
-    NSGradient(starting: cream, ending: cream.blended(withFraction: 0.25, of: creamDark)!)!.draw(in: face, angle: -90)
+/// A sharpened pencil lying along the x axis, the point at the origin, the eraser to the right,
+/// `length` long from the point to the end of the eraser.
+/// The y axis runs across it; the upper face catches the light.
+func pencil(length: CGFloat = 790) {
+    let half: CGFloat = 62                    // half the width
+    let face = half * 2 / 3                   // width of one of the three visible faces
+    let paint: CGFloat = 190                  // where the lacquer starts
+    let end = length, rubber = length - 78, ferrule = length - 170
+
+    // The whole outline first, for the shadow on the background.
+    let outline = NSBezierPath()
+    outline.move(to: .zero)
+    outline.line(to: NSPoint(x: paint - 24, y: half)); outline.line(to: NSPoint(x: end - 26, y: half))
+    outline.curve(to: NSPoint(x: end - 26, y: -half), controlPoint1: NSPoint(x: end + 8, y: half), controlPoint2: NSPoint(x: end + 8, y: -half))
+    outline.line(to: NSPoint(x: paint - 24, y: -half)); outline.close()
+    shadow(26, -18, 0.42); c(0x000000, 0.5).setFill(); outline.fill(); noShadow()
+
+    // Sharpened wood, darker on the shaded side
+    let cone = NSBezierPath()
+    cone.move(to: .zero); cone.line(to: NSPoint(x: paint - 24, y: half)); cone.line(to: NSPoint(x: paint + 20, y: half))
+    cone.line(to: NSPoint(x: paint + 20, y: -half)); cone.line(to: NSPoint(x: paint - 24, y: -half)); cone.close()
+    NSGradient(starting: wood, ending: woodDark)!.draw(in: cone, angle: -90)
+    // Lead at the point
+    let lead: CGFloat = 62
+    let tip = NSBezierPath()
+    tip.move(to: NSPoint(x: -4, y: 0))
+    tip.line(to: NSPoint(x: lead, y: half * lead / (paint - 24)))
+    tip.curve(to: NSPoint(x: lead, y: -half * lead / (paint - 24)), controlPoint1: NSPoint(x: lead - 8, y: 6), controlPoint2: NSPoint(x: lead - 8, y: -6))
+    tip.close()
+    NSGradient(starting: graphiteLight, ending: graphite)!.draw(in: tip, angle: -90)
+
+    // Lacquered body: three faces, each ending in a curve where the knife cut the paint.
+    for i in 0..<3 {
+        let top = half - CGFloat(i) * face, bottom = top - face
+        let body = NSBezierPath()
+        body.move(to: NSPoint(x: paint - 24, y: top))
+        body.line(to: NSPoint(x: ferrule, y: top)); body.line(to: NSPoint(x: ferrule, y: bottom))
+        body.line(to: NSPoint(x: paint - 24, y: bottom))
+        body.curve(to: NSPoint(x: paint - 24, y: top), controlPoint1: NSPoint(x: paint + 14, y: bottom + face * 0.2),
+                   controlPoint2: NSPoint(x: paint + 14, y: top - face * 0.2))
+        body.close()
+        let colour = lacquer[i]
+        NSGradient(starting: colour.blended(withFraction: 0.12, of: .white)!, ending: colour)!.draw(in: body, angle: -90)
+    }
+    // Fine edges between the faces
+    c(0x000000, 0.10).setFill()
+    for i in 1..<3 {
+        let y = half - CGFloat(i) * face
+        NSBezierPath(rect: NSRect(x: paint - 6, y: y - 1.5, width: ferrule - paint + 6, height: 3)).fill()
+    }
+
+    // Metal ferrule with grooves
+    let band = NSBezierPath(rect: NSRect(x: ferrule, y: -half - 3, width: rubber - ferrule, height: 2 * half + 6))
+    chrome.draw(in: band, angle: -90)
+    c(0x000000, 0.22).setFill()
+    for x in stride(from: ferrule + 16, to: rubber - 10, by: 22) {
+        NSBezierPath(rect: NSRect(x: x, y: -half - 3, width: 5, height: 2 * half + 6)).fill()
+    }
+    // Eraser
+    let rub = NSBezierPath()
+    rub.move(to: NSPoint(x: rubber, y: half)); rub.line(to: NSPoint(x: end - 26, y: half))
+    rub.curve(to: NSPoint(x: end - 26, y: -half), controlPoint1: NSPoint(x: end + 8, y: half), controlPoint2: NSPoint(x: end + 8, y: -half))
+    rub.line(to: NSPoint(x: rubber, y: -half)); rub.close()
+    NSGradient(starting: eraser.blended(withFraction: 0.15, of: .white)!, ending: eraserDark)!.draw(in: rub, angle: -90)
 }
 
-/// Knob of the platen with grooves.
-func knob(_ r: NSRect) {
-    let path = rr(r, 12)
-    shadow(8, -4, 0.4)
-    NSGradient(colors: [body.blended(withFraction: 0.3, of: .white)!, bodyDark, body, bodyDark.blended(withFraction: 0.4, of: .black)!],
-               atLocations: [0, 0.35, 0.65, 1], colorSpace: .sRGB)!.draw(in: path, angle: -90)
-    noShadow()
-    ctx.saveGState(); path.addClip()
-    c(0x000000, 0.28).setFill()
-    var x = r.minX + 6
-    while x < r.maxX - 4 { NSBezierPath(rect: NSRect(x: x, y: r.minY, width: 4, height: r.height)).fill(); x += 11 }
-    ctx.restoreGState()
+/// Lines written in graphite, the last one shorter; returns the middle of the last line's end.
+@discardableResult
+func writtenLines(in r: NSRect, widths: [CGFloat], height: CGFloat, gap: CGFloat) -> NSPoint {
+    graphite.withAlphaComponent(0.88).setFill()
+    var end = NSPoint.zero
+    for (i, w) in widths.enumerated() {
+        let y = r.maxY - CGFloat(i) * gap - height
+        rr(NSRect(x: r.minX, y: y, width: r.width * w, height: height), height / 2).fill()
+        end = NSPoint(x: r.minX + r.width * w, y: y + height / 2)
+    }
+    return end
 }
 
-/// The typewriter from the front, drawn on the full canvas and scaled into the icon by the caller.
-func typewriter() {
-    // paper behind the platen
-    shadow(18, -4, 0.25)
-    NSGradient(starting: c(0xFFFDF6), ending: c(0xF7EFD9))!.draw(in: NSBezierPath(rect: NSRect(x: 318, y: 600, width: 388, height: 268)), angle: -90)
-    noShadow()
-    typedLines(in: NSRect(x: 360, y: 680, width: 304, height: 150), widths: [0.62, 0.92, 0.8, 0.4], height: 20, gap: 38)
-    cursorColor.setFill()
-    NSBezierPath(rect: NSRect(x: 360 + 304 * 0.4 + 10, y: 830 - 3 * 38 - 20 - 6, width: 9, height: 32)).fill()
-
-    // upper body with the opening for the type basket
-    let upper = rr(NSRect(x: 214, y: 400, width: 596, height: 196), 16)
-    shadow(24, -8, 0.35)
-    NSGradient(starting: body, ending: bodyDark)!.draw(in: upper, angle: -90)
-    noShadow()
-    let recess = NSBezierPath()
-    recess.move(to: NSPoint(x: 352, y: 596))
-    recess.line(to: NSPoint(x: 672, y: 596))
-    recess.curve(to: NSPoint(x: 512, y: 430), controlPoint1: NSPoint(x: 662, y: 480), controlPoint2: NSPoint(x: 600, y: 430))
-    recess.curve(to: NSPoint(x: 352, y: 596), controlPoint1: NSPoint(x: 424, y: 430), controlPoint2: NSPoint(x: 362, y: 480))
-    recess.close()
-    well.setFill(); recess.fill()
-    ctx.saveGState(); recess.addClip()
-    let hub = NSPoint(x: 512, y: 572)
-    c(0xC8CCD4, 0.85).setStroke()
-    for i in 0...40 {
-        let angle = CGFloat.pi * (1.08 + 0.84 * CGFloat(i) / 40)
-        let bar = NSBezierPath()
-        bar.move(to: NSPoint(x: hub.x + cos(angle) * 70, y: hub.y + sin(angle) * 70))
-        bar.line(to: NSPoint(x: hub.x + cos(angle) * 150, y: hub.y + sin(angle) * 150))
-        bar.lineWidth = 3
-        bar.stroke()
-    }
-    ctx.restoreGState()
-    body.blended(withFraction: 0.45, of: .white)!.setStroke()
-    recess.lineWidth = 5; recess.stroke()
-    chrome.draw(in: rr(NSRect(x: 492, y: 560, width: 40, height: 44), 4), angle: 0)
-
-    // ribbon spools
-    for x in [CGFloat(282), 742] {
-        let side = NSBezierPath(rect: NSRect(x: x - 62, y: 540, width: 124, height: 30))
-        side.appendOval(in: NSRect(x: x - 62, y: 522, width: 124, height: 36))
-        shadow(6, -3, 0.35); chrome.draw(in: side, angle: 0); noShadow()
-        NSGradient(colors: [c(0xFFFFFF), c(0xB4B4BC), c(0xEDEDF2), c(0x9A9AA2)], atLocations: [0, 0.4, 0.7, 1], colorSpace: .sRGB)!
-            .draw(in: NSBezierPath(ovalIn: NSRect(x: x - 62, y: 552, width: 124, height: 38)), angle: 30)
-    }
-
-    // platen and knobs
-    shadow(12, -5, 0.45)
-    NSGradient(colors: [c(0x4A4A50), c(0x121214), c(0x2C2C30), c(0x060607)], atLocations: [0, 0.45, 0.8, 1], colorSpace: .sRGB)!
-        .draw(in: rr(NSRect(x: 206, y: 596, width: 612, height: 46), 23), angle: -90)
-    noShadow()
-    c(0xFFFFFF, 0.2).setFill(); rr(NSRect(x: 230, y: 628, width: 564, height: 7), 3.5).fill()
-    knob(NSRect(x: 150, y: 578, width: 64, height: 82))
-    knob(NSRect(x: 810, y: 578, width: 64, height: 82))
-
-    // keyboard: straight sides, wider at the bottom, dark well inside
-    let keyboard = NSBezierPath()
-    keyboard.move(to: NSPoint(x: 226, y: 420)); keyboard.line(to: NSPoint(x: 798, y: 420))
-    keyboard.line(to: NSPoint(x: 862, y: 160)); keyboard.line(to: NSPoint(x: 162, y: 160)); keyboard.close()
-    shadow(20, -6, 0.3)
-    NSGradient(starting: body.blended(withFraction: 0.15, of: .white)!, ending: bodyDark)!.draw(in: keyboard, angle: -90)
-    noShadow()
-    let wellPath = NSBezierPath()
-    wellPath.move(to: NSPoint(x: 250, y: 404)); wellPath.line(to: NSPoint(x: 774, y: 404))
-    wellPath.line(to: NSPoint(x: 830, y: 184)); wellPath.line(to: NSPoint(x: 194, y: 184)); wellPath.close()
-    NSGradient(starting: well, ending: well.blended(withFraction: 0.3, of: .black)!)!.draw(in: wellPath, angle: -90)
-
-    let rows: [(y: CGFloat, count: Int, spacing: CGFloat, w: CGFloat, offset: CGFloat)] = [
-        (378, 9, 58, 46, 0), (318, 9, 62, 50, 16), (256, 8, 66, 54, 0)]
-    for row in rows {
-        let width = CGFloat(row.count - 1) * row.spacing
-        for i in 0..<row.count { key(512 - width / 2 + row.offset + CGFloat(i) * row.spacing, row.y, row.w) }
-    }
-    shadow(4, -3, 0.4)
-    NSGradient(starting: cream, ending: creamDark)!.draw(in: rr(NSRect(x: 340, y: 198, width: 344, height: 22), 11), angle: -90)
-    noShadow()
-    chrome.draw(in: rr(NSRect(x: 340, y: 192, width: 344, height: 10), 5), angle: 0)
-
-    // base with a light edge
-    shadow(16, -6, 0.35)
-    NSGradient(starting: body, ending: bodyDark.blended(withFraction: 0.35, of: .black)!)!
-        .draw(in: rr(NSRect(x: 136, y: 104, width: 752, height: 64), 10), angle: -90)
-    noShadow()
-    body.blended(withFraction: 0.55, of: .white)!.setFill()
-    rr(NSRect(x: 146, y: 158, width: 732, height: 6), 3).fill()
+/// A white sheet with a folded corner, as on the document icon, in a light steel blue.
+func sheet(_ r: NSRect, fold: CGFloat) {
+    let page = NSBezierPath()
+    page.move(to: NSPoint(x: r.minX, y: r.minY)); page.line(to: NSPoint(x: r.maxX, y: r.minY))
+    page.line(to: NSPoint(x: r.maxX, y: r.maxY - fold)); page.line(to: NSPoint(x: r.maxX - fold, y: r.maxY))
+    page.line(to: NSPoint(x: r.minX, y: r.maxY)); page.close()
+    shadow(30, -14, 0.30); NSColor.white.setFill(); page.fill(); noShadow()
+    let corner = NSBezierPath()
+    corner.move(to: NSPoint(x: r.maxX - fold, y: r.maxY)); corner.line(to: NSPoint(x: r.maxX - fold, y: r.maxY - fold))
+    corner.line(to: NSPoint(x: r.maxX, y: r.maxY - fold)); corner.close()
+    shadow(10, -4, 0.2); c(0xC9D6EA).setFill(); corner.fill(); noShadow()
 }
 
 // MARK: icons
 
-/// The app icon: the typewriter standing on the steel blue squircle, with room below.
+/// The app icon: a page with written lines on the steel blue squircle, and the pencil that is
+/// writing its last line, coming in from the lower right.
 func drawIcon() {
     background()
-    // soft shadow on the ground
+    let r = NSRect(x: 262, y: 170, width: 470, height: 660)
+    sheet(r, fold: 128)
+    let end = writtenLines(in: NSRect(x: r.minX + 56, y: r.minY + 60, width: r.width - 112, height: r.height - 150),
+                           widths: [0.6, 0.94, 0.86, 0.92, 0.72, 0.9, 0.3], height: 24, gap: 62)
     ctx.saveGState()
-    ctx.setShadow(offset: .zero, blur: 40 * outputScale, color: NSColor.black.withAlphaComponent(0.35).cgColor)
-    c(0x000000, 0.25).setFill()
-    NSBezierPath(ovalIn: NSRect(x: 200, y: 168, width: 624, height: 40)).fill()
-    ctx.restoreGState()
-
-    ctx.saveGState()
-    drawingScale = 0.84
-    ctx.translateBy(x: 512, y: 196)
+    // A short, thick pencil, so that it carries the icon even at small sizes.
+    drawingScale = 0.95
+    ctx.translateBy(x: end.x + 6, y: end.y - 4)
+    ctx.rotate(by: .pi * 0.29)
     ctx.scaleBy(x: drawingScale, y: drawingScale)
-    ctx.translateBy(x: -512, y: -104)
-    typewriter()
+    pencil(length: 640)
     ctx.restoreGState()
     drawingScale = 1
 }
