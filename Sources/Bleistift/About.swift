@@ -106,7 +106,7 @@ struct AboutView: View {
                 .font(.callout)
                 .foregroundStyle(.secondary)
                 .textSelection(.enabled)
-            Text("Ein Texteditor für Text und Code.\nKein IDE-Ersatz, sondern ein Werkzeug zum Schreiben.")
+            Text("Ein Texteditor für Text, Markup und Code.\nKein IDE-Ersatz, sondern ein Werkzeug zum Schreiben.")
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.top, 4)

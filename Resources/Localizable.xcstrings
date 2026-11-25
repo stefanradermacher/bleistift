@@ -1731,12 +1731,12 @@
         }
       }
     },
-    "Ein Texteditor für Text und Code.\nKein IDE-Ersatz, sondern ein Werkzeug zum Schreiben." : {
+    "Ein Texteditor für Text, Markup und Code.\nKein IDE-Ersatz, sondern ein Werkzeug zum Schreiben." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A text editor for text and code.\nNot an IDE, but a tool for writing."
+            "value" : "A text editor for text, markup, and code.\nNot an IDE, but a tool for writing."
           }
         }
       }

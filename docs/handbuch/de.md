@@ -19,7 +19,7 @@ Die App heißt „Bleistift“, im Fließtext wie in Menünamen und Titeln ohne 
 Dokumenttitel: Bleistift – Handbuch
 Thema: Texteditor für macOS
 Untertitel: Handbuch zum Texteditor für macOS
-Leitsatz: Für Text und Code.
+Leitsatz: Für Text, Markup und Code.
 Einleitung: Kein IDE-Ersatz, sondern ein Werkzeug zum Schreiben: mit Suchleiste, Textbefehlen und einer Sitzung, die nichts vergisst.
 Kostenlos, werbefrei und ohne Datensammlung.
 

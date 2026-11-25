@@ -7,7 +7,7 @@ Vorbereitete Texte und Angaben für den Eintrag in App Store Connect. Zeichenzah
 | Feld | Wert |
 |---|---|
 | Name (30) | Bleistift – Texteditor (Deutsch), Bleistift – Text Editor (Englisch) |
-| Untertitel (30) | Für Text und Code |
+| Untertitel (30) | Für Text, Markup und Code |
 | Bundle-ID | com.stefanradermacher.bleistift |
 | SKU | bleistift-macos |
 | Primäre Sprache | Deutsch (zusätzlich Englisch) |
@@ -103,7 +103,7 @@ Für die Sprachen „Englisch (USA)“ und „Englisch (UK)“ in App Store Conn
 
 **Name (30):** Bleistift – Text Editor
 
-**Untertitel (30):** For text and code
+**Untertitel (30):** For text, markup, and code
 
 **Werbetext (170):**
 

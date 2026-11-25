@@ -6,7 +6,7 @@ Texts of the English manual; the format is described at the top of de.md.
 Dokumenttitel: Bleistift – Manual
 Thema: Text editor for macOS
 Untertitel: Manual for the text editor for macOS
-Leitsatz: For text and code.
+Leitsatz: For text, markup, and code.
 Einleitung: Not an IDE, but a tool for writing: with a find bar, text commands, and a session that forgets nothing.
 Free, ad-free, and without data collection.
 
