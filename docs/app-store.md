@@ -1,6 +1,6 @@
 # App-Store-Unterlagen
 
-Vorbereitete Texte und Angaben für den Eintrag in App Store Connect. Zeichenzahlen sind Apples Obergrenzen. Stand: Version 1.0, nach der Umbenennung in Bleistift im November 2026; die Store-Texte werden noch überarbeitet.
+Vorbereitete Texte und Angaben für den Eintrag in App Store Connect. Zeichenzahlen sind Apples Obergrenzen. Stand: Version 1.0, Texte nach der Umbenennung in Bleistift am 25.11.2026 überarbeitet.
 
 ## Grunddaten
 
@@ -19,54 +19,51 @@ Vorbereitete Texte und Angaben für den Eintrag in App Store Connect. Zeichenzah
 | Marketing-URL | https://stefanradermacher.com/projects/bleistift |
 | Datenschutz-URL | https://stefanradermacher.com/projects/bleistift/datenschutz |
 
-Die englischen Fassungen, USA und UK, heißen „Bleistift – Text Editor“, passend zu „Leser – PDF Reader“ und „Motiv – Image Viewer“. Der deutsche Eintrag heißt entsprechend „Bleistift – Texteditor“, wie „Leser – PDF-Betrachter“; das hilft bei der Suche, weil Apple den Namen stärker gewichtet als die Schlüsselwörter. Auf dem Mac selbst heißt die App nur „Bleistift“, im Fließtext ohne Artikel. Der Eintrag in App Store Connect ist im November 2026 neu angelegt worden; der frühere Eintrag „Schreibmaschine“ (Bundle-ID com.stefanradermacher.schreibmaschine) wird nach der Umbenennung entfernt. Weil „Texteditor“ und „Editor“ schon im Namen stehen, wiederholen weder Untertitel noch Schlüsselwörter sie.
+Die englischen Fassungen, USA und UK, heißen „Bleistift – Text Editor“, passend zu „Leser – PDF Reader“ und „Motiv – Image Viewer“. Der deutsche Eintrag heißt entsprechend „Bleistift – Texteditor“, wie „Leser – PDF-Betrachter“; das hilft bei der Suche, weil Apple den Namen stärker gewichtet als die Schlüsselwörter. Auf dem Mac selbst heißt die App nur „Bleistift“, im Fließtext ohne Artikel. Der Eintrag in App Store Connect ist im November 2026 neu angelegt worden; der frühere Eintrag „Schreibmaschine“ (Bundle-ID com.stefanradermacher.schreibmaschine) wird nach der Umbenennung entfernt. Weil „Texteditor“ und „Editor“ schon im Namen stehen und „Text“, „Markup“ und „Code“ im Untertitel, wiederholen die Schlüsselwörter sie nicht; Apple durchsucht Name, Untertitel und Schlüsselwörter gemeinsam.
+
+Die Beschreibung folgt dem Leitsatz: Sie beginnt mit den drei Abschnitten Text, Markup und Code, damit gleich sichtbar wird, dass Markdown und andere Auszeichnungssprachen ein Schwerpunkt sind, nicht nur eine Vorschau nebenbei.
 
 ## Werbetext (170)
 
-Texteditor für Text, Code und Markdown: gestaltet und mit Vorschau, mit Suchleiste, Textbefehlen, Gliederung und einer Sitzung, die nichts vergisst. Kostenlos, werbefrei.
+Texteditor für Text, Markup und Code: Markdown gestaltet und mit Vorschau, Suchleiste, Textbefehle, Gliederung, eine Sitzung, die nichts vergisst. Kostenlos, werbefrei.
 
 ## Beschreibung (4000)
 
-Bleistift ist ein Texteditor für den Mac: für einfachen Text, den man oft umformt, für Notizen in Markdown und genauso für Code. Kein IDE-Ersatz, sondern ein Werkzeug zum Schreiben. Keine Anmeldung, keine Werbung.
+Bleistift ist ein Texteditor für den Mac, für Text, Markup und Code: für einfachen Text, den man oft umformt, für Notizen und Dokumente in Markdown und genauso für Quelltexte. Kein IDE-Ersatz, sondern ein Werkzeug zum Schreiben. Keine Anmeldung, keine Werbung.
 
-Schreiben und umformen
-• Menü „Text“ mit Befehlen für Zeilen, Absätze, Leerraum, Schreibweise, Spalten und Kodierungen: Zeilen sortieren und verbinden, Dubletten entfernen, Absätze umbrechen, Markdown-Tabellen und JSON formatieren und vieles mehr
+Text
+• Menü „Text“ mit Befehlen für Zeilen, Absätze, Leerraum, Schreibweise, Spalten und Kodierungen: Zeilen sortieren und verbinden, Dubletten entfernen, Absätze umbrechen und vieles mehr
 • Ohne Auswahl wirkt jeder Befehl auf das, was sinnvoll ist: das Dokument, die Zeile, den Absatz oder das Wort
 • Befehlspalette: jeder Befehl mit ein paar Buchstaben erreichbar
+• Schreibmaschinen-Modus, der die aktuelle Zeile in der Mitte hält, Fokus-Modus und ablenkungsfreier Vollbildmodus
 
-Markdown
-• Gestaltet direkt im Text: Überschriften, Fett, Kursiv, Code, Links und Zitate, die Zeichen bleiben dabei sichtbar
-• Listen und Zitate setzen sich beim Zeilenumbruch fort, Fett, Kursiv und Links per Tastenkürzel
-• Vorschau neben dem Text, die beim Tippen mitläuft
+Markup
+• Markdown gestaltet direkt im Text: Überschriften, Fett, Kursiv, Code, Links und Zitate, die Zeichen bleiben dabei sichtbar
+• Listen, Aufgaben und Zitate setzen sich beim Zeilenumbruch fort; Fett, Kursiv, Code und Links per Tastenkürzel
+• Vorschau neben dem Text, die beim Tippen mitläuft, und Druck fertig gesetzt wie in der Vorschau
+• Markdown-Tabellen auf einen Befehl ausrichten, JSON formatieren oder verkleinern
+• HTML, XML, YAML, JSON und CSS mit Syntaxhervorhebung, die meisten auch mit Gliederung
+
+Code
+• Syntaxhervorhebung für Swift, PHP, JavaScript, Python, Shell, SQL, Lua und weitere Sprachen; eigene Sprachen als kleine YAML-Dateien
+• Gliederung: Mit ⇧⌘O springst du zu jeder Überschrift, Klasse und Funktion
+• Klammern und Anführungszeichen schließen sich selbst, Vorkommen des ausgewählten Worts sind hervorgehoben
+• Einrückung, Zeilen- und Blockkommentare, Code-Faltung
+• Mehrere Einfügemarken und Blockauswahl, Lesezeichen, geteilte Ansicht
 
 Suchen und ersetzen
 • Suchleiste im Fenster statt eines eigenen Fensters, mit Trefferzahl und allen Treffern hervorgehoben
 • Groß-/Kleinschreibung, ganze Wörter, reguläre Ausdrücke mit Vorschau beim Ersetzen, Suche in der Auswahl
 • Suchen und Ersetzen in allen offenen Dokumenten, Gehe zu Zeile und Spalte
 
-Für Code
-• Syntaxhervorhebung für Swift, PHP, JavaScript, Python, Markdown, JSON, YAML, HTML, CSS, SQL, Lua und weitere Sprachen; eigene Sprachen als kleine YAML-Dateien
-• Gliederung: Mit ⇧⌘O springst du zu jeder Überschrift, Klasse und Funktion
-• Klammern und Anführungszeichen schließen sich selbst, Vorkommen des ausgewählten Worts sind hervorgehoben
-• Einrückung, passende Klammern, Zeilen- und Blockkommentare, Code-Faltung
-• Mehrere Einfügemarken und Blockauswahl, Lesezeichen, geteilte Ansicht
-
-Zum Schreiben
-• Schreibmaschinen-Modus, der die aktuelle Zeile in der Mitte hält, Fokus-Modus und ablenkungsfreier Vollbildmodus
-
-Inspektor
-• Eine Seitenleiste mit allem über Datei und Text, von der Kodierung bis zur Lesedauer
-• Zeigt das Zeichen an der Einfügemarke mit Unicode-Namen, so fallen geschützte Leerzeichen und ähnliche Buchstaben auf
-• Die Gliederung zum Filtern und Springen
-
 Vergleichen
 • Zwei Texte nebeneinander, Zeile für Zeile ausgerichtet: ein Dokument mit seiner gesicherten Fassung, der Zwischenablage, einem anderen Dokument oder einer Datei
 • Unterschiede mit einem Klick übernehmen, das Ergebnis als Unified Diff weitergeben
 • Das Lineal zeigt, welche Zeilen seit dem letzten Sichern neu oder geändert sind
 
-Drucken
-• Mit Zeilennummern, Syntaxfarben, Kopf- und Fußzeile in wählbarer Schriftgröße
-• Markdown wahlweise wie im Editor oder fertig gesetzt wie in der Vorschau
+Inspektor
+• Eine Seitenleiste mit allem über Datei und Text, von der Kodierung bis zur Lesedauer, und der Gliederung zum Filtern und Springen
+• Zeigt das Zeichen an der Einfügemarke mit Unicode-Namen, so fallen geschützte Leerzeichen und ähnliche Buchstaben auf
 
 Eigene Skripte
 • Eigene Befehle als Skripte in jeder Sprache, die auf dem Mac läuft; sie bekommen die Auswahl oder das Dokument und geben Text zurück
@@ -74,13 +71,14 @@ Eigene Skripte
 Nichts geht verloren
 • Eine eigene Sitzung stellt Fenster, Tabs und ungesicherte Texte wieder her, auch nach einem Absturz
 • Beim Beenden keine Nachfragen; ungesicherte Texte bleiben erhalten
-• Wer eine Datei aus dem Finder öffnet, bekommt genau diese Datei und nicht die alte Sitzung
+• Eine Datei aus dem Finder öffnet genau diese Datei, nicht die alte Sitzung
 • Merkt sich für jede Datei Position, Auswahl und Darstellung
 
 Für jede Datei
 • Erkennt Zeichenkodierung und Zeilenenden und behält sie beim Sichern bei
 • Ändert ein anderes Programm die Datei, lädt Bleistift sie neu oder fragt nach, wenn du selbst etwas geändert hast
 • Auch große Dateien mit vielen Megabyte öffnen in einem Augenblick
+• Drucken mit Zeilennummern, Syntaxfarben, Kopf- und Fußzeile
 • Tabs oder Fenster, schneller Wechsel zwischen allen offenen Dokumenten, Dateien einfach aufs Fenster ziehen
 
 Ehrlich und offen
@@ -91,7 +89,7 @@ Ehrlich und offen
 
 ## Schlüsselwörter (100, mit Komma, ohne Leerzeichen)
 
-Code,Markdown,JSON,Vergleich,Diff,Syntax,Suchen,Ersetzen,Notizen,Skripte,Textverarbeitung,werbefrei
+Markdown,HTML,JSON,YAML,Vergleich,Diff,Syntax,Suchen,Ersetzen,Notizen,Skripte,Schreiben,werbefrei
 
 ## Neue Funktionen (4000)
 
@@ -107,50 +105,45 @@ Für die Sprachen „Englisch (USA)“ und „Englisch (UK)“ in App Store Conn
 
 **Werbetext (170):**
 
-A text editor for text, code, and Markdown: formatted and with a preview, a find bar, text commands, an outline, and a session that forgets nothing. Free and ad-free.
+A text editor for text, markup, and code: formatted Markdown with a preview, a find bar, text commands, an outline, and a session that forgets nothing. Free, no ads.
 
 **Beschreibung (4000):**
 
-Bleistift is a text editor for the Mac: for plain text that you often reshape, for notes in Markdown, and just as much for code. Not an IDE, but a tool for writing. No sign-in, no ads.
+Bleistift is a text editor for the Mac, for text, markup, and code: for plain text that you often reshape, for notes and documents in Markdown, and just as much for source code. Not an IDE, but a tool for writing. No sign-in, no ads.
 
-Writing and reshaping
-• A Text menu with commands for lines, paragraphs, white space, case, columns, and encodings: sort and join lines, remove duplicates, wrap paragraphs, format Markdown tables and JSON, and much more
+Text
+• A Text menu with commands for lines, paragraphs, white space, case, columns, and encodings: sort and join lines, remove duplicates, wrap paragraphs, and much more
 • Without a selection, every command works on what makes sense: the document, the line, the paragraph, or the word
 • Command palette: every command within reach of a few letters
+• Typewriter mode that keeps the current line in the middle, focus mode, and a distraction-free full screen mode
 
-Markdown
-• Formatted right in the text: headings, bold, italic, code, links, and quotes, with the marks still visible
-• Lists and quotes continue on a new line; bold, italic, and links have keyboard shortcuts
-• A preview beside the text that follows as you type
+Markup
+• Markdown formatted right in the text: headings, bold, italic, code, links, and quotes, with the marks still visible
+• Lists, tasks, and quotes continue on a new line; bold, italic, code, and links have keyboard shortcuts
+• A preview beside the text that follows as you type, and printing typeset as in the preview
+• Align Markdown tables with one command, and format or minify JSON
+• HTML, XML, YAML, JSON, and CSS with syntax highlighting, most of them with an outline too
+
+Code
+• Syntax highlighting for Swift, PHP, JavaScript, Python, Shell, SQL, Lua, and more; your own languages as small YAML files
+• Outline: jump to any heading, class, or function with ⇧⌘O
+• Brackets and quotation marks close themselves, and occurrences of the selected word are highlighted
+• Indentation, line and block comments, and code folding
+• Multiple insertion points and block selection, bookmarks, and split view
 
 Find and replace
 • A find bar in the window instead of a window of its own, with the match count and all matches highlighted
 • Match case, whole words, regular expressions with a preview when replacing, and search in the selection
 • Find and replace in all open documents, and go to line and column
 
-For code
-• Syntax highlighting for Swift, PHP, JavaScript, Python, Markdown, JSON, YAML, HTML, CSS, SQL, Lua, and more; your own languages as small YAML files
-• Outline: jump to any heading, class, or function with ⇧⌘O
-• Brackets and quotation marks close themselves, and occurrences of the selected word are highlighted
-• Indentation, matching brackets, line and block comments, and code folding
-• Multiple insertion points and block selection, bookmarks, and split view
-
-For writing
-• Typewriter mode that keeps the current line in the middle, focus mode, and a distraction-free full screen mode
-
-Inspector
-• A sidebar with everything about the file and the text, from the encoding to the reading time
-• Shows the character at the insertion point with its Unicode name, so no-break spaces and look-alike letters stand out
-• The outline, to filter and jump
-
 Compare
 • Two texts side by side, aligned line by line: a document with its saved version, the clipboard, another document, or a file
 • Take over a difference with a click, and pass the result on as a unified diff
 • The ruler shows which lines are new or changed since the last save
 
-Printing
-• With line numbers, syntax colors, and header and footer, in a font size of your choice
-• Markdown either as in the editor or typeset as in the preview
+Inspector
+• A sidebar with everything about the file and the text, from the encoding to the reading time, and the outline to filter and jump
+• Shows the character at the insertion point with its Unicode name, so no-break spaces and look-alike letters stand out
 
 Scripts of your own
 • Commands of your own as scripts in any language that runs on the Mac; they get the selection or the document and give back text
@@ -165,6 +158,7 @@ For every file
 • Recognizes text encoding and line endings and keeps them when saving
 • If another program changes the file, Bleistift reloads it, or asks if you have changed something yourself
 • Even large files of many megabytes open in an instant
+• Printing with line numbers, syntax colors, and header and footer
 • Tabs or windows, quick switching between all open documents, and files simply dragged onto the window
 
 Honest and open
@@ -175,7 +169,7 @@ Honest and open
 
 **Schlüsselwörter (100):**
 
-code,markdown,json,compare,diff,syntax,find,replace,notes,scripts,plain text,writing,utf-8,ad-free
+markdown,html,json,yaml,compare,diff,syntax,find,replace,notes,scripts,plain text,writing,ad-free
 
 **Neue Funktionen:** First release.
 
