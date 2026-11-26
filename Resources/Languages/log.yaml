@@ -1,33 +1,86 @@
-# Log-Dateien: Zeitstempel, Stufen wie ERROR und WARN, Ausnahmen und Stacktraces. Das Format der Sprachdefinitionen beschreibt docs/sprachen.md im Quellcode von Bleistift.
-# Dateien im Log-Modus ohne eigene Sprache bekommen diese Definition ebenfalls.
+# Log-Dateien: Zeitstempel, Stufen wie ERROR und WARN, Ausnahmen und Stacktraces aus PHP (auch
+# Laravel), Python, Java und Node.js. Das Format der Sprachdefinitionen beschreibt docs/sprachen.md
+# im Quellcode von Bleistift. Dateien im Log-Modus ohne eigene Sprache bekommen diese Definition
+# ebenfalls.
+#
+# Die Regeln sehen immer nur eine Zeile. In Stacktraces treten deshalb Frames aus Bibliotheken
+# (erkannt am Pfad) ganz zurück, bei Frames aus eigenem Code bleibt der Pfad sichtbar.
 name: Log
 extensions: [log]
 # Gehe zu Symbol (⇧⌘O) führt Fehler und Ausnahmen auf, um zwischen ihnen zu springen.
 outline:
   - match: '\b((?:ERROR|ERR|FATAL|CRITICAL|CRIT|SEVERE|PANIC|EMERG|ALERT)\b.*?)\s*$'
-  - match: '^\s*((?:Caused by: |Exception in thread "[^"]*" )?[\w.$]+(?:Exception|Error)\b.*?)\s*$'
-  - match: '^(Traceback \(most recent call last\):)'
+  - match: '\b(PHP (?:Fatal|Parse|Recoverable fatal) error\b.*?)\s*$'
+  - match: '^\s*((?:Caused by: |Exception in thread "[^"]*" )?[\w.$]*(?:Exception|Error)\b.*?)\s*$'
+  - match: '(\[(?:error|crit|alert|emerg)\].*?)\s*$'
 rules:
-  # Zeitstempel, vorn, damit Ziffern darin nicht einzeln als Zahlen zählen.
+  # Stacktraces: Frames aus Bibliotheken als ganze Zeile grau, vor allem anderen.
+  - scope: comment
+    match: '^#\d+ (?:\[internal function\]|\S*/vendor/).*$'
+  - scope: comment
+    match: '^#\d+ \{main\}\s*$'
+  - scope: comment
+    match: '^\s+File "[^"]*(?:site-packages|dist-packages|/lib/python\d[\d.]*/|<frozen )[^"]*", line \d+.*$'
+  - scope: comment
+    match: '^\s+at .*(?:\bnode_modules\b|\(node:|\(internal/).*$'
+  - scope: comment
+    match: '^\s+at [\w.$<>/]+\(.*\)\s*$'
+  # Frames aus eigenem Code: nur der Anfang grau, der Pfad bleibt sichtbar (Regel für Fundstellen unten).
+  - scope: comment
+    match: '^#\d+'
+  - scope: comment
+    match: '^\s+File "'
+  - scope: comment
+    match: '^\s+at\b'
+  # Markierungen in Tracebacks und Kopfzeilen von Stacktraces.
+  - scope: comment
+    match: '^\s*[~^]+\s*$'
+  - scope: comment
+    match: '^(?:\[stacktrace\]|Stack trace:)\s*$'
+  - scope: comment
+    match: '^\s+thrown in .*$'
+  - scope: comment
+    match: '^\s+\.\.\. \d+ (?:more|common frames omitted)\s*$'
+  - scope: comment
+    match: '^"\}\s*$'
+  # Ausnahmen und Fehler, die einen Abschnitt beginnen.
+  - scope: error
+    match: '^Traceback \(most recent call last\):'
+  - scope: error
+    match: '^(?:During handling of the above exception, another exception occurred|The above exception was the direct cause of the following exception):'
+  - scope: error
+    match: '^\[previous exception\]'
+  - scope: error
+    match: '^\s*(?:Caused by: |Exception in thread "[^"]*" )?[\w.$]*(?:Exception|Error)\b'
+  - scope: error
+    match: '^[\w.]*\b(?:KeyboardInterrupt|SystemExit|StopIteration|StopAsyncIteration|GeneratorExit)\b'
+  - scope: warning
+    match: '^[\w.]*Warning(?=:)'
+  # Ausnahmen mitten in der Zeile, wie Laravel und PHP sie schreiben.
+  - scope: error
+    match: '(?<=\[object\] \()[A-Za-z_\\][\w\\]*(?=\(code: )'
+  - scope: error
+    match: '\bUncaught [A-Za-z_\\][\w\\]*'
+  # PHP-Fehlerprotokoll
+  - scope: error
+    match: '\bPHP (?:Fatal|Parse|Recoverable fatal) error\b'
+  - scope: warning
+    match: '\bPHP (?:Warning|Deprecated)\b'
+  - scope: type
+    match: '\bPHP Notice\b'
+  # Zeitstempel, damit Ziffern darin nicht einzeln als Zahlen zählen.
   - scope: comment
     match: '\b\d{4}-\d{2}-\d{2}(?:[T ]\d{2}:\d{2}(?::\d{2}(?:[.,]\d+)?)?(?:Z|[+-]\d{2}:?\d{2})?)?\b'
+  - scope: comment
+    match: '\b\d{4}/\d{2}/\d{2} \d{2}:\d{2}:\d{2}\b'
+  - scope: comment
+    match: '\b\d{2}-[A-Z][a-z]{2}-\d{4} \d{2}:\d{2}:\d{2}(?: [A-Z][A-Za-z_/+-]{1,30})?'
   - scope: comment
     match: '\[\d{2}/[A-Z][a-z]{2}/\d{4}:\d{2}:\d{2}:\d{2} [+-]\d{4}\]'
   - scope: comment
     match: '^(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) [ \d]\d \d{2}:\d{2}:\d{2}'
   - scope: comment
     match: '\b\d{1,2}:\d{2}:\d{2}(?:[.,]\d+)?\b'
-  # Stacktraces aus Java und Python treten zurück, die Ausnahme selbst nicht.
-  - scope: comment
-    match: '^\s+at [\w.$<>/]+\(.*\)\s*$'
-  - scope: comment
-    match: '^\s+\.\.\. \d+ (?:more|common frames omitted)\s*$'
-  - scope: comment
-    match: '^\s+File ".*", line \d+.*$'
-  - scope: error
-    match: '^\s*(?:Caused by: |Exception in thread "[^"]*" )?[\w.$]+(?:Exception|Error)\b'
-  - scope: error
-    match: '^Traceback \(most recent call last\):'
   # Stufen
   - scope: error
     words: [ERROR, Error, ERR, FATAL, Fatal, CRITICAL, Critical, CRIT, SEVERE, Severe, PANIC, Panic, EMERG, EMERGENCY, ALERT, FAILURE, FAILED]
@@ -43,6 +96,19 @@ rules:
   - scope: warning
     ignoreCase: true
     match: '(?<=\blevel=|\blvl=|\bseverity=)"?(?:warn|warning)\b"?'
+  # Stufen in eckigen Klammern klein geschrieben, wie nginx sie schreibt.
+  - scope: error
+    match: '(?<=\[)(?:error|crit|alert|emerg)(?=\])'
+  - scope: warning
+    match: '(?<=\[)warn(?=\])'
+  - scope: type
+    match: '(?<=\[)(?:notice|info)(?=\])'
+  - scope: comment
+    match: '(?<=\[)debug(?=\])'
+  # Fundstellen: ein Pfad mit Zeile, wie /app/Foo.php(27), /app/foo.php:12, … on line 12 oder
+  # File "/app/worker.py", line 42.
+  - scope: property
+    match: '(?:/|[A-Za-z]:\\)[\w./\\@~+-]*\.\w+(?=\(\d+\)|:\d+|", line \d+| on line \d+)'
   # Inhalte
   - scope: link
     match: '\b(?:https?|ftp|file)://[^\s"''<>()\[\]]+'
