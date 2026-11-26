@@ -76,8 +76,10 @@ extension TextDocument {
             readOnly = FileStateStore.shared.readOnly(for: fileURL) ?? defaults.readOnly
         }
         guard log != isLogFile || readOnly != isReadOnly else { return }
+        let logChanged = log != isLogFile
         isLogFile = log
         isReadOnly = readOnly
+        if logChanged { redetectLanguage() }
         NotificationCenter.default.post(name: Self.logModeDidChange, object: self)
     }
 

@@ -1,0 +1,65 @@
+# Log-Dateien: Zeitstempel, Stufen wie ERROR und WARN, Ausnahmen und Stacktraces. Das Format der Sprachdefinitionen beschreibt docs/sprachen.md im Quellcode von Bleistift.
+# Dateien im Log-Modus ohne eigene Sprache bekommen diese Definition ebenfalls.
+name: Log
+extensions: [log]
+# Gehe zu Symbol (⇧⌘O) führt Fehler und Ausnahmen auf, um zwischen ihnen zu springen.
+outline:
+  - match: '\b((?:ERROR|ERR|FATAL|CRITICAL|CRIT|SEVERE|PANIC|EMERG|ALERT)\b.*?)\s*$'
+  - match: '^\s*((?:Caused by: |Exception in thread "[^"]*" )?[\w.$]+(?:Exception|Error)\b.*?)\s*$'
+  - match: '^(Traceback \(most recent call last\):)'
+rules:
+  # Zeitstempel, vorn, damit Ziffern darin nicht einzeln als Zahlen zählen.
+  - scope: comment
+    match: '\b\d{4}-\d{2}-\d{2}(?:[T ]\d{2}:\d{2}(?::\d{2}(?:[.,]\d+)?)?(?:Z|[+-]\d{2}:?\d{2})?)?\b'
+  - scope: comment
+    match: '\[\d{2}/[A-Z][a-z]{2}/\d{4}:\d{2}:\d{2}:\d{2} [+-]\d{4}\]'
+  - scope: comment
+    match: '^(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) [ \d]\d \d{2}:\d{2}:\d{2}'
+  - scope: comment
+    match: '\b\d{1,2}:\d{2}:\d{2}(?:[.,]\d+)?\b'
+  # Stacktraces aus Java und Python treten zurück, die Ausnahme selbst nicht.
+  - scope: comment
+    match: '^\s+at [\w.$<>/]+\(.*\)\s*$'
+  - scope: comment
+    match: '^\s+\.\.\. \d+ (?:more|common frames omitted)\s*$'
+  - scope: comment
+    match: '^\s+File ".*", line \d+.*$'
+  - scope: error
+    match: '^\s*(?:Caused by: |Exception in thread "[^"]*" )?[\w.$]+(?:Exception|Error)\b'
+  - scope: error
+    match: '^Traceback \(most recent call last\):'
+  # Stufen
+  - scope: error
+    words: [ERROR, Error, ERR, FATAL, Fatal, CRITICAL, Critical, CRIT, SEVERE, Severe, PANIC, Panic, EMERG, EMERGENCY, ALERT, FAILURE, FAILED]
+  - scope: warning
+    words: [WARN, Warn, WARNING, Warning]
+  - scope: type
+    words: [INFO, Info, NOTICE, Notice]
+  - scope: comment
+    words: [DEBUG, Debug, TRACE, Trace, VERBOSE, Verbose, FINE, FINER, FINEST]
+  - scope: error
+    ignoreCase: true
+    match: '(?<=\blevel=|\blvl=|\bseverity=)"?(?:error|err|fatal|critical|crit|panic|emerg|alert)\b"?'
+  - scope: warning
+    ignoreCase: true
+    match: '(?<=\blevel=|\blvl=|\bseverity=)"?(?:warn|warning)\b"?'
+  # Inhalte
+  - scope: link
+    match: '\b(?:https?|ftp|file)://[^\s"''<>()\[\]]+'
+  - scope: variable
+    match: '"(?:[^"\\]|\\.)*"'
+  - scope: property
+    match: '\b([A-Za-z_][\w.-]*)(?==)'
+    group: 1
+  - scope: constant
+    match: '\b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\b'
+  - scope: constant
+    match: '\b(?:\d{1,3}\.){3}\d{1,3}(?::\d+)?\b'
+  - scope: constant
+    words: [true, false, null, nil, None]
+  - scope: keyword
+    words: [GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS]
+  - scope: number
+    match: '\b0x[0-9a-fA-F]+\b'
+  - scope: number
+    match: '(?<![\w.])-?\d+(?:\.\d+)?(?:ms|s|µs|ns|%|[KMGT]i?B)?(?![\w.])'

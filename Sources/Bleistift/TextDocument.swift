@@ -264,7 +264,15 @@ final class TextDocument: NSDocument {
         let text = textStorage.string as NSString
         let firstLine = text.substring(with: text.lineRange(for: NSRange(location: 0, length: 0)))
             .trimmingCharacters(in: .whitespacesAndNewlines)
+        // A file shown as a log without a language of its own is colored as a log.
         return LanguageRegistry.shared.detect(fileName: name ?? fileURL?.lastPathComponent, firstLine: firstLine)
+            ?? (isLogFile ? LanguageRegistry.shared.language(id: "log") : nil)
+    }
+
+    /// The log mode changed: a language that was only recognized, not chosen, is recognized again.
+    func redetectLanguage() {
+        guard !languageChosenByUser else { return }
+        setLanguage(detectedLanguage(), byUser: false)
     }
 
     func setLanguage(_ language: LanguageDefinition?, byUser: Bool) {

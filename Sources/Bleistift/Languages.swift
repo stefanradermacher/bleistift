@@ -17,7 +17,7 @@ import AppKit
 /// What a piece of text is, for choosing its color.
 enum SyntaxScope: String, CaseIterable {
     case keyword, type, function, string, number, constant, comment, attribute, variable,
-         tag, property, heading, emphasis, link, code, quote
+         tag, property, heading, emphasis, link, code, quote, error, warning
 
     /// Colors in the manner of Xcode's default theme, for light and dark appearance.
     var color: NSColor {
@@ -36,6 +36,9 @@ enum SyntaxScope: String, CaseIterable {
         case .heading: (0x1D5E9E, 0x7DB9F2)
         case .emphasis: (0x6C36A9, 0xA167E6)
         case .link: (0x0E0EFF, 0x6699FF)
+        // For logs: the red and orange of Xcode's error and warning marks.
+        case .error: (0xD70015, 0xFF6961)
+        case .warning: (0xB45F00, 0xFFB340)
         }
         return NSColor(name: nil) { appearance in
             let value = appearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua ? dark : light

@@ -93,6 +93,8 @@ Protokolle liest man von unten: Was zuletzt geschah, steht am Ende. Eine Log-Dat
 
 Als Log-Datei gilt eine Datei, deren Name zu einem Muster unter „Einstellungen → Log-Dateien“ passt, voreingestellt `*.log`. Dabei steht `*` für beliebige Zeichen und `?` für eines. Zu jedem Muster legst du fest, ob die Dateien nur gelesen werden. Das ist bei `*.log` voreingestellt: Ein versehentlich getipptes Zeichen machte die Datei sonst zu einem geänderten Dokument, und Bleistift könnte sie nicht mehr von selbst neu laden. Für eine einzelne Datei schalten „Darstellung → Als Log-Datei anzeigen“ und „Darstellung → Nur lesen“ beides um, auch für Dateien, die zu keinem Muster passen; Bleistift merkt sich das für die Datei. Die Statusleiste zeigt dann „Log“ und „nur lesen“.
 
+In Log-Dateien sind Fehler und Ausnahmen rot, Warnungen orange, INFO blau, DEBUG und Zeitstempel grau; Stacktraces treten zurück. Auch Zahlen, IP-Adressen, IDs, Links und Angaben wie `user=stefan` sind gefärbt. „Gehe zu Symbol“ (⇧⌘O) führt alle Fehler und Ausnahmen auf, so springst du von einem zum nächsten. Eine Datei im Log-Modus ohne eigene Sprache wird ebenso gefärbt, auch wenn sie nicht auf `.log` endet.
+
 Öffnest du eine Log-Datei, erklärt ein Hinweis den Modus, einmal je Start von Bleistift; mit „Nicht mehr anzeigen“ bleibt er weg. Zurück holt ihn „Einstellungen → Log-Dateien → Beim Öffnen einer Log-Datei den Modus erklären“.
 
 # Die Sitzung
@@ -228,7 +230,7 @@ In einer Markdown-Datei zeigt „Darstellung → Markdown-Vorschau“ (⌥⌘P) 
 
 # Code
 
-Bleistift erkennt die Sprache einer Datei an Name, Endung oder erster Zeile und färbt sie entsprechend. Mitgeliefert werden Swift, Markdown, PHP, JavaScript und TypeScript, Python, JSON, YAML, INI und TOML, Shell, HTML, XML, CSS, SQL und Lua. Die Sprache lässt sich unter „Format → Sprache“ oder in der Statusleiste wählen.
+Bleistift erkennt die Sprache einer Datei an Name, Endung oder erster Zeile und färbt sie entsprechend. Mitgeliefert werden Swift, Markdown, PHP, JavaScript und TypeScript, Python, JSON, YAML, INI und TOML, Shell, HTML, XML, CSS, SQL, Lua und Log-Dateien. Die Sprache lässt sich unter „Format → Sprache“ oder in der Statusleiste wählen.
 
 ![Swift mit Syntaxhervorhebung, Zeilennummern und Lesezeichen](docs/screenshots/1-code.png)
 

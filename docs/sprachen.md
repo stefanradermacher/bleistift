@@ -113,6 +113,8 @@ Jede Regel kann außerdem `ignoreCase: true` haben.
 | `link` | Links (werden zusätzlich unterstrichen) |
 | `code` | Code in Markdown |
 | `quote` | Zitate in Markdown |
+| `error` | Fehler, etwa ERROR und Ausnahmen in Log-Dateien |
+| `warning` | Warnungen, etwa WARN in Log-Dateien |
 
 Die Farben folgen dem Standardthema von Xcode, je eine für helle und dunkle Darstellung.
 

@@ -82,6 +82,8 @@ Logs are read from the bottom: what happened last is at the end. Bleistift there
 
 A log file is a file whose name matches a pattern under “Settings → Log Files”, `*.log` by default. Here, `*` stands for any characters and `?` for one. For each pattern, you decide whether its files are read only. That is the default for `*.log`: otherwise, a character typed by mistake would turn the file into a changed document, and Bleistift could no longer reload it on its own. For a single file, “View → Show as Log File” and “View → Read Only” switch both, also for files that match no pattern; Bleistift remembers this for the file. The status bar then shows “Log” and “read only”.
 
+In log files, errors and exceptions are red, warnings orange, INFO blue, and DEBUG and timestamps gray; stack traces step back. Numbers, IP addresses, IDs, links, and entries like `user=stefan` are colored as well. “Go to Symbol” (⇧⌘O) lists all errors and exceptions, so you can jump from one to the next. A file in log mode without a language of its own is colored the same way, even if it does not end in `.log`.
+
 When you open a log file, a notice explains the mode, once each time Bleistift starts; check “Don’t show again” to stop it. “Settings → Log Files → Explain the mode when a log file opens” brings it back.
 
 # The session
@@ -217,7 +219,7 @@ In a Markdown file, “View → Markdown Preview” (⌥⌘P) shows beside the t
 
 # Code
 
-Bleistift recognizes the language of a file from its name, extension, or first line and colors it accordingly. It comes with Swift, Markdown, PHP, JavaScript and TypeScript, Python, JSON, YAML, INI and TOML, Shell, HTML, XML, CSS, SQL, and Lua. The language can be chosen under “Format → Language” or in the status bar.
+Bleistift recognizes the language of a file from its name, extension, or first line and colors it accordingly. It comes with Swift, Markdown, PHP, JavaScript and TypeScript, Python, JSON, YAML, INI and TOML, Shell, HTML, XML, CSS, SQL, Lua, and log files. The language can be chosen under “Format → Language” or in the status bar.
 
 ![Swift with syntax highlighting, line numbers, and bookmarks](docs/screenshots/en/1-code.png)
 
