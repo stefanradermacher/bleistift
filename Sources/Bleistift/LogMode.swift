@@ -156,7 +156,7 @@ enum LogModeNotice {
         if document.isReadOnly {
             lines.append(String(localized: "Die Datei ist nur zum Lesen geöffnet, damit sie nicht versehentlich geändert wird."))
         }
-        lines.append(String(localized: "Umschalten lässt sich das unter Darstellung → Als Log-Datei anzeigen und Nur lesen. Welche Dateien als Log-Dateien gelten, legen die Muster unter Einstellungen → Dateien fest."))
+        lines.append(String(localized: "Umschalten lässt sich das unter Darstellung → Als Log-Datei anzeigen und Nur lesen. Welche Dateien als Log-Dateien gelten, legen die Muster unter Einstellungen → Log-Dateien fest."))
         alert.informativeText = lines.joined(separator: "\n\n")
         alert.showsSuppressionButton = true
         alert.suppressionButton?.title = String(localized: "Nicht mehr anzeigen")
@@ -169,40 +169,73 @@ enum LogModeNotice {
     }
 }
 
-/// The list of patterns in Settings → Files.
-struct LogPatternSettings: View {
+/// Settings → Log-Dateien: the patterns in a list of fixed height, so that many of them do
+/// not stretch the window, and whether the notice comes when a log file opens.
+struct LogSettings: View {
     @State private var patterns = LogMode.patterns
+    @State private var selection: Set<LogPattern.ID> = []
+    @AppStorage(LogModeNotice.suppressedKey) private var noticeSuppressed = false
+
+    private var isDefault: Bool {
+        patterns.map(\.pattern) == LogMode.defaultPatterns.map(\.pattern)
+            && patterns.map(\.readOnly) == LogMode.defaultPatterns.map(\.readOnly)
+    }
 
     var body: some View {
-        ForEach($patterns) { $entry in
-            HStack {
-                TextField("Muster", text: $entry.pattern, prompt: Text(verbatim: "*.log"))
-                    .labelsHidden()
-                    .textFieldStyle(.roundedBorder)
-                    .frame(maxWidth: .infinity)
-                Toggle("nur lesen", isOn: $entry.readOnly)
-                    .toggleStyle(.checkbox)
-                    .fixedSize()
-                Button {
-                    patterns.removeAll { $0.id == entry.id }
-                } label: {
-                    Image(systemName: "minus.circle")
+        Form {
+            Section {
+                Table($patterns, selection: $selection) {
+                    TableColumn("Muster") { $entry in
+                        TextField("Muster", text: $entry.pattern, prompt: Text(verbatim: "*.log"))
+                            .labelsHidden()
+                    }
+                    TableColumn("Nur lesen") { $entry in
+                        Toggle("Nur lesen", isOn: $entry.readOnly)
+                            .labelsHidden()
+                            .toggleStyle(.checkbox)
+                    }
+                    .width(70)
+                }
+                .frame(height: 170)
+                HStack(spacing: 0) {
+                    Button {
+                        let pattern = LogPattern(pattern: "", readOnly: true)
+                        patterns.append(pattern)
+                        selection = [pattern.id]
+                    } label: {
+                        Image(systemName: "plus").frame(width: 22, height: 18)
+                    }
+                    .help("Muster hinzufügen")
+                    Divider().frame(height: 14)
+                    Button {
+                        patterns.removeAll { selection.contains($0.id) }
+                        selection = []
+                    } label: {
+                        Image(systemName: "minus").frame(width: 22, height: 18)
+                    }
+                    .help("Muster entfernen")
+                    .disabled(selection.isEmpty)
+                    Spacer()
+                    Button("Standard") {
+                        patterns = LogMode.defaultPatterns
+                        selection = []
+                    }
+                    .disabled(isDefault)
                 }
                 .buttonStyle(.borderless)
-                .help("Muster entfernen")
+            } footer: {
+                Text("Dateien, deren Name zu einem Muster passt, öffnen am Ende und folgen neuen Zeilen, solange das Ende zu sehen ist. * steht für beliebige Zeichen, ? für eines. Unter Darstellung lässt sich das für jede Datei einzeln umschalten.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+
+            Section {
+                Toggle("Beim Öffnen einer Log-Datei den Modus erklären", isOn: Binding(
+                    get: { !noticeSuppressed }, set: { noticeSuppressed = !$0 }))
             }
         }
-        HStack {
-            Button("Muster hinzufügen") {
-                patterns.append(LogPattern(pattern: "", readOnly: true))
-            }
-            Spacer()
-            Button("Standard") {
-                patterns = LogMode.defaultPatterns
-            }
-            .disabled(patterns.map(\.pattern) == LogMode.defaultPatterns.map(\.pattern)
-                      && patterns.map(\.readOnly) == LogMode.defaultPatterns.map(\.readOnly))
-        }
+        .formStyle(.grouped)
+        .scrollDisabled(true)
         .onChange(of: patterns) { _, patterns in
             LogMode.patterns = patterns
         }

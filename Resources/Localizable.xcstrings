@@ -21,6 +21,16 @@
         }
       }
     },
+    "Beim Öffnen einer Log-Datei den Modus erklären" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explain the mode when a log file opens"
+          }
+        }
+      }
+    },
     "Bleistift zeigt das Ende der Datei. Schreibt ein Programm neue Zeilen hinein, rückt die Ansicht mit, solange das Ende zu sehen ist; scrollst du nach oben, bleibt sie stehen." : {
       "localizations" : {
         "en" : {
@@ -161,12 +171,12 @@
         }
       }
     },
-    "Umschalten lässt sich das unter Darstellung → Als Log-Datei anzeigen und Nur lesen. Welche Dateien als Log-Dateien gelten, legen die Muster unter Einstellungen → Dateien fest." : {
+    "Umschalten lässt sich das unter Darstellung → Als Log-Datei anzeigen und Nur lesen. Welche Dateien als Log-Dateien gelten, legen die Muster unter Einstellungen → Log-Dateien fest." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You can switch this under View → Show as Log File and Read Only. Which files count as log files is set by the patterns under Settings → Files."
+            "value" : "You can switch this under View → Show as Log File and Read Only. Which files count as log files is set by the patterns under Settings → Log Files."
           }
         }
       }

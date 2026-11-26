@@ -80,9 +80,9 @@ Each time you open or save a file, by hand or automatically, Bleistift keeps tha
 
 Logs are read from the bottom: what happened last is at the end. Bleistift therefore opens a log file at its end, and when a program writes new lines to it, the view moves along as long as the end is in view. If you scroll up to read an older entry, the view stays put; scroll all the way down again, and it follows the new lines once more.
 
-A log file is a file whose name matches a pattern under “Settings → Files → Log Files”, `*.log` by default. Here, `*` stands for any characters and `?` for one. For each pattern, you decide whether its files are read only. That is the default for `*.log`: otherwise, a character typed by mistake would turn the file into a changed document, and Bleistift could no longer reload it on its own. For a single file, “View → Show as Log File” and “View → Read Only” switch both, also for files that match no pattern; Bleistift remembers this for the file. The status bar then shows “Log” and “read only”.
+A log file is a file whose name matches a pattern under “Settings → Log Files”, `*.log` by default. Here, `*` stands for any characters and `?` for one. For each pattern, you decide whether its files are read only. That is the default for `*.log`: otherwise, a character typed by mistake would turn the file into a changed document, and Bleistift could no longer reload it on its own. For a single file, “View → Show as Log File” and “View → Read Only” switch both, also for files that match no pattern; Bleistift remembers this for the file. The status bar then shows “Log” and “read only”.
 
-When you open a log file, a notice explains the mode, once each time Bleistift starts; check “Don’t show again” to stop it.
+When you open a log file, a notice explains the mode, once each time Bleistift starts; check “Don’t show again” to stop it. “Settings → Log Files → Explain the mode when a log file opens” brings it back.
 
 # The session
 
@@ -307,10 +307,11 @@ At the bottom of the window are line and column, the size of the selection, lang
 ## Settings
 
 - General: what happens when the app starts without a file, tabs or windows, and the default app for text and code
-- Files: saving automatically, how many earlier versions are kept, tidying up when saving, the patterns for log files, and encoding and line endings for new documents
+- Files: saving automatically, how many earlier versions are kept, tidying up when saving, and encoding and line endings for new documents
 - Appearance: font, line height (from +0% to +100% over what the font needs, +20% by default), defaults for new windows, highlighting of syntax, Markdown, the current line, and occurrences of the selected word, and changes in the ruler
 - Editing: tab width and indentation, closing brackets automatically, Page Up/Down, Home, and End, and the wrap column
 - Writing: typewriter mode, focus mode, and the width of the text column in distraction-free mode
+- Log Files: the patterns for log files, each with “Read Only”, and the notice on opening
 
 To have text files open in Bleistift with a double-click, “General → Default app → Make Default” makes it the default for plain text, Markdown, JSON, YAML, XML, CSS, JavaScript, Swift, Python, PHP, shell scripts, SQL, Lua, TOML, and INI, as well as diff and log files, which Console opens otherwise. macOS asks for each format separately. “Customize…” lists all formats with the app that opens them now and sets each one on its own, including HTML and CSV, which usually stay with the browser and a spreadsheet. “Reset” gives the formats back to the apps they had before. After a few days, Bleistift also asks once itself, in a bar below the title bar, at most twice.
 

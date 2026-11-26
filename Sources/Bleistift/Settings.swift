@@ -25,6 +25,7 @@ final class SettingsWindowController: NSWindowController {
         tabs.addTabViewItem(Self.pane(AppearanceSettings(), title: String(localized: "SettingsAppearance", defaultValue: "Darstellung"), symbol: "eyeglasses"))
         tabs.addTabViewItem(Self.pane(EditingSettings(), title: String(localized: "SettingsEditing", defaultValue: "Bearbeiten"), symbol: "character.cursor.ibeam"))
         tabs.addTabViewItem(Self.pane(WritingSettings(), title: String(localized: "Schreiben"), symbol: "pencil.line"))
+        tabs.addTabViewItem(Self.pane(LogSettings(), title: String(localized: "Log-Dateien"), symbol: "list.bullet.rectangle"))
 
         let window = NSWindow(contentViewController: tabs)
         window.styleMask = [.titled, .closable]
@@ -122,16 +123,6 @@ private struct FileSettings: View {
                 Text("Beim Sichern")
             } footer: {
                 Text("Die Zeile mit der Einfügemarke bleibt unberührt, ebenso zwei Leerzeichen am Ende einer Markdown-Zeile, die dort einen Zeilenumbruch bedeuten. ⌘Z nimmt das Aufräumen zurück.")
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
-            }
-
-            Section {
-                LogPatternSettings()
-            } header: {
-                Text("Log-Dateien")
-            } footer: {
-                Text("Dateien, deren Name zu einem Muster passt, öffnen am Ende und folgen neuen Zeilen, solange das Ende zu sehen ist. * steht für beliebige Zeichen, ? für eines. Unter Darstellung lässt sich das für jede Datei einzeln umschalten.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }

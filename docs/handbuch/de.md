@@ -91,9 +91,9 @@ Wie viele Fassungen je Datei bleiben, legt „Einstellungen → Dateien → Frü
 
 Protokolle liest man von unten: Was zuletzt geschah, steht am Ende. Eine Log-Datei öffnet Bleistift deshalb am Ende, und schreibt ein Programm neue Zeilen hinein, rückt die Ansicht mit, solange das Ende zu sehen ist. Scrollst du nach oben, um einen älteren Eintrag zu lesen, bleibt die Ansicht stehen; scrollst du wieder ganz nach unten, folgt sie den neuen Zeilen wieder.
 
-Als Log-Datei gilt eine Datei, deren Name zu einem Muster unter „Einstellungen → Dateien → Log-Dateien“ passt, voreingestellt `*.log`. Dabei steht `*` für beliebige Zeichen und `?` für eines. Zu jedem Muster legst du fest, ob die Dateien nur gelesen werden. Das ist bei `*.log` voreingestellt: Ein versehentlich getipptes Zeichen machte die Datei sonst zu einem geänderten Dokument, und Bleistift könnte sie nicht mehr von selbst neu laden. Für eine einzelne Datei schalten „Darstellung → Als Log-Datei anzeigen“ und „Darstellung → Nur lesen“ beides um, auch für Dateien, die zu keinem Muster passen; Bleistift merkt sich das für die Datei. Die Statusleiste zeigt dann „Log“ und „nur lesen“.
+Als Log-Datei gilt eine Datei, deren Name zu einem Muster unter „Einstellungen → Log-Dateien“ passt, voreingestellt `*.log`. Dabei steht `*` für beliebige Zeichen und `?` für eines. Zu jedem Muster legst du fest, ob die Dateien nur gelesen werden. Das ist bei `*.log` voreingestellt: Ein versehentlich getipptes Zeichen machte die Datei sonst zu einem geänderten Dokument, und Bleistift könnte sie nicht mehr von selbst neu laden. Für eine einzelne Datei schalten „Darstellung → Als Log-Datei anzeigen“ und „Darstellung → Nur lesen“ beides um, auch für Dateien, die zu keinem Muster passen; Bleistift merkt sich das für die Datei. Die Statusleiste zeigt dann „Log“ und „nur lesen“.
 
-Öffnest du eine Log-Datei, erklärt ein Hinweis den Modus, einmal je Start von Bleistift; mit „Nicht mehr anzeigen“ bleibt er weg.
+Öffnest du eine Log-Datei, erklärt ein Hinweis den Modus, einmal je Start von Bleistift; mit „Nicht mehr anzeigen“ bleibt er weg. Zurück holt ihn „Einstellungen → Log-Dateien → Beim Öffnen einer Log-Datei den Modus erklären“.
 
 # Die Sitzung
 
@@ -318,10 +318,11 @@ Unten im Fenster stehen Zeile und Spalte, die Größe der Auswahl, Sprache, Einr
 ## Einstellungen
 
 - Allgemein: was beim Start ohne Datei geschieht, Tabs oder Fenster und die Standard-App für Text und Code
-- Dateien: automatisches Sichern, wie viele frühere Fassungen bleiben, Aufräumen beim Sichern, die Muster für Log-Dateien, Kodierung und Zeilenenden für neue Dokumente
+- Dateien: automatisches Sichern, wie viele frühere Fassungen bleiben, Aufräumen beim Sichern, Kodierung und Zeilenenden für neue Dokumente
 - Darstellung: Schrift, Zeilenhöhe (von +0 % bis +100 % über das, was die Schrift braucht, voreingestellt +20 %), Vorgaben für neue Fenster, Hervorhebung von Syntax, Markdown, aktueller Zeile und Vorkommen des ausgewählten Worts, Änderungen im Lineal
 - Bearbeiten: Tabbreite und Einrückung, Klammern automatisch schließen, Bild ↑/↓, Pos1 und Ende, Umbruchspalte
 - Schreiben: Schreibmaschinen-Modus, Fokus-Modus und die Breite der Textspalte im ablenkungsfreien Modus
+- Log-Dateien: die Muster für Log-Dateien, je mit „Nur lesen“, und der Hinweis beim Öffnen
 
 Soll Bleistift Textdateien per Doppelklick öffnen, legt „Allgemein → Standard-App → Als Standard festlegen“ sie dafür fest: für reinen Text, Markdown, JSON, YAML, XML, CSS, JavaScript, Swift, Python, PHP, Shell-Skripte, SQL, Lua, TOML und INI, Diff sowie Log-Dateien, die sonst die Konsole öffnet. macOS fragt dabei für jedes Format einzeln nach. „Anpassen …“ zeigt alle Formate mit der App, die sie gerade öffnet, und legt jedes einzeln fest, auch HTML und CSV, die sonst meist in Browser und Tabellenkalkulation bleiben. „Zurücksetzen“ gibt die Formate der App zurück, die sie vorher hatten. Nach einigen Tagen fragt Bleistift auch selbst einmal in einem Balken unter der Titelleiste nach, höchstens zweimal.
 
