@@ -16,9 +16,9 @@ import AppKit
 import SwiftUI
 import UniformTypeIdentifiers
 
-/// The kinds of text Bleistift offers to open by default. HTML, CSV and logs can be
-/// chosen one by one but are left out of "all": web pages are usually opened in the browser,
-/// tables in a spreadsheet and logs in Console.
+/// The kinds of text Bleistift offers to open by default. HTML and CSV can be chosen one by
+/// one but are left out of "all": web pages are usually opened in the browser, tables in a
+/// spreadsheet. Logs belong to "all" since Bleistift follows them like Console (LogMode).
 enum TextFormat: String, CaseIterable, Identifiable {
     case plainText, markdown, json, yaml, toml, xml, html, css, javascript, swift, python, php, shell, sql, lua, log, csv, diff
 
@@ -41,7 +41,7 @@ enum TextFormat: String, CaseIterable, Identifiable {
         case .shell: String(localized: "Shell-Skripte")
         case .sql: "SQL"
         case .lua: "Lua"
-        case .log: String(localized: "Protokolle")
+        case .log: String(localized: "Log-Dateien")
         case .csv: "CSV / TSV"
         case .diff: "Diff / Patch"
         }
@@ -72,7 +72,7 @@ enum TextFormat: String, CaseIterable, Identifiable {
     }
 
     /// Whether "all formats" and the offer include it.
-    var isInAll: Bool { self != .html && self != .csv && self != .log }
+    var isInAll: Bool { self != .html && self != .csv }
 
     /// The formats whose types the system knows. The app declares the ones macOS does not, but a
     /// format without any type must never count as Bleistift's.
@@ -403,7 +403,7 @@ struct DefaultAppFormatsView: View {
                     }
                 }
             .id(generation)
-            Text("macOS fragt für jedes Format einzeln nach, bei allen Formaten also mehrmals hintereinander. Lehnst du einmal ab, fragt Bleistift nicht weiter. HTML, CSV und Protokolle gehören nicht zu „Alle Formate“, weil sie meist im Browser, in einer Tabellenkalkulation oder in der Konsole besser aufgehoben sind. Zurücksetzen gibt ein Format der App zurück, die es vorher hatte, sonst TextEdit.")
+            Text("macOS fragt für jedes Format einzeln nach, bei allen Formaten also mehrmals hintereinander. Lehnst du einmal ab, fragt Bleistift nicht weiter. HTML und CSV gehören nicht zu „Alle Formate“, weil sie meist im Browser oder in einer Tabellenkalkulation besser aufgehoben sind. Zurücksetzen gibt ein Format der App zurück, die es vorher hatte, sonst TextEdit.")
                 .font(.callout)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)

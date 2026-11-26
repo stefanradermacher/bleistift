@@ -76,7 +76,7 @@ private struct GeneralSettings: View {
             Section {
                 DefaultAppSettingsRows()
             } footer: {
-                Text("Für Text und Code: reiner Text, Markdown, JSON, YAML, Quelltexte und mehr. Mit „Anpassen …“ lässt sich jedes Format einzeln festlegen, auch HTML, CSV und Protokolle.")
+                Text("Für Text und Code: reiner Text, Markdown, JSON, YAML, Quelltexte, Log-Dateien und mehr. Mit „Anpassen …“ lässt sich jedes Format einzeln festlegen, auch HTML und CSV.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }

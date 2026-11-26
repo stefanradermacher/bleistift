@@ -310,7 +310,7 @@ At the bottom of the window are line and column, the size of the selection, lang
 - Editing: tab width and indentation, closing brackets automatically, Page Up/Down, Home, and End, and the wrap column
 - Writing: typewriter mode, focus mode, and the width of the text column in distraction-free mode
 
-To have text files open in Bleistift with a double-click, “General → Default app → Make Default” makes it the default for plain text, Markdown, JSON, YAML, XML, CSS, JavaScript, Swift, Python, PHP, shell scripts, SQL, Lua, TOML, and INI, as well as diff. macOS asks for each format separately. “Customize…” lists all formats with the app that opens them now and sets each one on its own, including HTML, CSV, and logs, which usually stay with the browser, a spreadsheet, and Console. “Reset” gives the formats back to the apps they had before. After a few days, Bleistift also asks once itself, in a bar below the title bar, at most twice.
+To have text files open in Bleistift with a double-click, “General → Default app → Make Default” makes it the default for plain text, Markdown, JSON, YAML, XML, CSS, JavaScript, Swift, Python, PHP, shell scripts, SQL, Lua, TOML, and INI, as well as diff and log files, which Console opens otherwise. macOS asks for each format separately. “Customize…” lists all formats with the app that opens them now and sets each one on its own, including HTML and CSV, which usually stay with the browser and a spreadsheet. “Reset” gives the formats back to the apps they had before. After a few days, Bleistift also asks once itself, in a bar below the title bar, at most twice.
 
 The default font is SF Mono, the monospaced font of macOS. Because macOS does not list it in the font panel, the “Default” button leads back to it.
 
