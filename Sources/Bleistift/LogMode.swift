@@ -140,6 +140,35 @@ extension EditorPane {
     }
 }
 
+/// Explains the log mode when a log file opens, until "Nicht mehr anzeigen" is checked; at
+/// most once per launch, so that a session with several logs brings one notice, not several.
+@MainActor
+enum LogModeNotice {
+    static let suppressedKey = "logModeNoticeSuppressed"
+    private static var shownThisLaunch = false
+
+    static func showIfDue(for document: TextDocument, in window: NSWindow) {
+        guard !shownThisLaunch, !UserDefaults.standard.bool(forKey: suppressedKey), window.attachedSheet == nil else { return }
+        shownThisLaunch = true
+        let alert = NSAlert()
+        alert.messageText = String(localized: "„\(document.displayName ?? "")“ wird als Log-Datei angezeigt")
+        var lines = [String(localized: "Bleistift zeigt das Ende der Datei. Schreibt ein Programm neue Zeilen hinein, rückt die Ansicht mit, solange das Ende zu sehen ist; scrollst du nach oben, bleibt sie stehen.")]
+        if document.isReadOnly {
+            lines.append(String(localized: "Die Datei ist nur zum Lesen geöffnet, damit sie nicht versehentlich geändert wird."))
+        }
+        lines.append(String(localized: "Umschalten lässt sich das unter Darstellung → Als Log-Datei anzeigen und Nur lesen. Welche Dateien als Log-Dateien gelten, legen die Muster unter Einstellungen → Dateien fest."))
+        alert.informativeText = lines.joined(separator: "\n\n")
+        alert.showsSuppressionButton = true
+        alert.suppressionButton?.title = String(localized: "Nicht mehr anzeigen")
+        alert.addButton(withTitle: String(localized: "OK"))
+        alert.beginSheetModal(for: window) { _ in
+            if alert.suppressionButton?.state == .on {
+                UserDefaults.standard.set(true, forKey: suppressedKey)
+            }
+        }
+    }
+}
+
 /// The list of patterns in Settings → Files.
 struct LogPatternSettings: View {
     @State private var patterns = LogMode.patterns

@@ -238,7 +238,17 @@ final class EditorViewController: NSViewController, NSMenuItemValidation, NSSpli
             apply(state)
         }
         // A log opens at its end, wherever it was left; after the first layout of the panes.
-        if document.isLogFile { DispatchQueue.main.async { [weak self] in self?.followEnd() } }
+        if document.isLogFile {
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                followEnd()
+                #if DEBUG
+                // Test runs with -DebugScript look at the text, not at the notice.
+                if UserDefaults.standard.string(forKey: "DebugScript") != nil, UserDefaults.standard.string(forKey: "DebugLogNotice") == nil { return }
+                #endif
+                if let window = view.window { LogModeNotice.showIfDue(for: document, in: window) }
+            }
+        }
         #if DEBUG
         // For looking at the find bar without a keyboard: -DebugFindBar find|replace|goto
         // and -DebugFindText <text>.

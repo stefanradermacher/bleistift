@@ -93,6 +93,8 @@ Protokolle liest man von unten: Was zuletzt geschah, steht am Ende. Eine Log-Dat
 
 Als Log-Datei gilt eine Datei, deren Name zu einem Muster unter „Einstellungen → Dateien → Log-Dateien“ passt, voreingestellt `*.log`. Dabei steht `*` für beliebige Zeichen und `?` für eines. Zu jedem Muster legst du fest, ob die Dateien nur gelesen werden. Das ist bei `*.log` voreingestellt: Ein versehentlich getipptes Zeichen machte die Datei sonst zu einem geänderten Dokument, und Bleistift könnte sie nicht mehr von selbst neu laden. Für eine einzelne Datei schalten „Darstellung → Als Log-Datei anzeigen“ und „Darstellung → Nur lesen“ beides um, auch für Dateien, die zu keinem Muster passen; Bleistift merkt sich das für die Datei. Die Statusleiste zeigt dann „Log“ und „nur lesen“.
 
+Öffnest du eine Log-Datei, erklärt ein Hinweis den Modus, einmal je Start von Bleistift; mit „Nicht mehr anzeigen“ bleibt er weg.
+
 # Die Sitzung
 
 Viele Mac-Apps überlassen es macOS, nach dem Neustart wieder zu öffnen, was offen war. Ob das klappt, hängt von Systemeinstellungen und der Art des Beendens ab. Bleistift führt deshalb eine eigene Sitzung: alle Fenster mit ihren Tabs, die Dateien darin und alle ungesicherten Texte.

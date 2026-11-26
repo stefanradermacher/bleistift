@@ -21,12 +21,32 @@
         }
       }
     },
+    "Bleistift zeigt das Ende der Datei. Schreibt ein Programm neue Zeilen hinein, rückt die Ansicht mit, solange das Ende zu sehen ist; scrollst du nach oben, bleibt sie stehen." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bleistift shows the end of the file. When a program writes new lines to it, the view moves along as long as the end is in view; if you scroll up, it stays put."
+          }
+        }
+      }
+    },
     "Dateien, deren Name zu einem Muster passt, öffnen am Ende und folgen neuen Zeilen, solange das Ende zu sehen ist. * steht für beliebige Zeichen, ? für eines. Unter Darstellung lässt sich das für jede Datei einzeln umschalten." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Files whose name matches a pattern open at their end and follow new lines as long as the end is in view. * stands for any characters, ? for one. Under View, this can be switched for each file."
+          }
+        }
+      }
+    },
+    "Die Datei ist nur zum Lesen geöffnet, damit sie nicht versehentlich geändert wird." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The file is open read only, so that it is not changed by mistake."
           }
         }
       }
@@ -111,12 +131,42 @@
         }
       }
     },
+    "Nicht mehr anzeigen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don’t show again"
+          }
+        }
+      }
+    },
     "Nur lesen" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Read Only"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "Umschalten lässt sich das unter Darstellung → Als Log-Datei anzeigen und Nur lesen. Welche Dateien als Log-Dateien gelten, legen die Muster unter Einstellungen → Dateien fest." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can switch this under View → Show as Log File and Read Only. Which files count as log files is set by the patterns under Settings → Files."
           }
         }
       }
@@ -137,6 +187,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "“%@” was not possible."
+          }
+        }
+      }
+    },
+    "„%@“ wird als Log-Datei angezeigt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” is shown as a log file"
           }
         }
       }

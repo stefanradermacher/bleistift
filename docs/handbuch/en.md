@@ -82,6 +82,8 @@ Logs are read from the bottom: what happened last is at the end. Bleistift there
 
 A log file is a file whose name matches a pattern under “Settings → Files → Log Files”, `*.log` by default. Here, `*` stands for any characters and `?` for one. For each pattern, you decide whether its files are read only. That is the default for `*.log`: otherwise, a character typed by mistake would turn the file into a changed document, and Bleistift could no longer reload it on its own. For a single file, “View → Show as Log File” and “View → Read Only” switch both, also for files that match no pattern; Bleistift remembers this for the file. The status bar then shows “Log” and “read only”.
 
+When you open a log file, a notice explains the mode, once each time Bleistift starts; check “Don’t show again” to stop it.
+
 # The session
 
 Many Mac apps leave it to macOS to reopen what was open after a restart. Whether that works depends on system settings and on how the app was quit. Bleistift therefore keeps a session of its own: all windows with their tabs, the files in them, and every unsaved text.
