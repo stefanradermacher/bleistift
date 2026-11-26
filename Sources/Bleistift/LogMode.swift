@@ -174,6 +174,7 @@ enum LogModeNotice {
 struct LogSettings: View {
     @State private var patterns = LogMode.patterns
     @State private var selection: Set<LogPattern.ID> = []
+    @State private var confirmsReset = false
     @AppStorage(LogModeNotice.suppressedKey) private var noticeSuppressed = false
 
     private var isDefault: Bool {
@@ -216,11 +217,8 @@ struct LogSettings: View {
                     .help("Muster entfernen")
                     .disabled(selection.isEmpty)
                     Spacer()
-                    Button("Standard") {
-                        patterns = LogMode.defaultPatterns
-                        selection = []
-                    }
-                    .disabled(isDefault)
+                    Button("Standard") { confirmsReset = true }
+                        .disabled(isDefault)
                 }
                 .buttonStyle(.borderless)
             } footer: {
@@ -238,6 +236,15 @@ struct LogSettings: View {
         .scrollDisabled(true)
         .onChange(of: patterns) { _, patterns in
             LogMode.patterns = patterns
+        }
+        .alert("Muster auf den Standard zurücksetzen?", isPresented: $confirmsReset) {
+            Button("Zurücksetzen", role: .destructive) {
+                patterns = LogMode.defaultPatterns
+                selection = []
+            }
+            Button("Abbrechen", role: .cancel) {}
+        } message: {
+            Text("Deine eigenen Muster werden entfernt. Danach gilt nur noch *.log, nur zum Lesen.")
         }
     }
 }

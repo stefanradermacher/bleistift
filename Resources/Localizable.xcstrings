@@ -51,6 +51,16 @@
         }
       }
     },
+    "Deine eigenen Muster werden entfernt. Danach gilt nur noch *.log, nur zum Lesen." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your own patterns are removed. Afterwards, only *.log applies, read only."
+          }
+        }
+      }
+    },
     "Die Datei ist nur zum Lesen geöffnet, damit sie nicht versehentlich geändert wird." : {
       "localizations" : {
         "en" : {
@@ -117,6 +127,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pattern"
+          }
+        }
+      }
+    },
+    "Muster auf den Standard zurücksetzen?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset the patterns to the default?"
           }
         }
       }
