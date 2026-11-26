@@ -11,6 +11,106 @@
         }
       }
     },
+    "Als Log-Datei anzeigen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show as Log File"
+          }
+        }
+      }
+    },
+    "Dateien, deren Name zu einem Muster passt, öffnen am Ende und folgen neuen Zeilen, solange das Ende zu sehen ist. * steht für beliebige Zeichen, ? für eines. Unter Darstellung lässt sich das für jede Datei einzeln umschalten." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Files whose name matches a pattern open at their end and follow new lines as long as the end is in view. * stands for any characters, ? for one. Under View, this can be switched for each file."
+          }
+        }
+      }
+    },
+    "Folgt neuen Zeilen am Ende; umschalten unter Darstellung → Als Log-Datei anzeigen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Follows new lines at the end; switch under View → Show as Log File"
+          }
+        }
+      }
+    },
+    "Log" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log"
+          }
+        }
+      }
+    },
+    "Log-Dateien" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log Files"
+          }
+        }
+      }
+    },
+    "Muster" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pattern"
+          }
+        }
+      }
+    },
+    "Muster entfernen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove Pattern"
+          }
+        }
+      }
+    },
+    "Muster hinzufügen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Pattern"
+          }
+        }
+      }
+    },
+    "Nur lesen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read Only"
+          }
+        }
+      }
+    },
+    "Umschalten unter Darstellung → Nur lesen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch under View → Read Only"
+          }
+        }
+      }
+    },
     "„%@“ war nicht möglich." : {
       "localizations" : {
         "en" : {

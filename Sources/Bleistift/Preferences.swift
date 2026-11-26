@@ -57,6 +57,8 @@ enum Preferences {
     static let autosave = "autosave"
     /// How many earlier states of each file File → Revert To keeps.
     static let historyLength = "historyLength"
+    /// Patterns of file names shown as logs ([LogPattern] as JSON).
+    static let logPatterns = "logPatterns"
     static let defaultEncoding = "defaultEncoding"          // String.Encoding.rawValue
     static let writesUTF8BOM = "writesUTF8BOM"
     static let defaultLineEnding = "defaultLineEnding"      // LineEnding.rawValue
@@ -100,6 +102,7 @@ enum Preferences {
             compareMarksEqualLines: false,
             autosave: AutosaveMode.off.rawValue,
             historyLength: 20,
+            logPatterns: LogMode.defaultValue,
             defaultEncoding: Int(String.Encoding.utf8.rawValue),
             writesUTF8BOM: false,
             defaultLineEnding: LineEnding.lf.rawValue,

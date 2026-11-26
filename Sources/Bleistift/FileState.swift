@@ -56,6 +56,9 @@ final class FileStateStore {
         var language: String?
         /// Chosen by hand; otherwise recognized from the text.
         var indentation: Indentation?
+        /// Chosen by hand; otherwise the patterns in the settings decide.
+        var logMode: Bool?
+        var readOnly: Bool?
         var lastUsed: Date
     }
 
@@ -79,6 +82,17 @@ final class FileStateStore {
 
     func language(for fileURL: URL) -> String? { entries[key(fileURL)]?.language }
     func indentation(for fileURL: URL) -> Indentation? { entries[key(fileURL)]?.indentation }
+    func logMode(for fileURL: URL) -> Bool? { entries[key(fileURL)]?.logMode }
+    func readOnly(for fileURL: URL) -> Bool? { entries[key(fileURL)]?.readOnly }
+
+    /// nil forgets the choice, so the patterns in the settings decide again.
+    func recordLogMode(_ logMode: Bool?, for fileURL: URL) {
+        update(fileURL) { $0.logMode = logMode }
+    }
+
+    func recordReadOnly(_ readOnly: Bool?, for fileURL: URL) {
+        update(fileURL) { $0.readOnly = readOnly }
+    }
 
     /// Remembers a language chosen by hand; "" stands for plain text.
     func recordLanguage(_ id: String, for fileURL: URL) {

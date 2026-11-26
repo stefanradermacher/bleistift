@@ -109,6 +109,9 @@ extension TextDocument {
     func reloadFromDisk() {
         guard let fileURL else { return }
         let states = editor?.positions()
+        // A log follows its new lines in the panes that showed its end.
+        let following = isLogFile ? editor?.panes.map(\.isScrolledToEnd) : nil
+        let caretsAtEnd = editor?.panes.map { $0.textView.selectedRange().location >= textStorage.length }
         do {
             let data = try Data(contentsOf: fileURL)
             do {
@@ -121,7 +124,14 @@ extension TextDocument {
             showExternalChange(nil)
             if let states {
                 // After the views have heard of the new text, which moves them to its start.
-                DispatchQueue.main.async { [weak self] in self?.editor?.restore(positions: states) }
+                DispatchQueue.main.async { [weak self] in
+                    guard let editor = self?.editor else { return }
+                    editor.restore(positions: states)
+                    guard let following else { return }
+                    for (pane, (follows, caretAtEnd)) in zip(editor.panes, zip(following, caretsAtEnd ?? [])) where follows {
+                        pane.scrollToEnd(movingInsertionPoint: caretAtEnd)
+                    }
+                }
             }
         } catch {
             showExternalChange(.modified)

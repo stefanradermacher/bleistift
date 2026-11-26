@@ -127,6 +127,16 @@ private struct FileSettings: View {
             }
 
             Section {
+                LogPatternSettings()
+            } header: {
+                Text("Log-Dateien")
+            } footer: {
+                Text("Dateien, deren Name zu einem Muster passt, öffnen am Ende und folgen neuen Zeilen, solange das Ende zu sehen ist. * steht für beliebige Zeichen, ? für eines. Unter Darstellung lässt sich das für jede Datei einzeln umschalten.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+
+            Section {
                 Picker("Zeichenkodierung:", selection: $encoding) {
                     ForEach(TextEncoding.all, id: \.rawValue) { encoding in
                         Text(TextEncoding.name(of: encoding)).tag(Int(encoding.rawValue))

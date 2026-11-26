@@ -76,6 +76,12 @@ Each time you open or save a file, by hand or automatically, Bleistift keeps tha
 
 “File → Print…” (⌘P) prints the document, wrapped to the width of the paper and in the light colors. In the print dialog, the “Bleistift” section holds its own options: the font size for paper (10 pt by default), syntax colors, line numbers, and a header and footer with the file name or path, the date, and the page number. For Markdown files, you choose whether the text is printed as in the editor or typeset as in the preview, with real headings, lists, and tables. With text selected, the selection option under “Pages” prints only that, keeping the line numbers of the document. The preview on the left follows every change, and Bleistift remembers the options for next time.
 
+## Log files
+
+Logs are read from the bottom: what happened last is at the end. Bleistift therefore opens a log file at its end, and when a program writes new lines to it, the view moves along as long as the end is in view. If you scroll up to read an older entry, the view stays put; scroll all the way down again, and it follows the new lines once more.
+
+A log file is a file whose name matches a pattern under “Settings → Files → Log Files”, `*.log` by default. Here, `*` stands for any characters and `?` for one. For each pattern, you decide whether its files are read only. That is the default for `*.log`: otherwise, a character typed by mistake would turn the file into a changed document, and Bleistift could no longer reload it on its own. For a single file, “View → Show as Log File” and “View → Read Only” switch both, also for files that match no pattern; Bleistift remembers this for the file. The status bar then shows “Log” and “read only”.
+
 # The session
 
 Many Mac apps leave it to macOS to reopen what was open after a restart. Whether that works depends on system settings and on how the app was quit. Bleistift therefore keeps a session of its own: all windows with their tabs, the files in them, and every unsaved text.
@@ -92,7 +98,7 @@ Started without a file, Bleistift restores the last session, opens a new documen
 
 ## Every file remembers its state
 
-For every file, Bleistift remembers the selection, the visible part, wrapping, line numbers, font size, bookmarks, folds, and a split view. Next time you open it, everything is as you left it. The file itself stays untouched.
+For every file, Bleistift remembers the selection, the visible part, wrapping, line numbers, font size, bookmarks, folds, a split view, and whether it is shown as a log file or read only. Next time you open it, everything is as you left it. The file itself stays untouched.
 
 # Find and replace
 
@@ -294,12 +300,12 @@ Page Up and Page Down scroll by the height of the window and take the insertion 
 
 ## The status bar
 
-At the bottom of the window are line and column, the size of the selection, language, indentation, text encoding, and line endings. Everything except the position can be changed with a click.
+At the bottom of the window are line and column, the size of the selection, language, indentation, text encoding, and line endings, and for log files and read-only files also “Log” and “read only”. Everything except the position can be changed with a click.
 
 ## Settings
 
 - General: what happens when the app starts without a file, tabs or windows, and the default app for text and code
-- Files: saving automatically, how many earlier versions are kept, tidying up when saving, and encoding and line endings for new documents
+- Files: saving automatically, how many earlier versions are kept, tidying up when saving, the patterns for log files, and encoding and line endings for new documents
 - Appearance: font, line height (from +0% to +100% over what the font needs, +20% by default), defaults for new windows, highlighting of syntax, Markdown, the current line, and occurrences of the selected word, and changes in the ruler
 - Editing: tab width and indentation, closing brackets automatically, Page Up/Down, Home, and End, and the wrap column
 - Writing: typewriter mode, focus mode, and the width of the text column in distraction-free mode

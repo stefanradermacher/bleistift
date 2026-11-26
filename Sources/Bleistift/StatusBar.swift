@@ -18,6 +18,8 @@ import AppKit
 /// ending on the right, each changeable with a click.
 final class StatusBar: NSView, NSMenuDelegate {
     private let position = NSTextField(labelWithString: "")
+    /// "Log" and "nur lesen", for documents shown that way.
+    private let mode = NSTextField(labelWithString: "")
     private let countButton = NSPopUpButton(frame: .zero, pullsDown: true)
     private let languageButton = NSPopUpButton(frame: .zero, pullsDown: true)
     private let indentationButton = NSPopUpButton(frame: .zero, pullsDown: true)
@@ -34,6 +36,9 @@ final class StatusBar: NSView, NSMenuDelegate {
         position.textColor = .secondaryLabelColor
         position.lineBreakMode = .byTruncatingTail
         position.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        mode.font = font
+        mode.textColor = .secondaryLabelColor
+        mode.isHidden = true
 
         for button in [countButton, languageButton, indentationButton, encodingButton, lineEndingButton] {
             button.isBordered = false
@@ -54,7 +59,7 @@ final class StatusBar: NSView, NSMenuDelegate {
         let separator = NSBox()
         separator.boxType = .separator
 
-        let stack = NSStackView(views: [position, countButton, NSView(), languageButton, indentationButton, encodingButton, lineEndingButton])
+        let stack = NSStackView(views: [position, countButton, NSView(), mode, languageButton, indentationButton, encodingButton, lineEndingButton])
         stack.orientation = .horizontal
         stack.spacing = 12
         stack.edgeInsets = NSEdgeInsets(top: 0, left: 10, bottom: 0, right: 6)
@@ -162,6 +167,13 @@ final class StatusBar: NSView, NSMenuDelegate {
     /// Shows the document's language, indentation, encoding and line ending.
     func updateFormat() {
         guard let document else { return }
+        let modes = [document.isLogFile ? String(localized: "Log") : nil,
+                     document.isReadOnly ? String(localized: "nur lesen") : nil].compactMap { $0 }
+        mode.stringValue = modes.joined(separator: " · ")
+        mode.isHidden = modes.isEmpty
+        mode.toolTip = document.isReadOnly
+            ? String(localized: "Umschalten unter Darstellung → Nur lesen")
+            : String(localized: "Folgt neuen Zeilen am Ende; umschalten unter Darstellung → Als Log-Datei anzeigen")
         languageButton.menu?.items.first?.title = document.language?.name ?? String(localized: "Reiner Text")
         let indentation = document.indentation
         indentationButton.menu?.items.first?.title = indentation.usesSpaces

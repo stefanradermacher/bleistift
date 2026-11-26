@@ -27,6 +27,10 @@ final class TextDocument: NSDocument {
     private(set) var language: LanguageDefinition?
     /// The language was chosen by hand and is not recognized again, for example after "Save As".
     private var languageChosenByUser = false
+    /// Shown as a log: opens at the end and follows new lines (LogMode).
+    var isLogFile = false
+    /// Shown without taking any changes, as logs usually are.
+    var isReadOnly = false
     private(set) var indentation = Indentation.preferred
 
     private(set) var encoding: String.Encoding = Preferences.defaultEncodingValue
@@ -103,6 +107,7 @@ final class TextDocument: NSDocument {
             if fileURL != oldValue, fileURL != nil, !languageChosenByUser {
                 setLanguage(detectedLanguage(), byUser: false)
             }
+            if fileURL != oldValue { updateLogMode() }
             DocumentListView.setNeedsUpdate()
         }
     }
@@ -647,6 +652,12 @@ final class TextDocument: NSDocument {
         case #selector(toggleBOM(_:)):
             item.state = hasBOM ? .on : .off
             return TextEncoding.supportsBOM(encoding)
+        case #selector(toggleLogMode(_:)):
+            item.state = isLogFile ? .on : .off
+            return fileURL != nil
+        case #selector(toggleReadOnly(_:)):
+            item.state = isReadOnly ? .on : .off
+            return fileURL != nil
         case #selector(changeLineEnding(_:)):
             item.state = (item.representedObject as? String) == lineEnding.rawValue ? .on : .off
             return true

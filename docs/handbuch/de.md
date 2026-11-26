@@ -87,6 +87,12 @@ Wie viele Fassungen je Datei bleiben, legt „Einstellungen → Dateien → Frü
 
 „Ablage → Drucken …“ (⌘P) druckt das Dokument, umbrochen auf die Breite des Papiers und in den hellen Farben. Im Druckdialog stehen unter „Bleistift“ die eigenen Optionen: die Schriftgröße für das Papier (voreingestellt 10 pt), Syntaxfarben, Zeilennummern und eine Kopf- und Fußzeile mit Dateiname oder Dateipfad, Datum und Seitenzahl. Bei Markdown-Dateien wählst du, ob der Text so gedruckt wird wie im Editor oder gesetzt wie in der Vorschau, mit echten Überschriften, Listen und Tabellen. Ist Text ausgewählt, druckt „Auswahl in Bleistift“ unter „Seiten“ nur ihn, mit den Zeilennummern aus dem Dokument. Die Vorschau links folgt jeder Änderung, und Bleistift merkt sich die Optionen für das nächste Mal.
 
+## Log-Dateien
+
+Protokolle liest man von unten: Was zuletzt geschah, steht am Ende. Eine Log-Datei öffnet Bleistift deshalb am Ende, und schreibt ein Programm neue Zeilen hinein, rückt die Ansicht mit, solange das Ende zu sehen ist. Scrollst du nach oben, um einen älteren Eintrag zu lesen, bleibt die Ansicht stehen; scrollst du wieder ganz nach unten, folgt sie den neuen Zeilen wieder.
+
+Als Log-Datei gilt eine Datei, deren Name zu einem Muster unter „Einstellungen → Dateien → Log-Dateien“ passt, voreingestellt `*.log`. Dabei steht `*` für beliebige Zeichen und `?` für eines. Zu jedem Muster legst du fest, ob die Dateien nur gelesen werden. Das ist bei `*.log` voreingestellt: Ein versehentlich getipptes Zeichen machte die Datei sonst zu einem geänderten Dokument, und Bleistift könnte sie nicht mehr von selbst neu laden. Für eine einzelne Datei schalten „Darstellung → Als Log-Datei anzeigen“ und „Darstellung → Nur lesen“ beides um, auch für Dateien, die zu keinem Muster passen; Bleistift merkt sich das für die Datei. Die Statusleiste zeigt dann „Log“ und „nur lesen“.
+
 # Die Sitzung
 
 Viele Mac-Apps überlassen es macOS, nach dem Neustart wieder zu öffnen, was offen war. Ob das klappt, hängt von Systemeinstellungen und der Art des Beendens ab. Bleistift führt deshalb eine eigene Sitzung: alle Fenster mit ihren Tabs, die Dateien darin und alle ungesicherten Texte.
@@ -103,7 +109,7 @@ Startest du Bleistift ohne Datei, stellt die App die letzte Sitzung wieder her, 
 
 ## Jede Datei merkt sich ihren Zustand
 
-Für jede Datei merkt sich Bleistift Auswahl, sichtbaren Ausschnitt, Umbruch, Zeilennummern, Schriftgröße, Lesezeichen, Faltungen und eine geteilte Ansicht. Beim nächsten Öffnen ist alles wieder so, wie du es verlassen hast. Die Datei selbst bleibt dabei unverändert.
+Für jede Datei merkt sich Bleistift Auswahl, sichtbaren Ausschnitt, Umbruch, Zeilennummern, Schriftgröße, Lesezeichen, Faltungen, eine geteilte Ansicht und ob sie als Log-Datei oder nur zum Lesen erscheint. Beim nächsten Öffnen ist alles wieder so, wie du es verlassen hast. Die Datei selbst bleibt dabei unverändert.
 
 # Suchen und Ersetzen
 
@@ -305,12 +311,12 @@ Bild ↑ und Bild ↓ blättern um eine Fensterhöhe und nehmen die Einfügemark
 
 ## Die Statusleiste
 
-Unten im Fenster stehen Zeile und Spalte, die Größe der Auswahl, Sprache, Einrückung, Zeichenkodierung und Zeilenenden. Alles außer der Position lässt sich per Klick ändern.
+Unten im Fenster stehen Zeile und Spalte, die Größe der Auswahl, Sprache, Einrückung, Zeichenkodierung und Zeilenenden, bei Log-Dateien und Dateien nur zum Lesen außerdem „Log“ und „nur lesen“. Alles außer der Position lässt sich per Klick ändern.
 
 ## Einstellungen
 
 - Allgemein: was beim Start ohne Datei geschieht, Tabs oder Fenster und die Standard-App für Text und Code
-- Dateien: automatisches Sichern, wie viele frühere Fassungen bleiben, Aufräumen beim Sichern, Kodierung und Zeilenenden für neue Dokumente
+- Dateien: automatisches Sichern, wie viele frühere Fassungen bleiben, Aufräumen beim Sichern, die Muster für Log-Dateien, Kodierung und Zeilenenden für neue Dokumente
 - Darstellung: Schrift, Zeilenhöhe (von +0 % bis +100 % über das, was die Schrift braucht, voreingestellt +20 %), Vorgaben für neue Fenster, Hervorhebung von Syntax, Markdown, aktueller Zeile und Vorkommen des ausgewählten Worts, Änderungen im Lineal
 - Bearbeiten: Tabbreite und Einrückung, Klammern automatisch schließen, Bild ↑/↓, Pos1 und Ende, Umbruchspalte
 - Schreiben: Schreibmaschinen-Modus, Fokus-Modus und die Breite der Textspalte im ablenkungsfreien Modus

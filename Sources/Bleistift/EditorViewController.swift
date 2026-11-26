@@ -32,7 +32,7 @@ final class EditorViewController: NSViewController, NSMenuItemValidation, NSSpli
     private var previewHeadings: [Int] = []
     private var previewUpdate: DispatchWorkItem?
     private var previewObserver: NSObjectProtocol?
-    private var statusBar: StatusBar!
+    private(set) var statusBar: StatusBar!
     private(set) var search: SearchController!
     private var textAtTop: NSLayoutConstraint!
     private let allDocumentsView = AllDocumentsSearchView()
@@ -191,11 +191,14 @@ final class EditorViewController: NSViewController, NSMenuItemValidation, NSSpli
         applyFont()
         updateSidebar()
         updatePosition()
+        document.updateLogMode()
+        applyLogMode()
 
         let center = NotificationCenter.default
         observers = [
             center.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: .main) { [weak self] _ in
                 guard let self else { return }
+                document.updateLogMode()
                 updateSidebar()
                 updateSidebarWidths()
                 if isDistractionFree { applyFocus() }
@@ -207,6 +210,9 @@ final class EditorViewController: NSViewController, NSMenuItemValidation, NSSpli
             },
             center.addObserver(forName: TextDocument.formatDidChange, object: document, queue: .main) { [weak self] _ in
                 self?.statusBar.updateFormat()
+            },
+            center.addObserver(forName: TextDocument.logModeDidChange, object: document, queue: .main) { [weak self] _ in
+                self?.applyLogMode()
             },
             center.addObserver(forName: TextDocument.textDidReload, object: document, queue: .main) { [weak self] _ in
                 guard let self else { return }
@@ -231,6 +237,8 @@ final class EditorViewController: NSViewController, NSMenuItemValidation, NSSpli
             pendingViewState = nil
             apply(state)
         }
+        // A log opens at its end, wherever it was left; after the first layout of the panes.
+        if document.isLogFile { DispatchQueue.main.async { [weak self] in self?.followEnd() } }
         #if DEBUG
         // For looking at the find bar without a keyboard: -DebugFindBar find|replace|goto
         // and -DebugFindText <text>.
@@ -361,6 +369,14 @@ final class EditorViewController: NSViewController, NSMenuItemValidation, NSSpli
                 document.setBookmarkedLines(argument.split(separator: ",").compactMap { Int($0) })
             case "top":
                 activePane?.scroll(toOffset: document.lineIndex.start(ofLine: Int(argument) ?? 1))
+            case "log":
+                // The log mode of every pane: where it stands and whether it follows the end.
+                for pane in panes {
+                    NSLog("DEBUGSCRIPT log=%d readOnly=%d editable=%d atEnd=%d topLine=%d caret=%d length=%d",
+                          document.isLogFile ? 1 : 0, document.isReadOnly ? 1 : 0, pane.textView.isEditable ? 1 : 0,
+                          pane.isScrolledToEnd ? 1 : 0, document.lineIndex.lineNumber(at: pane.topOffset),
+                          pane.textView.selectedRange().location, document.textStorage.length)
+                }
             case "activate":
                 NSApp.activate()
                 view.window?.makeKeyAndOrderFront(nil)
@@ -529,8 +545,9 @@ final class EditorViewController: NSViewController, NSMenuItemValidation, NSSpli
                 // tc:markdownBold — a command of the Text menu
                 if let command = TextCommands.command(argument) { try? command.run(textView, "") }
             case "call":
-                // call:<action> — straight to this editor, also when the window is not in front
-                _ = perform(NSSelectorFromString(argument), with: nil)
+                // call:<action> — straight to this editor or its document, also when the window is not in front
+                let selector = NSSelectorFromString(argument)
+                _ = responds(to: selector) ? perform(selector, with: nil) : document.perform(selector, with: nil)
             case "sel":
                 NSApp.sendAction(NSSelectorFromString(argument), to: nil, from: nil)
             case "type":
@@ -572,6 +589,7 @@ final class EditorViewController: NSViewController, NSMenuItemValidation, NSSpli
             return true
         }
         panes.append(pane)
+        pane.textView.isEditable = !document.isReadOnly
         if isDistractionFree { pane.distractionFreeColumn = textColumnWidth }
         if let font = lastFont {
             pane.takeFont(font, attributes: EditorStyle.attributes(font: font, tabWidth: document.indentation.width))
