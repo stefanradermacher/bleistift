@@ -81,12 +81,12 @@
         }
       }
     },
-    "Für Text und Code: reiner Text, Markdown, JSON, YAML, Quelltexte, Log-Dateien und mehr. Mit „Anpassen …“ lässt sich jedes Format einzeln festlegen, auch HTML und CSV." : {
+    "Für Text und Code: reiner Text, Markdown, JSON, YAML, Quelltexte, Log-Dateien und mehr. Mit „Anpassen …“ lässt sich jedes Format einzeln festlegen, auch CSV." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "For text and code: plain text, Markdown, JSON, YAML, source code, log files, and more. “Customize…” sets each format on its own, HTML and CSV included."
+            "value" : "For text and code: plain text, Markdown, JSON, YAML, source code, log files, and more. “Customize…” sets each format on its own, CSV included."
           }
         }
       }
@@ -111,12 +111,12 @@
         }
       }
     },
-    "macOS fragt für jedes Format einzeln nach, bei allen Formaten also mehrmals hintereinander. Lehnst du einmal ab, fragt Bleistift nicht weiter. HTML und CSV gehören nicht zu „Alle Formate“, weil sie meist im Browser oder in einer Tabellenkalkulation besser aufgehoben sind. Zurücksetzen gibt ein Format der App zurück, die es vorher hatte, sonst TextEdit." : {
+    "macOS fragt für jedes Format einzeln nach, bei allen Formaten also mehrmals hintereinander. Lehnst du einmal ab, fragt Bleistift nicht weiter. CSV gehört nicht zu „Alle Formate“, weil Tabellen meist in einer Tabellenkalkulation besser aufgehoben sind. HTML bietet Bleistift nicht an: macOS koppelt es an den Standard-Browser, Links würden sonst in Bleistift landen. Zurücksetzen gibt ein Format der App zurück, die es vorher hatte, sonst TextEdit." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "macOS asks for each format separately, so for all formats several times in a row. If you decline once, Bleistift stops asking. HTML and CSV are not part of “All Formats”, as they are usually better off in the browser or a spreadsheet. Reset gives a format back to the app it had before, otherwise TextEdit."
+            "value" : "macOS asks for each format separately, so for all formats several times in a row. If you decline once, Bleistift stops asking. CSV is not part of “All Formats”, as tables are usually better off in a spreadsheet. Bleistift does not offer HTML: macOS ties it to the default browser, so links would end up in Bleistift. Reset gives a format back to the app it had before, otherwise TextEdit."
           }
         }
       }
